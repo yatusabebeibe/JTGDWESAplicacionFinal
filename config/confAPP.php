@@ -19,6 +19,7 @@ $controlador = [
     "registro" => "controller/cRegistro.php",
     "wip" => "controller/cWIP.php",
     "error" => "controller/cError.php",
+    "rest" => "controller/cREST.php",
 ];
 
 $vista = [
@@ -30,4 +31,5 @@ $vista = [
     "registro" => "view/vRegistro.php",
     "wip" => "view/vWIP.php",
     "error" => "view/vError.php",
+    "rest" => "view/vREST.php",
 ];

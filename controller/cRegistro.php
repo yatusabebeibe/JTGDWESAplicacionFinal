@@ -13,7 +13,7 @@ if (isset($_REQUEST["cancelar"])) {
     $_SESSION["paginaEnCurso"] = "inicioPublico";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -38,7 +38,7 @@ if (isset($_REQUEST["aceptar"])) {
                 $_SESSION["paginaEnCurso"] = "inicioPublico";
 
                 // Redirigimos
-                header("Location: indexLoginLogoff.php");
+                header("Location: index.php");
                 exit;
             } else {
                 $sErrorRegistro = "El usuario ya existe.";

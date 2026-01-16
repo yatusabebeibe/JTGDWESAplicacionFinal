@@ -10,7 +10,7 @@ if (! isset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"])) {
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -22,7 +22,7 @@ if (isset($_REQUEST["logoff"])) {
     unset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"]);
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -33,7 +33,7 @@ if (isset($_REQUEST["volver"])) {
     $_SESSION["paginaAnterior"] = "detalle";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 

@@ -11,7 +11,7 @@ if (isset($_REQUEST["login"])) {
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 // Registro
@@ -21,7 +21,7 @@ if (isset($_REQUEST["register"])) {
     $_SESSION["paginaEnCurso"] = "registro";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 
