@@ -1,0 +1,179 @@
+/* Variables globales */
+:root {
+    --color-bg-body: #1b2839;
+    --color-bg-header: #171d25;
+    --color-bg-footer: #171a21;
+    --color-primary: #66c0f4;
+    --color-primary-hover: #4da0d8;
+    --color-text: #fff;
+    --color-border-footer: #2a2f3b;
+    --font-main: Arial, sans-serif;
+    --header-padding: 15px 50px;
+    --footer-padding: 15px 50px;
+    --logo-font-size: 2em;
+    --hero-font-size: 3em;
+    --hero-sub-font-size: 1.2em;
+    --flag-size: 32px;
+    --github-icon-size: 24px;
+    --border-radius: 5px;
+    --transition-speed: 0.3s;
+
+    --header-height: 68px;
+    --footer-height: 58.5px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+body {
+    background: var(--color-bg-body);
+    color: var(--color-text);
+}
+
+/* Header simple */
+header {
+    display: flex;
+    position: sticky; top: 0;
+    z-index: 100;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--header-padding);
+    background: var(--color-bg-header);
+    backdrop-filter: blur(10px);
+    transition: all .75s linear;
+}
+.desacoplado {
+  background: color-mix(in srgb, var(--color-bg-header) 90%, transparent 10%);
+}
+header .logo {
+    font-size: var(--logo-font-size);
+    font-weight: bold;
+    color: var(--color-primary);
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Idiomas */
+.idiomas label img {
+    width: var(--flag-size);
+    height: auto;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed);
+}
+/* Bandera seleccionada */
+.idiomas input[type="radio"]:checked + label img {
+    border-color: var(--color-primary);
+    transform: scale(1.1);
+}
+/* Hover sobre bandera */
+.idiomas label img:hover {
+    border-color: var(--color-primary-hover);
+    transform: scale(1.05);
+}
+/* Ocultar radios */
+.idiomas input[type="radio"] {
+    display: none;
+}
+
+/* Botón de login */
+#login input[type="submit"] {
+    padding: 8px 16px;
+    margin: 0;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-primary);
+    color: var(--color-bg-header);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform 0.2s;
+}
+#login input[type="submit"]:hover {
+    background: var(--color-primary-hover);
+    transform: scale(1.05);
+}
+
+/* Main / Hero */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    text-align: center;
+}
+.hero-text h1 {
+    font-size: var(--hero-font-size);
+    margin-bottom: 10px;
+}
+.hero-text p {
+    font-size: var(--hero-sub-font-size);
+}
+/* Botones generales */
+input[type="submit"] {
+    padding: 8px 16px;
+    margin: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--color-primary);
+    color: var(--color-bg-header);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition-speed), transform 0.2s;
+}
+input[type="submit"]:hover {
+    background: var(--color-primary-hover);
+    transform: scale(1.05);
+}
+
+/* Footer estilizado */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: var(--footer-padding);
+    background: var(--color-bg-footer);
+    color: var(--color-text);
+    flex-wrap: wrap;
+    border-top: 1px solid var(--color-border-footer);
+}
+footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all var(--transition-speed);
+}
+footer a:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+footer img {
+    height: var(--github-icon-size);
+    transition: transform var(--transition-speed);
+}
+footer img:hover {
+    transform: scale(1.2);
+}
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+
+
+.imagenesInicio {
+    display: flex;
+    gap: 15px;
+
+    &> img {
+        height: 500px;
+    }
+}
