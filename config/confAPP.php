@@ -10,6 +10,8 @@ require_once 'model/DBPDO.php';
 require_once 'model/Usuario.php';
 require_once 'model/UsuarioPDO.php';
 require_once 'model/AppError.php';
+require_once 'model/REST.php';
+require_once 'model/ImagenNasa.php';
 
 $controlador = [
     "inicioPublico" => "controller/cInicioPublico.php",
