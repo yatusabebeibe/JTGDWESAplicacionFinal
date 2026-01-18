@@ -16,6 +16,16 @@ if (isset($_REQUEST["cancelar"])) {
     header("Location: index.php");
     exit;
 }
+// Registro
+if (isset($_REQUEST["register"])) {
+
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "registro";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
+}
 
 $encontrado = false; // Variable que indicará si se ha encontrado el usuario
 $aRespuestas = ["usuario"=>"","contraseña"=>""]; // Array para almacenar los datos del usuario

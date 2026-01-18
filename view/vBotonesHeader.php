@@ -30,13 +30,15 @@
 
 
 <!-- Botones de login/logoff/registro -->
-<?php if ($_SESSION["paginaEnCurso"] != "login"): // No mostramos los botones de sesión si estamos en la página de login ?>
 <form id="form_login" action="" method="post">
     <?php if ($estaLogeado): ?>
         <input type="submit" value="Cerrar sesión" name="logoff">
     <?php else: ?>
-        <input type="submit" value="Iniciar sesión" name="login">
-        <input type="submit" value="Registrarse" name="register">
+        <?php if ($_SESSION["paginaEnCurso"] != "login"): // No mostramos el botón de login si ya estamos en la página de login ?>
+            <input type="submit" value="Iniciar sesión" name="login">
+        <?php endif; ?>
+        <?php if ($_SESSION["paginaEnCurso"] != "registro"): // No mostramos el botón de registro si ya estamos en la página de registro ?>
+            <input type="submit" value="Registrarse" name="register">
+        <?php endif; ?>
     <?php endif; ?>
 </form>
-<?php endif; ?>
