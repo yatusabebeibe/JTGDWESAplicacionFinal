@@ -1,0 +1,111 @@
+.steam-image-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+    z-index: 9999;
+}
+
+.steam-image-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.steam-image-modal img {
+    max-width: 88%;
+    max-height: 88%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    user-select: none;
+}
+
+.steam-image-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.2rem;
+    background: none;
+    border: none;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.steam-image-close:hover {
+    color: white;
+}
+
+.steam-image-modal img {
+    max-width: 88%;
+    max-height: 88%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    user-select: none;
+    cursor: zoom-in;
+    transform: scale(1);
+    transition: transform .2s ease;
+}
+
+.steam-image-modal img {
+    cursor: grab;
+}
+
+.steam-image-modal img:active {
+    cursor: grabbing;
+}
+
+
+.carouselImagenes {
+    position: relative;
+    width: 100%;
+    max-width: 90vw;
+    height: 65vh;
+    max-height: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: end; /* los inputs quedan abajo */
+    gap: 10px;
+    padding: 0;
+}
+
+/* Contenedor de imágenes */
+.imagenes {
+    display: flex;
+    position: absolute;
+    top: 0; left: 50%;   /* centrar horizontalmente */
+    transform: translateX(-50%);
+    width: auto;
+    height: 100%;
+    padding-bottom: 30px; /* espacio para los inputs */
+}
+
+/* Cada imagen ocupa todo el alto y se centra */
+.imagenes img {
+    height: 100%;
+    width: auto;       /* ancho proporcional */
+    max-width: 90vw;   /* no se sale del contenedor */
+    display: none;     /* todas ocultas por defecto */
+    object-fit: contain;
+    margin: 0 auto;    /* centrar horizontalmente */
+    user-select: none;
+}
+
+/* Posicionar los inputs como fila centrada */
+.carouselImagenes input[type="radio"] {
+    margin: 0 5px; z-index: 2;
+    width: 1.25rem; aspect-ratio: 1;
+    appearance: none;
+    border: 2px solid var(--color-primary-hover);
+    border-radius: 100%;
+    background: var(--color-primary);
+    cursor: pointer;
+    &:checked {
+        background: var(--color-bg-body);
+    }
+    &:hover {
+        box-shadow: 0 0 1px 1px var(--color-primary-hover);
+    }
+}
