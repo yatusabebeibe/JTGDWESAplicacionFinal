@@ -12,8 +12,4 @@
     <pre><?= $avError['archivoError'] ?></pre>
     <h3>Línea del archivo donde se ha producido el error:</h3>
     <pre><?= $avError['lineaError'] ?></pre>
-    <br>
-    <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
-        <div><input type="submit" value="Volver" name="volver"></div>
-    </form>
 </div>

@@ -11,8 +11,7 @@
         <div class="logo">Steam</div>
         <h1 class="titulo"><?= $titulo ?></h1>
         <div class="header-actions">
-            <?php require_once 'view/vBotonesIdioma.php'; ?>
-            <?php require_once 'view/vBotonesSesion.php'; ?>
+            <?php require_once 'view/vBotonesHeader.php'; ?>
         </div>
     </header>
     <script>
