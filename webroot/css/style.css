@@ -225,7 +225,7 @@ footer p {
         font-size: 1.15rem;
     }
 }
-.obligatorio {
+input[obligatorio] {
     background: #323500 !important;
     &:focus {
         border-color: #b0bd00 !important;
