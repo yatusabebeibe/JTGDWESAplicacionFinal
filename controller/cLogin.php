@@ -4,8 +4,6 @@
  *  @since 16/12/2025
  */
 
-require_once __DIR__ . '/../model/UsuarioPDO.php';
-
 // Si se ha pulsado el botón de cancelar, redirigimos al inicio público
 if (isset($_REQUEST["cancelar"])) {
 

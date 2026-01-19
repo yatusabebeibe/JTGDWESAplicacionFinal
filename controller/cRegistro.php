@@ -4,8 +4,6 @@
  *  @since 16/12/2025
  */
 
-require_once __DIR__ . '/../model/UsuarioPDO.php';
-
 // Comprobamos si se ha pulsado el botón 'cancelar'
 if (isset($_REQUEST["cancelar"])) {
 
