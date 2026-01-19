@@ -8,7 +8,6 @@ class REST {
         $curl = curl_init("https://api.nasa.gov/planetary/apod?date=$fecha&api_key=".self::NASA_KEY);
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $respuesta = curl_exec($curl);
         $datos = json_decode($respuesta, true);
