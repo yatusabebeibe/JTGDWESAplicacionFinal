@@ -7,7 +7,6 @@
 
 // Si se ha pulsado el botón de volver, redirigimos a la página anterior
 if(isset($_REQUEST['volver'])){
-    unset($_SESSION['REST']);
     $temp = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     $_SESSION['paginaAnterior'] = $temp;
@@ -15,27 +14,24 @@ if(isset($_REQUEST['volver'])){
     exit;
 }
 
-// Inicializamos el array de datos de la vista
-$avREST = [
-    "nasa" => $_SESSION["REST"]["nasa"] ?? null,
-];
-
 // Si se ha enviado una fecha, obtenemos la foto de la NASA para esa fecha
 if (isset($_REQUEST['fecha'])) {
-    // Validamos que la fecha no sea mayor que la fecha actual
-    $fechaSeleccionada = $_REQUEST['fecha'];
-    if ($fechaSeleccionada <= date('Y-m-d')) {
-        $fotoNasa = REST::getFotoDiaNasa($fechaSeleccionada);
-        $avREST["nasa"] = $fotoNasa;
+    // Validamos la fecha el minimo siendo la fecha que la NASA empezo a publicar imagenes, eL maximo la fecha actual
+    if (empty(validacionFormularios::validarFecha($_REQUEST['fecha'], date('d/m/Y'), '16/06/1995', 1))) {
+        $fotoNasa = REST::getFotoDiaNasa($_REQUEST['fecha']);
+        $_SESSION["REST"]["nasa"] = $fotoNasa;
     }
-} else if (empty($avREST["nasa"]) || $avREST["nasa"]->getFecha() === null) { // Si no se ha enviado una fecha, obtenemos la foto de hoy
-    $fotoNasa = REST::getFotoDiaNasa(date('Y-m-d'));
-    $avREST["nasa"] = $fotoNasa;
 }
-// var_dump($avREST["nasa"]);
+// Si no se ha enviado una fecha, obtenemos la foto de hoy
+else if (empty($_SESSION["REST"]["nasa"]) || $_SESSION["REST"]["nasa"]->getFecha() === null) {
+    $fotoNasa = REST::getFotoDiaNasa(date('Y-m-d'));
+    $_SESSION["REST"]["nasa"] = $fotoNasa;
+}
 
-// Guardamos los datos en la sesión
-$_SESSION['REST'] = $avREST;
+// Inicializamos el array de datos de la vista
+$avREST = [
+    "nasa" => $_SESSION["REST"]["nasa"],
+];
 
 $titulo = "REST";
 

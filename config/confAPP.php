@@ -13,6 +13,8 @@ require_once 'model/AppError.php';
 require_once 'model/REST.php';
 require_once 'model/ImagenNasa.php';
 
+const NASA_KEY = '779UxkhQlroYxeSVtJe5YN16lYt0EYrLi6Y8Chhf'; // Clave de API de NASA
+
 $controlador = [
     "inicioPublico" => "controller/cInicioPublico.php",
     "login" => "controller/cLogin.php",
