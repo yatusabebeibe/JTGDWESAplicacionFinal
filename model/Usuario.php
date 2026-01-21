@@ -44,22 +44,50 @@ class Usuario {
         $this->perfil = $perfil;
     }
 
-    // getter methods
+    /** Obtiene el código del usuario.
+     *
+     * @return string El código del usuario.
+     */
     public function getCodUsuario(): string {
         return $this->codUsuario;
     }
+
+    /** Obtiene la descripción del usuario.
+     *
+     * @return string La contraseña del usuario.
+     */
     public function getDescUsuario(): string {
         return $this->descUsuario;
     }
+
+    /** Obtiene el número de accesos del usuario.
+     *
+     * @return int El número de accesos del usuario.
+     */
     public function getNumAccesos(): int {
         return $this->numAccesos;
     }
+
+    /** Obtiene la fecha y hora de la última conexión del usuario.
+     *
+     * @return DateTime La fecha y hora de la última conexión del usuario.
+     */
     public function getFechaHoraUltimaConexion(): DateTime {
         return $this->fechaHoraUltimaConexion;
     }
+
+    /** Obtiene la fecha y hora de la penúltima conexión del usuario.
+     *
+     * @return DateTime|null La fecha y hora de la penúltima conexión del usuario, o null si no existe.
+     */
     public function getFechaHoraUltimaConexionAnterior(): ?DateTime {
         return $this->fechaHoraUltimaConexionAnterior;
     }
+
+    /** Obtiene el perfil del usuario.
+     *
+     * @return string El perfil del usuario.
+     */
     public function getPerfil(): string {
         return $this->perfil;
     }

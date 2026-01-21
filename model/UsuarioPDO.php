@@ -100,6 +100,4 @@ class UsuarioPDO {
 
         return ($insercion && $insercion->rowCount() > 0) ? true : false ;
     }
-
-    // public static function x() {}
 }

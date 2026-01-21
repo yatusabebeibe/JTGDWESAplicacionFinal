@@ -30,19 +30,42 @@ class AppError {
         $this->paginaSiguiente = $paginaSiguiente;
     }
 
-    // Getters
+    /** Obtiene el código del error.
+     *
+     * @return string El código del error.
+     */
     public function getCodError(): string {
         return $this->codError;
     }
+
+    /** Obtiene la descripción del error.
+     *
+     * @return string La descripción del error.
+     */
     public function getDescError(): string {
         return $this->descError;
     }
+
+    /** Obtiene el archivo donde ocurrió el error.
+     *
+     * @return string El archivo donde ocurrió el error.
+     */
     public function getArchivoError(): string {
         return $this->archivoError;
     }
+
+    /** Obtiene la línea donde ocurrió el error.
+     *
+     * @return int La línea donde ocurrió el error.
+     */
     public function getLineaError(): int {
         return $this->lineaError;
     }
+
+    /** Obtiene la página a la que se redirige después del error.
+     *
+     * @return string La página a la que se redirige después del error.
+     */
     public function getPaginaSiguiente(): string {
         return $this->paginaSiguiente;
     }
