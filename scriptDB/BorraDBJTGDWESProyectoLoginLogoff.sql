@@ -1,3 +1,3 @@
-DROP USER IF EXISTS 'userJTGDWESProyectoLoginLogoff'@'%';
+DROP USER IF EXISTS 'userJTGDWESAplicacionFinal'@'%';
 
-DROP DATABASE if EXISTS DBJTGDWESProyectoLoginLogoff;
+DROP DATABASE if EXISTS DBJTGDWESAplicacionFinal;

@@ -1,4 +1,4 @@
-USE DBJTGDWESProyectoLoginLogoff;
+USE DBJTGDWESAplicacionFinal;
 
 INSERT INTO T01_Usuario (T01_CodUsuario, T01_Password, T01_DescUsuario, T01_Perfil)
 VALUES
