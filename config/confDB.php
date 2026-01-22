@@ -14,8 +14,8 @@ const DBHost = "10.199.11.252";   // desarrollo
 // const DBHost = "localhost";   // explotación
 
 // usuario
-const DBName = "DBJTGDWESProyectoLoginLogoff";
-const DBUser = "userJTGDWESProyectoLoginLogoff";
+const DBName = "DBJTGDWESAplicacionFinal";
+const DBUser = "userJTGDWESAplicacionFinal";
 const DBPass = "paso";   // desarrollo
 // const DBPass = "!Paso1234x";   // explotación
 const DSN = "mysql:host=".DBHost.";dbname=".DBName;

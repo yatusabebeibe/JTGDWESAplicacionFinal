@@ -1,7 +1,5 @@
+<style> .hero-text > div:first-child { margin-top: 1.3rem; } </style>
 <div class="hero-text">
-    <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
-        <div><input type="submit" value="Volver" name="volver"></div>
-    </form>
     <?php
         // Creamos un array con las superglobales para recorrerlas fácilmente
         $variablesSuperglobales = [

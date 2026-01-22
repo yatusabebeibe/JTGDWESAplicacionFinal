@@ -1,8 +1,5 @@
 <?php
 
-require_once "DBPDO.php";
-require_once "Usuario.php";
-
 /**
  * @author Jesús Temprano Gallego
  * @since 18/12/2025
@@ -103,6 +100,4 @@ class UsuarioPDO {
 
         return ($insercion && $insercion->rowCount() > 0) ? true : false ;
     }
-
-    // public static function x() {}
 }

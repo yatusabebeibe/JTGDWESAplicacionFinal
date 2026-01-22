@@ -10,6 +10,10 @@ require_once 'model/DBPDO.php';
 require_once 'model/Usuario.php';
 require_once 'model/UsuarioPDO.php';
 require_once 'model/AppError.php';
+require_once 'model/REST.php';
+require_once 'model/ImagenNasa.php';
+
+const NASA_KEY = '779UxkhQlroYxeSVtJe5YN16lYt0EYrLi6Y8Chhf'; // Clave de API de NASA
 
 $controlador = [
     "inicioPublico" => "controller/cInicioPublico.php",
@@ -19,6 +23,7 @@ $controlador = [
     "registro" => "controller/cRegistro.php",
     "wip" => "controller/cWIP.php",
     "error" => "controller/cError.php",
+    "rest" => "controller/cREST.php",
 ];
 
 $vista = [
@@ -30,4 +35,5 @@ $vista = [
     "registro" => "view/vRegistro.php",
     "wip" => "view/vWIP.php",
     "error" => "view/vError.php",
+    "rest" => "view/vREST.php",
 ];

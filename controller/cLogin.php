@@ -4,8 +4,6 @@
  *  @since 16/12/2025
  */
 
-require_once __DIR__ . '/../model/UsuarioPDO.php';
-
 // Si se ha pulsado el botón de cancelar, redirigimos al inicio público
 if (isset($_REQUEST["cancelar"])) {
 
@@ -13,7 +11,17 @@ if (isset($_REQUEST["cancelar"])) {
     $_SESSION["paginaEnCurso"] = "inicioPublico";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
+    exit;
+}
+// Registro
+if (isset($_REQUEST["register"])) {
+
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "registro";
+
+    // Redirigimos
+    header("Location: index.php");
     exit;
 }
 
@@ -37,7 +45,7 @@ if (isset($_REQUEST["entrar"])) {
         $_SESSION["paginaEnCurso"] = "inicioPrivado";
 
         // Redirigimos
-        header("Location: indexLoginLogoff.php");
+        header("Location: index.php");
         exit;
     }
 }

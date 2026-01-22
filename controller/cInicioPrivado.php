@@ -10,7 +10,7 @@ if (! isset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"])) {
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -22,7 +22,7 @@ if (isset($_REQUEST["logoff"])) {
     unset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"]);
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 // Detalle
@@ -32,7 +32,7 @@ if (isset($_REQUEST["detalle"])) {
     $_SESSION["paginaEnCurso"] = "detalle";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 // Mantenimiento de departamentos
@@ -42,17 +42,17 @@ if (isset($_REQUEST["departamentos"])) {
     $_SESSION["paginaEnCurso"] = "wip";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 // REST
 if (isset($_REQUEST["REST"])) {
 
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "rest";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
     exit;
 }
 // Forzamos un error para probar el manejo de errores

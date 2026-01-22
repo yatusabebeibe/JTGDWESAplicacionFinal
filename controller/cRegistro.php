@@ -4,8 +4,6 @@
  *  @since 16/12/2025
  */
 
-require_once __DIR__ . '/../model/UsuarioPDO.php';
-
 // Comprobamos si se ha pulsado el botón 'cancelar'
 if (isset($_REQUEST["cancelar"])) {
 
@@ -13,7 +11,17 @@ if (isset($_REQUEST["cancelar"])) {
     $_SESSION["paginaEnCurso"] = "inicioPublico";
 
     // Redirigimos
-    header("Location: indexLoginLogoff.php");
+    header("Location: index.php");
+    exit;
+}
+// Login
+if (isset($_REQUEST["login"])) {
+
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "login";
+
+    // Redirigimos
+    header("Location: index.php");
     exit;
 }
 
@@ -35,10 +43,12 @@ if (isset($_REQUEST["aceptar"])) {
             // Si el alta es correcta, redirigimos al inicio público
             if (UsuarioPDO::altaUsuario($_REQUEST["usuario"], $_REQUEST["nombre"], $_REQUEST["contraseña1"])) {
                 $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-                $_SESSION["paginaEnCurso"] = "inicioPublico";
+                $_SESSION["paginaEnCurso"] = "inicioPrivado";
+                $_SESSION["usuarioDAWJTGProyectoLoginLogoff"] = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["contraseña1"]);
+                UsuarioPDO::actualizarUltimaConexion($_REQUEST["usuario"], new DateTime());
 
                 // Redirigimos
-                header("Location: indexLoginLogoff.php");
+                header("Location: index.php");
                 exit;
             } else {
                 $sErrorRegistro = "El usuario ya existe.";
