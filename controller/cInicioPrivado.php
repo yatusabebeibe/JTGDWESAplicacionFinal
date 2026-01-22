@@ -57,7 +57,22 @@ if (isset($_REQUEST["REST"])) {
 }
 // Forzamos un error para probar el manejo de errores
 if (isset($_REQUEST["error"])) {
-    DBPDO::ejecutarConsulta("SELECT * FROM xsghuh");
+    try {
+        DBPDO::ejecutarConsulta("SELECT * FROM xsghuh");
+    } catch (PDOException $exception) {
+        $_SESSION['error'] = new AppError(
+            $exception->getCode(),
+            $exception->getMessage(),
+            $exception->getFile(),
+            $exception->getLine(),
+            $_SESSION['paginaEnCurso']
+        );
+        $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+        $_SESSION["paginaEnCurso"] = "error";
+
+        header("Location: index.php");
+        exit;
+    }
 }
 
 $titulo = "Inicio Privado";

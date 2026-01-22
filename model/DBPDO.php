@@ -15,29 +15,12 @@ class DBPDO {
      * @return PDOStatement Devuelve el objeto PDOStatement de la consulta.
      */
     public static function ejecutarConsulta(string $sentenciaSQL, array $parametros = []) {
-        try {
-            $miDB = new PDO(DSN, DBUser, DBPass);
+        $miDB = new PDO(DSN, DBUser, DBPass);
 
-            $consulta = $miDB->prepare($sentenciaSQL);
+        $consulta = $miDB->prepare($sentenciaSQL);
 
-            $consulta->execute($parametros);
+        $consulta->execute($parametros);
 
-            return $consulta;
-
-        } catch (PDOException $exception) {
-            $_SESSION['error'] = new AppError(
-                $exception->getCode(),
-                $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
-                $_SESSION['paginaEnCurso']
-            );
-            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-            $_SESSION["paginaEnCurso"] = "error";
-
-            // Redirigimos
-            header("Location: index.php");
-            exit;
-        }
+        return $consulta;
     }
 }

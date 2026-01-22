@@ -29,7 +29,22 @@ class UsuarioPDO {
             ":contrasenia" => $codUsuario.$passwd ?? ""
         ];
 
-        $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        try {
+            $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION['paginaEnCurso']
+            );
+            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
 
         $usuario = null;
         if ($datos && $datos->rowCount() >= 1) {
@@ -71,7 +86,22 @@ class UsuarioPDO {
             ":fecha" => $fecha->format('Y-m-d H:i:s')
         ];
 
-        $actualizacion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        try {
+            $actualizacion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION['paginaEnCurso']
+            );
+            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
 
         return ($actualizacion && $actualizacion->rowCount() > 0) ? true : false ;
     }
@@ -96,7 +126,12 @@ class UsuarioPDO {
             ":descripcion" => $nombre ?? ""
         ];
 
-        $insercion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        try {
+            $insercion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            header("Location: index.php");
+            exit;
+        }
 
         return ($insercion && $insercion->rowCount() > 0) ? true : false ;
     }
