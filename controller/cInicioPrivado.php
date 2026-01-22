@@ -5,7 +5,7 @@
  */
 
 // Si no hay un usuario logueado, redirigimos al login
-if (! isset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"])) {
+if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
@@ -19,7 +19,7 @@ if (isset($_REQUEST["logoff"])) {
 
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "inicioPublico";
-    unset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"]);
+    unset($_SESSION["usuarioDAWJTGDAplicacionFinal"]);
 
     // Redirigimos
     header("Location: index.php");
@@ -66,7 +66,7 @@ $titulo = "Inicio Privado";
 // traducimos y preparamos los datos para la vista
 
 // Obtenemos los datos del usuario logueado
-$usuario = $_SESSION["usuarioDAWJTGProyectoLoginLogoff"];
+$usuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"];
 
 $nombreUsuario = $usuario->getDescUsuario();
 $numConexiones = $usuario->getNumAccesos();

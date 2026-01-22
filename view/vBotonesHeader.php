@@ -1,4 +1,4 @@
-<?php $estaLogeado = isset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"]); ?>
+<?php $estaLogeado = isset($_SESSION["usuarioDAWJTGDAplicacionFinal"]); ?>
 <?php $estaEnInicio = in_array( $_SESSION["paginaEnCurso"], ["inicioPublico", "inicioPrivado"] ); ?>
 <?php $esErrorOWip = in_array( $_SESSION["paginaEnCurso"], ["error", "wip"] ); ?>
 

@@ -44,7 +44,7 @@ if (isset($_REQUEST["aceptar"])) {
             if (UsuarioPDO::altaUsuario($_REQUEST["usuario"], $_REQUEST["nombre"], $_REQUEST["contraseña1"])) {
                 $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
                 $_SESSION["paginaEnCurso"] = "inicioPrivado";
-                $_SESSION["usuarioDAWJTGProyectoLoginLogoff"] = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["contraseña1"]);
+                $_SESSION["usuarioDAWJTGDAplicacionFinal"] = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["contraseña1"]);
                 UsuarioPDO::actualizarUltimaConexion($_REQUEST["usuario"], new DateTime());
 
                 // Redirigimos
