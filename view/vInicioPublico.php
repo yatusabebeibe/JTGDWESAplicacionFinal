@@ -5,11 +5,13 @@
         <input type="radio" name="rd" id="rd1">
         <input type="radio" name="rd" id="rd2">
         <input type="radio" name="rd" id="rd3">
+        <input type="radio" name="rd" id="rd4">
 
         <div class="imagenes">
             <img src="./webroot/images/modelo.png" alt="">
             <img src="./webroot/images/diagramaDeClases.png" alt="">
             <img src="./webroot/images/diagramaDeClasesPropio.png" alt="">
+            <img src="./webroot/images/usoSession.png" alt="">
         </div>
     </div>
     <script src="./webroot/js/imageModal.js"></script>
