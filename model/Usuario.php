@@ -59,6 +59,9 @@ class Usuario {
     public function getDescUsuario(): string {
         return $this->descUsuario;
     }
+    public function setDescUsuario(string $desc): void {
+        $this->descUsuario = $desc;
+    }
 
     /** Obtiene el número de accesos del usuario.
      *

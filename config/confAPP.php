@@ -27,6 +27,7 @@ $controlador = [
     "error" => "controller/cError.php",
     "rest" => "controller/cREST.php",
     "mtoDep" => "controller/cMtoDepartamentos.php",
+    "cuenta" => "controller/cMiCuenta.php",
 ];
 
 $vista = [
@@ -40,4 +41,5 @@ $vista = [
     "error" => "view/vError.php",
     "rest" => "view/vREST.php",
     "mtoDep" => "view/vMtoDepartamentos.php",
+    "cuenta" => "view/vMiCuenta.php",
 ];

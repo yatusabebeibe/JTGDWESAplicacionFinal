@@ -135,4 +135,41 @@ class UsuarioPDO {
 
         return ($insercion && $insercion->rowCount() > 0) ? true : false ;
     }
+
+    public static function modificarUsuario(string $codUsuario, string $descUsuario) {
+        $consulta = <<<CONSULTA
+        UPDATE T01_Usuario
+        SET T01_DescUsuario = :descripcion
+        WHERE T01_CodUsuario = :usuario
+        CONSULTA;
+
+        $parametros = [
+            ":usuario" => $codUsuario,
+            ":descripcion" => $descUsuario,
+        ];
+
+        try {
+            $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION['paginaEnCurso']
+            );
+            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        if ($datos->rowCount() > 0) {
+            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDescUsuario($descUsuario);
+            return true; // Se modificó el usuario
+        } else {
+            return false; // No se encontró el usuario o no hubo cambios
+        }
+    }
 }
