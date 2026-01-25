@@ -1,6 +1,5 @@
 <?php $estaLogeado = isset($_SESSION["usuarioDAWJTGDAplicacionFinal"]); ?>
 <?php $estaEnInicio = in_array( $_SESSION["paginaEnCurso"], ["inicioPublico", "inicioPrivado"] ); ?>
-<?php $esErrorOWip = in_array( $_SESSION["paginaEnCurso"], ["error", "wip"] ); ?>
 
 <!-- Botones de cambio de idioma -->
 <?php if ($estaEnInicio): // Solo mostramos los botones de idioma en las páginas de inicio ?>
@@ -22,7 +21,7 @@
 
 
 <!-- Boton para volver a la página anterior -->
-<?php if ($estaLogeado && (!$estaEnInicio /* && !$esErrorOWip */)): ?>
+<?php if (!$estaEnInicio && !in_array( $_SESSION["paginaEnCurso"], ["login", "registro"] ) ): ?>
 <form id="form_volver" action="" method="post">
     <input type="submit" value="Volver" name="volver">
 </form>
