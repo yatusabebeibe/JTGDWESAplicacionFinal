@@ -12,6 +12,8 @@ require_once 'model/UsuarioPDO.php';
 require_once 'model/AppError.php';
 require_once 'model/REST.php';
 require_once 'model/ImagenNasa.php';
+require_once 'model/Departamento.php';
+require_once 'model/DepartamentoPDO.php';
 
 const NASA_KEY = '779UxkhQlroYxeSVtJe5YN16lYt0EYrLi6Y8Chhf'; // Clave de API de NASA
 
@@ -24,6 +26,7 @@ $controlador = [
     "wip" => "controller/cWIP.php",
     "error" => "controller/cError.php",
     "rest" => "controller/cREST.php",
+    "mtoDep" => "controller/cMtoDepartamentos.php",
 ];
 
 $vista = [
@@ -36,4 +39,5 @@ $vista = [
     "wip" => "view/vWIP.php",
     "error" => "view/vError.php",
     "rest" => "view/vREST.php",
+    "mtoDep" => "view/vMtoDepartamentos.php",
 ];

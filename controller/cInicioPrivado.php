@@ -39,7 +39,7 @@ if (isset($_REQUEST["detalle"])) {
 if (isset($_REQUEST["departamentos"])) {
 
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "mtoDep";
 
     // Redirigimos
     header("Location: index.php");
@@ -73,6 +73,15 @@ if (isset($_REQUEST["error"])) {
         header("Location: index.php");
         exit;
     }
+}
+
+if (isset($_REQUEST["cuenta"])) {
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "cuenta";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
 }
 
 $titulo = "Inicio Privado";
