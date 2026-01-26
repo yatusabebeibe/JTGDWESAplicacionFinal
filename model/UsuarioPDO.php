@@ -29,7 +29,22 @@ class UsuarioPDO {
             ":contrasenia" => $codUsuario.$passwd ?? ""
         ];
 
-        $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        try {
+            $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION['paginaEnCurso']
+            );
+            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
 
         $usuario = null;
         if ($datos && $datos->rowCount() >= 1) {
@@ -71,7 +86,22 @@ class UsuarioPDO {
             ":fecha" => $fecha->format('Y-m-d H:i:s')
         ];
 
-        $actualizacion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        try {
+            $actualizacion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION['paginaEnCurso']
+            );
+            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
 
         return ($actualizacion && $actualizacion->rowCount() > 0) ? true : false ;
     }
@@ -96,8 +126,50 @@ class UsuarioPDO {
             ":descripcion" => $nombre ?? ""
         ];
 
-        $insercion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        try {
+            $insercion = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            header("Location: index.php");
+            exit;
+        }
 
         return ($insercion && $insercion->rowCount() > 0) ? true : false ;
+    }
+
+    public static function modificarUsuario(string $codUsuario, string $descUsuario) {
+        $consulta = <<<CONSULTA
+        UPDATE T01_Usuario
+        SET T01_DescUsuario = :descripcion
+        WHERE T01_CodUsuario = :usuario
+        CONSULTA;
+
+        $parametros = [
+            ":usuario" => $codUsuario,
+            ":descripcion" => $descUsuario,
+        ];
+
+        try {
+            $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION['paginaEnCurso']
+            );
+            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        if ($datos->rowCount() > 0) {
+            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDescUsuario($descUsuario);
+            return true; // Se modificó el usuario
+        } else {
+            return false; // No se encontró el usuario o no hubo cambios
+        }
     }
 }

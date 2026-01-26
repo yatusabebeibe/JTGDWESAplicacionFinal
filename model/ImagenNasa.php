@@ -7,13 +7,13 @@
  * @since 21/01/2026
  */
 class ImagenNasa {
-    private $fecha;
-    private $titulo;
-    private $url;
-    private $hdurl;
-    private $explicacion;
-    private $copyright;
-    private $error;
+    private string $fecha;
+    private ?string $titulo;
+    private ?string $url;
+    private ?string $hdurl;
+    private ?string $explicacion;
+    private ?string $copyright;
+    private ?array $error;
 
     /** Constructor de la clase ImagenNasa.
      *

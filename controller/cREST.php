@@ -5,6 +5,16 @@
  * @since 16/01/2026
  */
 
+// Si no hay un usuario logueado, redirigimos al login
+if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "login";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
+}
+
 // Si se ha pulsado el botón de volver, redirigimos a la página anterior
 if(isset($_REQUEST['volver'])){
     $temp = $_SESSION['paginaEnCurso'];
@@ -17,7 +27,7 @@ if(isset($_REQUEST['volver'])){
 // Si se ha enviado una fecha, obtenemos la foto de la NASA para esa fecha
 if (isset($_REQUEST['fecha'])) {
     // Validamos la fecha el minimo siendo la fecha que la NASA empezo a publicar imagenes, eL maximo la fecha actual
-    if (empty(validacionFormularios::validarFecha($_REQUEST['fecha'], date('d/m/Y'), '16/06/1995', 1))) {
+    if (empty(validacionFormularios::validarFecha($_REQUEST['fecha'], date('Y-m-d'), "1995-06-16", 1))) {
         $fotoNasa = REST::getFotoDiaNasa($_REQUEST['fecha']);
         $_SESSION["REST"]["nasa"] = $fotoNasa;
     }

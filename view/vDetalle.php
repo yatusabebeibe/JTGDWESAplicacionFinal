@@ -1,4 +1,3 @@
-<style> .hero-text > div:first-child { margin-top: 1.3rem; } </style>
 <div class="hero-text">
     <?php
         // Creamos un array con las superglobales para recorrerlas fácilmente
@@ -37,7 +36,9 @@
     ?>
 </div>
 <style>
+    .hero-text > div:first-child { margin-top: 1.3rem; }
     body { background: var(--color-bg-body); }
+    pre { text-wrap: auto; }
     a:link{ color: var(--color-primary); text-decoration: unset; background-color: unset; }
     th { top: 67px; }
     @media (prefers-color-scheme: light) { body { color: #E2E4EF; } table { color: #222;} }

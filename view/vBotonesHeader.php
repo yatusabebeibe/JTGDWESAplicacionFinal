@@ -1,6 +1,6 @@
-<?php $estaLogeado = isset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"]); ?>
+<?php $estaLogeado = isset($_SESSION["usuarioDAWJTGDAplicacionFinal"]); ?>
 <?php $estaEnInicio = in_array( $_SESSION["paginaEnCurso"], ["inicioPublico", "inicioPrivado"] ); ?>
-<?php $esErrorOWip = in_array( $_SESSION["paginaEnCurso"], ["error", "wip"] ); ?>
+
 
 <!-- Botones de cambio de idioma -->
 <?php if ($estaEnInicio): // Solo mostramos los botones de idioma en las páginas de inicio ?>
@@ -20,9 +20,25 @@
 </script>
 <?php endif; ?>
 
+<!-- Botones para ir al apartado de miCuenta -->
+<?php if ($estaLogeado && $_SESSION["paginaEnCurso"] != "cuenta"): ?>
+<form id="form_cuenta" action="" method="post">
+    <?php
+    $letra = strtoupper($_SESSION["usuarioDAWJTGDAplicacionFinal"]->getDescUsuario()[0]);
+    $hue = (ord($letra) * 37) % 360; // matiz distinto según la letra
+    $colorFondo = "hsl($hue, 70%, 50%)"; // un poco más oscuro para que contraste
+    ?>
+    <input type="submit" id="boton_cuenta" name="cuenta"
+        value="<?= $letra ?>"
+        style="background: <?= $colorFondo ?>;"
+    >
+
+</form>
+<?php endif; ?>
+
 
 <!-- Boton para volver a la página anterior -->
-<?php if ($estaLogeado && (!$estaEnInicio /* && !$esErrorOWip */)): ?>
+<?php if (!$estaEnInicio && !in_array( $_SESSION["paginaEnCurso"], ["login", "registro"] ) ): ?>
 <form id="form_volver" action="" method="post">
     <input type="submit" value="Volver" name="volver">
 </form>

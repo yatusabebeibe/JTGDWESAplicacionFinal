@@ -5,7 +5,7 @@
  */
 
 // Si no hay un usuario logueado, redirigimos al login
-if (! isset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"])) {
+if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
@@ -19,7 +19,7 @@ if (isset($_REQUEST["logoff"])) {
 
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "inicioPublico";
-    unset($_SESSION["usuarioDAWJTGProyectoLoginLogoff"]);
+    unset($_SESSION["usuarioDAWJTGDAplicacionFinal"]);
 
     // Redirigimos
     header("Location: index.php");
@@ -39,7 +39,7 @@ if (isset($_REQUEST["detalle"])) {
 if (isset($_REQUEST["departamentos"])) {
 
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "mtoDep";
 
     // Redirigimos
     header("Location: index.php");
@@ -57,7 +57,31 @@ if (isset($_REQUEST["REST"])) {
 }
 // Forzamos un error para probar el manejo de errores
 if (isset($_REQUEST["error"])) {
-    DBPDO::ejecutarConsulta("SELECT * FROM xsghuh");
+    try {
+        DBPDO::ejecutarConsulta("SELECT * FROM xsghuh");
+    } catch (PDOException $exception) {
+        $_SESSION['error'] = new AppError(
+            $exception->getCode(),
+            $exception->getMessage(),
+            $exception->getFile(),
+            $exception->getLine(),
+            $_SESSION['paginaEnCurso']
+        );
+        $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+        $_SESSION["paginaEnCurso"] = "error";
+
+        header("Location: index.php");
+        exit;
+    }
+}
+
+if (isset($_REQUEST["cuenta"])) {
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "cuenta";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
 }
 
 $titulo = "Inicio Privado";
@@ -66,7 +90,7 @@ $titulo = "Inicio Privado";
 // traducimos y preparamos los datos para la vista
 
 // Obtenemos los datos del usuario logueado
-$usuario = $_SESSION["usuarioDAWJTGProyectoLoginLogoff"];
+$usuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"];
 
 $nombreUsuario = $usuario->getDescUsuario();
 $numConexiones = $usuario->getNumAccesos();
