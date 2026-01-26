@@ -14,16 +14,18 @@
                 <th>Fecha de Creación</th>
                 <th>Volumen de Negocio</th>
                 <th>Fecha de Baja</th>
+                <th>Opciones</th>
             </tr>
         </thead>
         <tbody>
             <?php foreach($avMtoDep["departamentos"] as $departamento): ?>
                 <tr>
-                    <td><?= $departamento->T02_CodDepartamento ?></td>
-                    <td><?= $departamento->T02_DescDepartamento ?></td>
-                    <td><?= $departamento->T02_FechaCreacionDepartamento ?></td>
-                    <td><?= $departamento->T02_VolumenDeNegocio ?></td>
-                    <td><?= $departamento->T02_FechaBajaDepartamento ?></td>
+                    <td><?= $departamento["codigo"] ?></td>
+                    <td><?= $departamento["descripcion"] ?></td>
+                    <td><?= $departamento["fechaCreacion"] ?></td>
+                    <td><?= $departamento["volumenDeNegocio"] ?></td>
+                    <td><?= $departamento["fechaBaja"] ?></td>
+                    <td><?= "WIP" ?></td>
                 </tr>
             <?php endforeach ?>
         </tbody>

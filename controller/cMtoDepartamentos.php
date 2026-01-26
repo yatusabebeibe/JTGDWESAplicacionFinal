@@ -43,8 +43,20 @@ if ( (isset($_REQUEST["buscar"]) && empty(validacionFormularios::comprobarAlfaNu
     $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
     $_SESSION["mtoDep"] = "";
 }
+$aDatosDepartamentos = [];
+foreach ($aDepartamentos as $departamento) {
+    $aDatosDepartamentos[] = [
+        "codigo" => $departamento->getCodigo(),
+        "descripcion" => $departamento->getDesc(),
+        "fechaCreacion" => $departamento->getFechaCreacion()->format("Y-m-d"),
+        "volumenDeNegocio" => $departamento->getVolumenDeNegocio(),
+        "fechaBaja" => $departamento->getFechaBaja() ? $departamento->getFechaBaja()->format("Y-m-d") : null,
+    ];
+}
+
+
 $avMtoDep = [
-    "departamentos" => $aDepartamentos,
+    "departamentos" => $aDatosDepartamentos,
     "buscado" => $_SESSION["mtoDep"],
 ];
 

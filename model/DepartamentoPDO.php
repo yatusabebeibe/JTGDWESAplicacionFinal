@@ -75,9 +75,18 @@ class DepartamentoPDO {
             exit;
         }
 
+        $aDepartamentos = [];
         if ($datos && $datos->rowCount() >= 1) {
-            return $datos->fetchAll(PDO::FETCH_OBJ);
+            while ($departamento = $datos->fetchObject()) {
+                $aDepartamentos[] = new Departamento(
+                    $departamento->T02_CodDepartamento,
+                    $departamento->T02_DescDepartamento,
+                    new DateTime($departamento->T02_FechaCreacionDepartamento),
+                    $departamento->T02_VolumenDeNegocio,
+                    $departamento->T02_FechaBajaDepartamento ? new DateTime($departamento->T02_FechaBajaDepartamento) : null
+                );
+            }
         }
-        return [];
+        return $aDepartamentos;
     }
 }
