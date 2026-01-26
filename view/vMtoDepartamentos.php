@@ -20,10 +20,10 @@
             <?php foreach($avMtoDep["departamentos"] as $departamento): ?>
                 <tr>
                     <td><?= $departamento->T02_CodDepartamento ?></td>
-                    <td><?= $departamento->T02_DescDepartamento  ?></td>
-                    <td><?= $departamento->T02_FechaCreacionDepartamento  ?></td>
-                    <td><?= $departamento->T02_VolumenDeNegocio  ?></td>
-                    <td><?= $departamento->T02_FechaBajaDepartamento  ?></td>
+                    <td><?= $departamento->T02_DescDepartamento ?></td>
+                    <td><?= $departamento->T02_FechaCreacionDepartamento ?></td>
+                    <td><?= $departamento->T02_VolumenDeNegocio ?></td>
+                    <td><?= $departamento->T02_FechaBajaDepartamento ?></td>
                 </tr>
             <?php endforeach ?>
         </tbody>
