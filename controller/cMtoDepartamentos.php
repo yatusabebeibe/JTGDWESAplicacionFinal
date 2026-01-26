@@ -48,9 +48,9 @@ foreach ($aDepartamentos as $departamento) {
     $aDatosDepartamentos[] = [
         "codigo" => $departamento->getCodigo(),
         "descripcion" => $departamento->getDesc(),
-        "fechaCreacion" => $departamento->getFechaCreacion()->format("Y-m-d"),
+        "fechaCreacion" => $departamento->getFechaCreacion()->format("d-m-Y"),
         "volumenDeNegocio" => $departamento->getVolumenDeNegocio(),
-        "fechaBaja" => $departamento->getFechaBaja() ? $departamento->getFechaBaja()->format("Y-m-d") : null,
+        "fechaBaja" => $departamento->getFechaBaja() ? $departamento->getFechaBaja()->format("d-m-Y") : null,
     ];
 }
 
