@@ -36,16 +36,16 @@ if(isset($_REQUEST['volver'])){
     exit;
 }
 
-if ( isset($_REQUEST["buscar"]) && empty(validacionFormularios::comprobarAlfaNumerico($_REQUEST["buscar"], minTamanio:0, obligatorio:1)) ) {
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_REQUEST["buscar"]);
-    $buscado = $_REQUEST["buscar"];
+if ( (isset($_REQUEST["buscar"]) && empty(validacionFormularios::comprobarAlfaNumerico($_REQUEST["buscar"], minTamanio:0, obligatorio:1))) || !empty($_SESSION["mtoDep"]) ) {
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_REQUEST["buscar"] ?? $_SESSION["mtoDep"]);
+    $_SESSION["mtoDep"] = $_REQUEST["buscar"] ?? $_SESSION["mtoDep"];
 } else {
     $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
-    $buscado = "";
+    $_SESSION["mtoDep"] = "";
 }
 $avMtoDep = [
     "departamentos" => $aDepartamentos,
-    "buscado" => $buscado,
+    "buscado" => $_SESSION["mtoDep"],
 ];
 
 $titulo = "Mantenimiento Departamentos";
