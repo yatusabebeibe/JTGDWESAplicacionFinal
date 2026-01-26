@@ -3,7 +3,7 @@
 class REST {
     // La clave de API de la NASA para acceder a la API esta en el archivo configAPP.php
 
-    public static function getFotoDiaNasa($fecha, $numIntentos = 0) {
+    public static function getFotoDiaNasa(string $fecha, int $numIntentos = 0) {
         // Inicializamos una sesión cURL con la URL de la API de NASA, incluyendo la fecha y la clave de API.
         $curl = curl_init("https://api.nasa.gov/planetary/apod?date=$fecha&api_key=".NASA_KEY);
 
