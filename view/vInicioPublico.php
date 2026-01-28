@@ -8,8 +8,8 @@
         <input type="radio" name="rd" id="rd4">
 
         <div class="imagenes">
-            <img src="./webroot/images/modelo.png" alt="">
-            <img src="./webroot/images/diagramaDeClases.png" alt="">
+            <img src="./webroot/images/diagramaDeCasosDeUso.png" alt="">
+            <img src="./webroot/images/arbolDeNavegacion.png" alt="">
             <img src="./webroot/images/diagramaDeClasesPropio.png" alt="">
             <img src="./webroot/images/usoSession.png" alt="">
         </div>
