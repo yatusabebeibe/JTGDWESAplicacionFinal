@@ -15,15 +15,6 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
     exit;
 }
 
-// Si se ha pulsado el botón de volver, redirigimos a la página anterior
-if(isset($_REQUEST['volver'])){
-    $temp = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior'] = $temp;
-    header('Location: index.php');
-    exit;
-}
-
 // Si se ha enviado una fecha, obtenemos la foto de la NASA para esa fecha
 if (isset($_REQUEST['fecha'])) {
     // Validamos la fecha el minimo siendo la fecha que la NASA empezo a publicar imagenes, eL maximo la fecha actual

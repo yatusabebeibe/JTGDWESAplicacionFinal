@@ -27,15 +27,6 @@ if (isset($_REQUEST["logoff"])) {
     exit;
 }
 
-// Si se ha pulsado el botón de volver, redirigimos a la página anterior
-if(isset($_REQUEST['volver'])){
-    $temp = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior'] = $temp;
-    header('Location: index.php');
-    exit;
-}
-
 // Si se ha pulsado el botón de editar un departamento
 if(isset($_REQUEST['editar'])){
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];

@@ -26,4 +26,26 @@ if (empty($_COOKIE["idioma"])) {
     exit;
 }
 
+// Si se ha pulsado el botón de volver, redirigimos a la página anterior
+if(isset($_REQUEST['volver'])){
+    // Limpiamos el error de la sesión por si hubiera
+    unset($_SESSION['error']);
+
+    $temp = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    $_SESSION['paginaAnterior'] = $temp;
+    header('Location: index.php');
+    exit;
+}
+
+// Si hay sesion iniciada y se ha pulsado el boton cuenta
+if (isset($_SESSION["usuarioDAWJTGDAplicacionFinal"]) && isset($_REQUEST["cuenta"])) {
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "cuenta";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
+}
+
 require_once($controlador[$_SESSION["paginaEnCurso"]]);
