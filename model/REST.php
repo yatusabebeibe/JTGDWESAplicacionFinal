@@ -27,20 +27,12 @@ class REST {
         if (isset($datos["error"])) { $datos = $datos["error"]; }
 
         if (isset($datos["code"])) {
-            // Si hay un error (código 404 o 400), intentamos con la fecha del día anterior (máximo 3 intentos)
-            if (($datos["code"] == "404" || $datos["code"] == "400") && $numIntentos < 3) {
-                // Si la fecha actual no tiene foto, devolvemos la del día anterior (si acaba de cambiar de día puede que aún no esté disponible)
-                return self::getFotoDiaNasa(date('Y-m-d', strtotime($fecha . ' -1 day')), ++$numIntentos); // Llamada recursiva
-            }
-            // Si hemos superado los intentos o el error no es 404/400, devolvemos el error
-            else {
-                if ($numIntentos > 0) { $fecha = date('Y-m-d', strtotime($fecha . " +$numIntentos day")); } // Ajustamos la fecha al original si hemos hecho intentos
-                return new ImagenNasa(
-                    fecha: $fecha,
-                    code: $datos['code'],
-                    msg: $datos['msg'] || $datos['message']
-                );
-            }
+            // Si hay un error guardamos el mensaje del error
+            return new ImagenNasa(
+                fecha: $fecha,
+                code: $datos['code'],
+                msg: $datos['msg'] || $datos['message']
+            );
         }
 
         return new ImagenNasa( // Si no hay errores, devolvemos la imagen con los datos obtenidos
