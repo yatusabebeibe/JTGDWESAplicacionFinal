@@ -14,6 +14,8 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
     exit;
 }
 
+$sTipoUsuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getPerfil();
+
 // Si se ha pulsado el botón de logoff, cerramos la sesión y redirigimos al inicio público
 if (isset($_REQUEST["logoff"])) {
 
@@ -78,6 +80,14 @@ if (isset($_REQUEST["error"])) {
 if (isset($_REQUEST["cuenta"])) {
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "cuenta";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
+}
+if ( isset($_REQUEST["mtoUsuarios"]) && $sTipoUsuario == "administrador" ) {
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "wip";
 
     // Redirigimos
     header("Location: index.php");
@@ -148,7 +158,8 @@ $fechaUltConexTexto = $fechaUltConex
 $avInicioPrivado = [
     'saludo' => "{$traducciones[$idioma]['saludo']} {$nombreUsuario}",
     'nConexiones' => str_replace('%', $numConexiones, $traducciones[$idioma]['nConexiones']),
-    'fechaUltConex' => $fechaUltConexTexto
+    'fechaUltConex' => $fechaUltConexTexto,
+    'tipoUsuario' => $sTipoUsuario,
 ];
 
 require_once $vista["layout"];

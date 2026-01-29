@@ -7,5 +7,8 @@
         <input type="submit" value="Error" name="error">
         <input type="submit" value="Mantenimiento de departamentos" name="mtoDepartamentos">
         <input type="submit" value="REST" name="REST">
+        <?php if ($avInicioPrivado["tipoUsuario"] == "administrador"): ?>
+            <input type="submit" value="Mantenimiento de usuarios" name="mtoUsuarios">
+        <?php endif ?>
     </form>
 </div>
