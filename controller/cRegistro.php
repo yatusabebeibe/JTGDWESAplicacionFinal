@@ -34,9 +34,10 @@ if (isset($_REQUEST["aceptar"])) {
     $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["nombre"], 255, 4, 1);
     $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["contraseña1"], 16, 4, 1);
     $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["contraseña2"], 16, 4, 1);
+    $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["resPregSeg"], 25, 1, 1);
 
     // Si no hay errores, procesamos el formulario
-    if (empty($sErrorRegistro)) {
+    if (empty($sErrorRegistro) && $_REQUEST["resPregSeg"] == preguntaSeguridad) {
 
         // Comprobamos si las contraseñas coinciden
         if ($_REQUEST["contraseña1"] === $_REQUEST["contraseña2"]) {

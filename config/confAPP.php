@@ -17,6 +17,8 @@ require_once 'model/DepartamentoPDO.php';
 
 const NASA_KEY = '779UxkhQlroYxeSVtJe5YN16lYt0EYrLi6Y8Chhf'; // Clave de API de NASA
 
+const preguntaSeguridad = "pimentel";
+
 $controlador = [
     "inicioPublico" => "controller/cInicioPublico.php",
     "login" => "controller/cLogin.php",
