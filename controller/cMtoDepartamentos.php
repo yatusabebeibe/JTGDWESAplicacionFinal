@@ -7,20 +7,8 @@
 
 // Si no hay un usuario logueado, redirigimos al login
 if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
-
-    // Redirigimos
-    header("Location: index.php");
-    exit;
-}
-
-// Si pulsamos cerrar sesion, cerramos la sesion y volvemos a inicio publico
-if (isset($_REQUEST["logoff"])) {
-
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "inicioPublico";
-    unset($_SESSION["usuarioDAWJTGDAplicacionFinal"]);
 
     // Redirigimos
     header("Location: index.php");
@@ -29,15 +17,15 @@ if (isset($_REQUEST["logoff"])) {
 
 // Si se ha pulsado el botón de editar un departamento
 if(isset($_REQUEST['editar'])){
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = "wip";
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "wip";
     header('Location: index.php');
     exit;
 }
 // Si se ha pulsado el botón de borrar un departamento
 if(isset($_REQUEST['borrar'])){
-    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = "wip";
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "wip";
     header('Location: index.php');
     exit;
 }

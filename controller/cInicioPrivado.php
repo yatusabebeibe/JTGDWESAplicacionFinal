@@ -6,7 +6,7 @@
 
 // Si no hay un usuario logueado, redirigimos al login
 if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -18,7 +18,7 @@ $sTipoUsuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getPerfil();
 
 // Si hay sesion iniciada y se ha pulsado el boton cuenta
 if (isset($_REQUEST["cuenta"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "cuenta";
 
     // Redirigimos
@@ -26,21 +26,10 @@ if (isset($_REQUEST["cuenta"])) {
     exit;
 }
 
-// Si se ha pulsado el botón de logoff, cerramos la sesión y redirigimos al inicio público
-if (isset($_REQUEST["logoff"])) {
-
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "inicioPublico";
-    unset($_SESSION["usuarioDAWJTGDAplicacionFinal"]);
-
-    // Redirigimos
-    header("Location: index.php");
-    exit;
-}
 // Detalle
 if (isset($_REQUEST["detalle"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "detalle";
 
     // Redirigimos
@@ -50,7 +39,7 @@ if (isset($_REQUEST["detalle"])) {
 // Mantenimiento de departamentos
 if (isset($_REQUEST["mtoDepartamentos"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "mtoDep";
 
     // Redirigimos
@@ -60,7 +49,7 @@ if (isset($_REQUEST["mtoDepartamentos"])) {
 // REST
 if (isset($_REQUEST["REST"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "rest";
 
     // Redirigimos
@@ -77,9 +66,9 @@ if (isset($_REQUEST["error"])) {
             $exception->getMessage(),
             $exception->getFile(),
             $exception->getLine(),
-            $_SESSION['paginaEnCurso']
+            $_SESSION["paginaEnCurso"]
         );
-        $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+        $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
         $_SESSION["paginaEnCurso"] = "error";
 
         header("Location: index.php");
@@ -88,7 +77,7 @@ if (isset($_REQUEST["error"])) {
 }
 
 if ( isset($_REQUEST["mtoUsuarios"]) && $sTipoUsuario == "administrador" ) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "wip";
 
     // Redirigimos

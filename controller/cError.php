@@ -8,7 +8,7 @@
 // Login
 if (isset($_REQUEST["login"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -18,7 +18,7 @@ if (isset($_REQUEST["login"])) {
 // Registro
 if (isset($_REQUEST["register"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "registro";
 
     // Redirigimos

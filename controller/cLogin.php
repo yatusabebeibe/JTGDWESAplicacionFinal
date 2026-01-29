@@ -7,7 +7,7 @@
 // Si se ha pulsado el botón de cancelar, redirigimos al inicio público
 if (isset($_REQUEST["cancelar"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "inicioPublico";
 
     // Redirigimos
@@ -17,7 +17,7 @@ if (isset($_REQUEST["cancelar"])) {
 // Registro
 if (isset($_REQUEST["register"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "registro";
 
     // Redirigimos
@@ -41,7 +41,7 @@ if (isset($_REQUEST["entrar"])) {
     if ($usuario) {
         $_SESSION["usuarioDAWJTGDAplicacionFinal"] = $usuario;
         UsuarioPDO::actualizarUltimaConexion($usuario->getCodUsuario(), new DateTime());
-        $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+        $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
         $_SESSION["paginaEnCurso"] = "inicioPrivado";
 
         // Redirigimos

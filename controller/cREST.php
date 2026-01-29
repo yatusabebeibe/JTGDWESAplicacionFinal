@@ -7,7 +7,7 @@
 
 // Si no hay un usuario logueado, redirigimos al login
 if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -17,7 +17,7 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
 
 // Si se ha pulsado el boton detalleNasa
 if (isset($_REQUEST['detalleNasa'])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "detalleNasa";
 
     // Redirigimos
