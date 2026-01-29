@@ -312,5 +312,31 @@ form#form_cuenta > input[type="submit"]#boton_cuenta:hover {
     font-size: 1.1rem;
 
     & * {border: 3px solid var(--color-primary);}
-    & th,td { padding: 4px 10px; min-width: 35px;}
+    & td,th { padding: 4px 10px}
+}
+table > * > tr >th,
+table > * > tr >td {
+    &:nth-child(1) { --tamaño: 83px; width: var(--tamaño); max-width: var(--tamaño); }
+    &:nth-child(2) { --tamaño: 50vw; width: var(--tamaño); max-width: var(--tamaño); }
+    &:nth-child(3) { --tamaño: 180px; width: var(--tamaño); max-width: var(--tamaño); }
+    &:nth-child(4) { --tamaño: 196px; width: var(--tamaño); max-width: var(--tamaño); }
+    &:nth-child(5) { --tamaño: 145px; width: var(--tamaño); max-width: var(--tamaño); }
+    &:nth-child(6) { --tamaño: 120px; width: var(--tamaño); max-width: var(--tamaño); }
+}
+
+#manDep .formEdicion {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0; padding: 0;
+    & * {
+        margin: 0; padding: 0;
+        border: none;
+        background: none;
+    }
+    input[type=submit]:hover {
+        transform: scale(1.4);
+    }
 }
