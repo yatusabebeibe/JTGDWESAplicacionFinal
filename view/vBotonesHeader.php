@@ -21,7 +21,7 @@
 <?php endif; ?>
 
 <!-- Botones para ir al apartado de miCuenta -->
-<?php if ($estaLogeado && $_SESSION["paginaEnCurso"] != "cuenta"): ?>
+<?php if ($estaLogeado && $estaEnInicio): ?>
 <form id="form_cuenta" action="" method="post">
     <?php
     $letra = strtoupper($_SESSION["usuarioDAWJTGDAplicacionFinal"]->getDescUsuario()[0]);

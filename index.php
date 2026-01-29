@@ -38,14 +38,4 @@ if(isset($_REQUEST['volver'])){
     exit;
 }
 
-// Si hay sesion iniciada y se ha pulsado el boton cuenta
-if (isset($_SESSION["usuarioDAWJTGDAplicacionFinal"]) && isset($_REQUEST["cuenta"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "cuenta";
-
-    // Redirigimos
-    header("Location: index.php");
-    exit;
-}
-
 require_once($controlador[$_SESSION["paginaEnCurso"]]);

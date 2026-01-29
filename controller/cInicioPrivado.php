@@ -16,6 +16,16 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
 
 $sTipoUsuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getPerfil();
 
+// Si hay sesion iniciada y se ha pulsado el boton cuenta
+if (isset($_REQUEST["cuenta"])) {
+    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "cuenta";
+
+    // Redirigimos
+    header("Location: index.php");
+    exit;
+}
+
 // Si se ha pulsado el botón de logoff, cerramos la sesión y redirigimos al inicio público
 if (isset($_REQUEST["logoff"])) {
 
