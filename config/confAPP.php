@@ -30,6 +30,7 @@ $controlador = [
     "rest" => "controller/cREST.php",
     "mtoDep" => "controller/cMtoDepartamentos.php",
     "cuenta" => "controller/cMiCuenta.php",
+    "detalleNasa" => "controller/cImagenNasa.php",
 ];
 
 $vista = [
@@ -44,4 +45,5 @@ $vista = [
     "rest" => "view/vREST.php",
     "mtoDep" => "view/vMtoDepartamentos.php",
     "cuenta" => "view/vMiCuenta.php",
+    "detalleNasa" => "view/vImagenNasa.php",
 ];
