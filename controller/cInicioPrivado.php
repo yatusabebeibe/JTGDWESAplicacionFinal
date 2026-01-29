@@ -36,7 +36,7 @@ if (isset($_REQUEST["detalle"])) {
     exit;
 }
 // Mantenimiento de departamentos
-if (isset($_REQUEST["departamentos"])) {
+if (isset($_REQUEST["mtoDepartamentos"])) {
 
     $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "mtoDep";
