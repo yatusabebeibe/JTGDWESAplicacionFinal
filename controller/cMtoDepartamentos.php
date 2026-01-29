@@ -36,6 +36,23 @@ if(isset($_REQUEST['volver'])){
     exit;
 }
 
+// Si se ha pulsado el botón de editar un departamento
+if(isset($_REQUEST['editar'])){
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = "wip";
+    header('Location: index.php');
+    exit;
+}
+// Si se ha pulsado el botón de borrar un departamento
+if(isset($_REQUEST['borrar'])){
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = "wip";
+    header('Location: index.php');
+    exit;
+}
+
+
+
 if ( (isset($_REQUEST["buscar"]) && empty(validacionFormularios::comprobarAlfaNumerico($_REQUEST["buscar"], minTamanio:0, obligatorio:1))) || !empty($_SESSION["mtoDep"]) ) {
     $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_REQUEST["buscar"] ?? $_SESSION["mtoDep"]);
     $_SESSION["mtoDep"] = $_REQUEST["buscar"] ?? $_SESSION["mtoDep"];

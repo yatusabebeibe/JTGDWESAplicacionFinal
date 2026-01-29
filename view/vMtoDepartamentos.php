@@ -25,7 +25,13 @@
                     <td><?= $departamento["fechaCreacion"] ?></td>
                     <td><?= $departamento["volumenDeNegocio"] ?></td>
                     <td><?= $departamento["fechaBaja"] ?></td>
-                    <td><?= "WIP" ?></td>
+                    <td>
+                        <form action="" method="post" class="formEdicion">
+                            <input type="hidden" name="codDep" value="<?= $departamento["codigo"] ?>">
+                            <input type="submit" value="✏️" name="editar" title="Editar">
+                            <input type="submit" value="🗑️" name="borrar" title="Borrar">
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach ?>
         </tbody>
