@@ -35,7 +35,8 @@
             <a href="../../" target="_self">Jesús Temprano Gallego</a> |
             <a href="https://store.steampowered.com/" target="_blank">Pagina imitada</a> |
             16/12/2025 |
-            <a href="./doc/" target="_blank">Documentacion phpDoc</a></p>
+            <a href="./doc/" target="_blank">Documentacion phpDoc</a>
+        </p>
     </footer>
 </body>
 </html>
