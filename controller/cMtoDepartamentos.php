@@ -31,14 +31,18 @@ if(isset($_REQUEST['borrar'])){
 }
 
 
+$buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe
+$buscarValido = !empty($buscar) && empty(validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:1));
 
-if ( (isset($_REQUEST["buscar"]) && empty(validacionFormularios::comprobarAlfaNumerico($_REQUEST["buscar"], minTamanio:0, obligatorio:1))) || !empty($_SESSION["mtoDep"]) ) {
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_REQUEST["buscar"] ?? $_SESSION["mtoDep"]);
-    $_SESSION["mtoDep"] = $_REQUEST["buscar"] ?? $_SESSION["mtoDep"];
+if ($buscarValido || !empty($_SESSION["mtoDep"])) {
+    $terminoABuscar = $buscarValido ? $buscar : $_SESSION["mtoDep"];
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($terminoABuscar);
+    $_SESSION["mtoDep"] = $terminoABuscar;
 } else {
     $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
     $_SESSION["mtoDep"] = "";
 }
+
 $aDatosDepartamentos = [];
 foreach ($aDepartamentos as $departamento) {
     $aDatosDepartamentos[] = [
