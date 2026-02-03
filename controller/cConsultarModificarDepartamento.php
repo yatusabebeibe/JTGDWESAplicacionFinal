@@ -33,6 +33,8 @@ if (isset($_REQUEST["guardarDep"])) {
         $departamento->setVolumenDeNegocio($_REQUEST["volumenNegocio"]);
         if (! empty($_REQUEST["darDeBaja"])) {
             $departamento->setFechaBaja(new DateTime());
+        } else {
+            $departamento->setFechaBaja(null);
         }
 
         // Intentamos actualizar el departamento en la base de datos y redirigimos si tiene éxito

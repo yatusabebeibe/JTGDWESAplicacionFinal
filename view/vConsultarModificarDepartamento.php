@@ -69,12 +69,10 @@
         <label for="fechaBaja">Fecha de Baja:</label>
         <input type="text" id="fechaBaja" name="fechaBaja" value="<?= $avEditDep["fechaBaja"] ?>" readonly disabled>
 
-        <?php if (empty($avEditDep["fechaBaja"]) && $avEditDep["editable"]): ?>
         <div style="display: grid; grid-template-columns: 1fr 1fr;" >
             <label for="darDeBaja" style="text-align: left;">Dar de Baja:</label>
-            <input type="checkbox" id="darDeBaja" name="darDeBaja">
+            <input type="checkbox" id="darDeBaja" name="darDeBaja" <?= !empty($avEditDep["fechaBaja"]) ? "checked" : "" ?> <?= $avEditDep["editable"] ? "obligatorio" : "readonly disabled" ?> >
         </div>
-        <?php endif ?>
 
         <?php if (!empty($avEditDep["error"]) && $avEditDep["editable"]): ?>
         <span style="margin-top: 20px; font-size: 0.8rem; color:red;"><?= $avEditDep["error"] ?></span>
