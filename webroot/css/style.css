@@ -314,8 +314,8 @@ form#form_cuenta > input[type="submit"]#boton_cuenta:hover {
     & * {border: 3px solid var(--color-primary);}
     & td,th { padding: 4px 10px}
 }
-table > * > tr >th,
-table > * > tr >td {
+#manDep table > * > tr >th,
+#manDep table > * > tr >td {
     &:nth-child(1) { --tamaño: 83px; width: var(--tamaño); max-width: var(--tamaño); }
     &:nth-child(2) { --tamaño: 50vw; width: var(--tamaño); max-width: var(--tamaño); }
     &:nth-child(3) { --tamaño: 180px; width: var(--tamaño); max-width: var(--tamaño); }
