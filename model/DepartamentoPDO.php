@@ -46,9 +46,9 @@ class DepartamentoPDO {
             return new Departamento(
                 $oDatos->T02_CodDepartamento,
                 $oDatos->T02_DescDepartamento,
-                $oDatos->T02_FechaCreacionDepartamento,
+                new DateTime($oDatos->T02_FechaCreacionDepartamento),
                 $oDatos->T02_VolumenDeNegocio,
-                $oDatos->T02_FechaBajaDepartamento,
+                $oDatos->T02_FechaBajaDepartamento ? new DateTime($oDatos->T02_FechaBajaDepartamento) : null
             );
         }
         return null;
