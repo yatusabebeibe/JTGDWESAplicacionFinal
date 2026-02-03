@@ -1,12 +1,19 @@
 <?php
 
 /**
+ * Clase que gestiona operaciones sobre departamentos en la base de datos usando PDO.
+ *
  * @author Jesus Temprano Gallego
  * @since 23/01/2026
  */
-
 class DepartamentoPDO {
 
+    /**
+     * Busca un departamento por su código.
+     *
+     * @param string $codigo Código del departamento
+     * @return Departamento|null Devuelve un objeto Departamento o null si no existe
+     */
     static function buscaDepartamentoPorCod(string $codigo) : ?Departamento {
         $consulta = <<<CONSULTA
         SELECT * FROM T02_Departamento
@@ -47,6 +54,12 @@ class DepartamentoPDO {
         return null;
     }
 
+    /**
+     * Busca departamentos cuya descripción contenga el texto indicado.
+     *
+     * @param string $desc Texto a buscar en la descripción
+     * @return array Array de objetos Departamento (vacío si no hay resultados)
+     */
     static function buscaDepartamentosPorDesc(string $desc = "") : ?Array {
         $consulta = <<<CONSULTA
         SELECT * FROM T02_Departamento

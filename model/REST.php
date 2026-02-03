@@ -1,8 +1,24 @@
 <?php
 
+/**
+ * Encargada de realizar peticiones a APIs REST externas.
+ *
+ * @author Jesus Temprano Gallego
+ * @since 23/01/2026
+ */
 class REST {
     // La clave de API de la NASA para acceder a la API esta en el archivo configAPP.php
 
+    /**
+     * Obtiene la foto del día de la NASA (APOD) para una fecha concreta.
+     *
+     * Realiza una petición a la API de la NASA y devuelve un objeto ImagenNasa
+     * con los datos de la imagen o con la información del error si ocurre.
+     *
+     * @param string $fecha Fecha en formato YYYY-MM-DD
+     * @param int $numIntentos Número de intentos de la petición
+     * @return ImagenNasa Objeto con la imagen o el error producido
+     */
     public static function getFotoDiaNasa(string $fecha, int $numIntentos = 0) {
         // Inicializamos una sesión cURL con la URL de la API de NASA, incluyendo la fecha y la clave de API.
         $curl = curl_init("https://api.nasa.gov/planetary/apod?date=$fecha&api_key=".NASA_KEY);
