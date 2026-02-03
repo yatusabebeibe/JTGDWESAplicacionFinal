@@ -42,13 +42,14 @@ if(isset($_REQUEST['borrar'])){
 
 
 $buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe
-$buscarValido = !empty($buscar) && empty(validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:1));
+$buscarValido = $buscar === "" || ( !empty($buscar) && empty(validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:0)) );
 
 if ($buscarValido || !empty($_SESSION["mtoDep"])) {
     $terminoABuscar = $buscarValido ? $buscar : $_SESSION["mtoDep"];
     $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($terminoABuscar);
     $_SESSION["mtoDep"] = $terminoABuscar;
 } else {
+    // No hay búsqueda ni sesión, mostramos todos
     $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
     $_SESSION["mtoDep"] = "";
 }
