@@ -1,3 +1,5 @@
+<style> .deBaja { color: gray; } </style>
+
 <div id="manDep">
     <form method="post">
         <div>
@@ -19,7 +21,7 @@
         </thead>
         <tbody>
             <?php foreach($avMtoDep["departamentos"] as $departamento): ?>
-                <tr>
+                <tr class="<?= !empty($departamento["fechaBaja"]) ? "deBaja" : "" ?>" >
                     <td><?= $departamento["codigo"] ?></td>
                     <td><?= $departamento["descripcion"] ?></td>
                     <td><?= $departamento["fechaCreacion"] ?></td>
