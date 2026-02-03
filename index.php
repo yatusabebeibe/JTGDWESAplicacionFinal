@@ -42,6 +42,7 @@ if (isset($_REQUEST["logoff"])) {
 if(isset($_REQUEST['volver'])){
     // Limpiamos el error de la sesión por si hubiera
     unset($_SESSION['error']);
+    unset($_SESSION["codDepActual"]);
 
     $_SESSION["paginaEnCurso"] = array_pop($_SESSION["paginaAnterior"]) ?? "inicioPrivado";
 

@@ -102,4 +102,49 @@ class DepartamentoPDO {
         }
         return $aDepartamentos;
     }
+
+    /**
+     * Actualiza un departamento en la base de datos.
+     *
+     * @param Departamento $departamento Objeto Departamento con los datos a actualizar.
+     * @return bool Devuelve `true` si se actualizó exactamente un registro, `false` si no.
+     */
+    static function editarDepartamento(Departamento $departamento): bool {
+        $consulta = <<<CONSULTA
+        UPDATE T02_Departamento
+        SET
+            T02_DescDepartamento = :descripcion,
+            T02_VolumenDeNegocio = :volumen,
+            T02_FechaBajaDepartamento = :fechaBaja
+        WHERE T02_CodDepartamento = :codigo;
+        CONSULTA;
+
+        $parametros = [
+            ":codigo"      => $departamento->getCodigo(),
+            ":descripcion" => $departamento->getDesc(),
+            ":volumen"     => $departamento->getVolumenDeNegocio(),
+            ":fechaBaja"   => $departamento->getFechaBaja()
+                ? $departamento->getFechaBaja()->format('Y-m-d H:i:s')
+                : null
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        return $resultado && $resultado->rowCount() === 1;
+    }
 }

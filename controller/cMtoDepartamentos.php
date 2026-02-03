@@ -17,13 +17,15 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
 
 // Si se ha pulsado el botón de editar un departamento
 if(isset($_REQUEST['editar'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
     $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "modificarDpto";
     header('Location: index.php');
     exit;
 }
 // Si se ha pulsado el botón de borrar un departamento
 if(isset($_REQUEST['borrar'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
     $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "wip";
     header('Location: index.php');
