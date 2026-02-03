@@ -23,6 +23,14 @@ if(isset($_REQUEST['editar'])){
     header('Location: index.php');
     exit;
 }
+// Si se ha pulsado el botón de ver un departamento
+if(isset($_REQUEST['ver'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "verDpto";
+    header('Location: index.php');
+    exit;
+}
 // Si se ha pulsado el botón de borrar un departamento
 if(isset($_REQUEST['borrar'])){
     $_SESSION["codDepActual"] = $_REQUEST['codDep'];

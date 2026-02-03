@@ -51,6 +51,7 @@ $avEditDep = [
     "volumenNegocio" => $departamentoActual->getVolumenDeNegocio(),
     "fechaBaja" => $departamentoActual->getFechaBaja() ? $departamentoActual->getFechaBaja()->format("d-m-Y") : null,
     "error" => $error,
+    "editable" => $_SESSION["paginaEnCurso"] == "modificarDpto" ? true : false,
 ];
 
 $titulo = "Editar Departamento " .$departamentoActual->getCodigo();

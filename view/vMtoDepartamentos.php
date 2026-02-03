@@ -28,6 +28,7 @@
                     <td>
                         <form action="" method="post" class="formEdicion">
                             <input type="hidden" name="codDep" value="<?= $departamento["codigo"] ?>">
+                            <input type="submit" value="👁️" name="ver" title="Ver">
                             <input type="submit" value="✏️" name="editar" title="Editar">
                             <input type="submit" value="🗑️" name="borrar" title="Borrar">
                         </form>
