@@ -33,6 +33,7 @@ $controlador = [
     "detalleNasa" => "controller/cImagenNasa.php",
     "modificarDpto" => "controller/cConsultarModificarDepartamento.php",
     "verDpto" => "controller/cConsultarModificarDepartamento.php",
+    "eliminarDpto" => "controller/cEliminarDepartamento.php",
 ];
 
 $vista = [
@@ -50,4 +51,5 @@ $vista = [
     "detalleNasa" => "view/vImagenNasa.php",
     "modificarDpto" => "view/vConsultarModificarDepartamento.php",
     "verDpto" => "view/vConsultarModificarDepartamento.php",
+    "eliminarDpto" => "view/vEliminarDepartamento.php",
 ];

@@ -147,4 +147,40 @@ class DepartamentoPDO {
 
         return $resultado && $resultado->rowCount() === 1;
     }
+
+    /**
+     * Elimina un departamento de forma física de la base de datos.
+     *
+     * @param string $codigo Código del departamento
+     * @return bool Devuelve true si se eliminó exactamente un registro, false si no
+     */
+    static function eliminarDepartamento(string $codigo): bool {
+        $consulta = <<<CONSULTA
+        DELETE FROM T02_Departamento
+        WHERE T02_CodDepartamento = :codigo;
+        CONSULTA;
+
+        $parametros = [
+            ":codigo" => $codigo,
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        return $resultado && $resultado->rowCount() === 1;
+    }
 }

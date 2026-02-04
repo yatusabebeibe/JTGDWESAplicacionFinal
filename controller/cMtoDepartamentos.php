@@ -35,7 +35,7 @@ if(isset($_REQUEST['ver'])){
 if(isset($_REQUEST['borrar'])){
     $_SESSION["codDepActual"] = $_REQUEST['codDep'];
     $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "eliminarDpto";
     header('Location: index.php');
     exit;
 }
