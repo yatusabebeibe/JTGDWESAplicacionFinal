@@ -183,4 +183,60 @@ class DepartamentoPDO {
 
         return $resultado && $resultado->rowCount() === 1;
     }
+
+    /**
+     * Crea un nuevo departamento en la base de datos.
+     *
+     * @param Departamento $departamento Objeto Departamento a crear
+     * @return Departamento|null Devuelve el departamento creado o null si no se insertó
+     */
+    static function crearDepartamento(Departamento $departamento): ?Departamento {
+        $consulta = <<<CONSULTA
+        INSERT INTO T02_Departamento (
+            T02_CodDepartamento,
+            T02_DescDepartamento,
+            T02_FechaCreacionDepartamento,
+            T02_VolumenDeNegocio,
+            T02_FechaBajaDepartamento
+        ) VALUES (
+            :codigo,
+            :descripcion,
+            :fechaCreacion,
+            :volumen,
+            :fechaBaja
+        );
+        CONSULTA;
+
+        $parametros = [
+            ":codigo"        => $departamento->getCodigo(),
+            ":descripcion"   => $departamento->getDesc(),
+            ":fechaCreacion" => $departamento->getFechaCreacion()->format('Y-m-d H:i:s'),
+            ":volumen"       => $departamento->getVolumenDeNegocio(),
+            ":fechaBaja"     => $departamento->getFechaBaja()
+                ? $departamento->getFechaBaja()->format('Y-m-d H:i:s')
+                : null
+        ];
+
+        $resultado = null;
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        // Devolvemos el objeto solo si se insertó exactamente 1 fila
+        return ($resultado && $resultado->rowCount() === 1) ? $departamento : null;
+    }
 }

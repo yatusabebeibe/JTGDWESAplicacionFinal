@@ -39,6 +39,14 @@ if(isset($_REQUEST['borrar'])){
     header('Location: index.php');
     exit;
 }
+// Si se ha pulsado el botón de crear un departamento
+if(isset($_REQUEST['crear'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "crearDpto";
+    header('Location: index.php');
+    exit;
+}
 
 
 $buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe
