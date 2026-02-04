@@ -1,57 +1,4 @@
-<style>
-    section.hero-text {
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 20px;
-        background: var(--color-bg-footer);
-        border-radius: 1rem;
-    }
-    section.hero-text > div {
-        min-width: 100%;
-        width: min-content;
-        & > img{
-            border-radius: .5rem;
-            width: 100%; max-width: 200px;
-            aspect-ratio: 1;
-            margin-bottom: 15px;
-        }
-        & > form { width: 100%; }
-        & > form > input { display: none; }
-        & > form > label {
-            display: block; width: max-content;
-            padding: 10px;
-            margin: 5px auto;
-            background: var(--color-primary);
-            border-radius: var(--border-radius);
-            color: var(--color-bg-header);
-            cursor: pointer;
-        }
-    }
-
-    section.hero-text > form {
-        height: 100%; width: 100%;
-        background: #171d25;
-        border-radius: .5rem;
-        min-width: 50px;
-        padding: 20px;
-
-        & > * {display: block; max-width: 240px;}
-        & > input {margin-bottom: 12px; width: 240px;}
-    }
-    section.hero-text > form > label {
-        width: 100%;
-        text-align: left;
-        padding: 3px 3px;
-    }
-    section.hero-text > form > input[type="submit"] {
-        margin: 0 auto;
-        margin-top: 29px;
-    }
-</style>
-
-<section class="hero-text">
+<section class="hero-text vaDep">
 
     <form action="" method="post">
         <label for="codigo">Codigo:</label>
@@ -82,4 +29,5 @@
         <input type="submit" value="Confirmar cambios" name="guardarDep">
         <?php endif ?>
     </form>
+
 </section>
