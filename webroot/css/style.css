@@ -297,15 +297,17 @@ form#form_cuenta > input[type="submit"]#boton_cuenta:hover {
     border-radius: 8px;
     display: flex;
     flex-flow: column nowrap;
-    gap: 40px;
+    gap: 15px;
 }
-#manDep > form {
+#manDep > .formularios > form {
     display: flex;
     justify-content: center;
+    & > div {display: flex; gap:10px;}
+    & input {display: block;}
 }
-#manDep > form input[type="submit"] {
-    margin: 0; margin-left: 5px;
-    height: 100%;
+#manDep > .formularios > form input[type="submit"] {
+    margin: 0;
+    height: 40px;
 }
 #manDep > table {
     border-collapse: collapse;

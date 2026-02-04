@@ -1,12 +1,29 @@
-<style> .deBaja { color: gray; } </style>
+<style>
+    #manDep > table .deBaja { color: gray; }
+    #manDep > .formularios {
+        margin-bottom: 30px;
+        display: grid;
+        --espacios: 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            ". x x y ."
+            ". x x y .";
+    }
+    .x { grid-area: x; }
+    .y { grid-area: y; }
+</style>
 
 <div id="manDep">
-    <form method="post">
-        <div>
-            <input type="text" name="buscar" placeholder="Texto a buscar" value="<?= $avMtoDep["buscado"] ?>" autofocus>
-            <input type="submit" value="Buscar">
-        </div>
-    </form>
+    <div class="formularios">
+        <form method="post" class="x">
+            <div>
+                <input type="text" name="buscar" placeholder="Texto a buscar" value="<?= $avMtoDep["buscado"] ?>" autofocus>
+                <input type="submit" value="Buscar">
+            </div>
+        </form>
+        <form method="post" class="y"><input type="submit" value="Crear departamento" name="crear"></form>
+    </div>
 
     <table>
         <thead>
