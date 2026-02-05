@@ -50,13 +50,13 @@ class UsuarioPDO {
         if ($datos && $datos->rowCount() >= 1) {
             $oDatos = $datos->fetchObject();
             $usuario = new Usuario(
-                $oDatos->{aColumnasUsuario["Codigo"]},
-                $oDatos->{aColumnasUsuario["Password"]},
-                $oDatos->{aColumnasUsuario["Descripcion"]},
-                $oDatos->{aColumnasUsuario["NumConexiones"]} + 1,
+                $oDatos->T01_CodUsuario,
+                $oDatos->T01_Password,
+                $oDatos->T01_DescUsuario,
+                $oDatos->T01_NumConexiones + 1,
                 new DateTime(),
-                $oDatos->{aColumnasUsuario["UltimaConexion"]} ? new DateTime($oDatos->{aColumnasUsuario["UltimaConexion"]}) : null,
-                $oDatos->{aColumnasUsuario["Perfil"]}
+                $oDatos->T01_FechaHoraUltimaConexion ? new DateTime($oDatos->T01_FechaHoraUltimaConexion) : null,
+                $oDatos->T01_Perfil
             );
 
             return $usuario;

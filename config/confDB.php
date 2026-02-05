@@ -19,21 +19,3 @@ const DBUser = "userJTGDWESAplicacionFinal";
 const DBPass = "paso";   // desarrollo
 // const DBPass = "!Paso1234x";   // explotación
 const DSN = "mysql:host=".DBHost.";dbname=".DBName;
-
-// Array con el nombre de las columnas que vamos a seleccionar
-const aColumnasUsuario = [
-    "Codigo" => "T01_CodUsuario",
-    "Password" => "T01_Password",
-    "Descripcion" => "T01_DescUsuario",
-    "NumConexiones" => "T01_NumConexiones",
-    "UltimaConexion" => "T01_FechaHoraUltimaConexion",
-    "Perfil" => "T01_Perfil",
-    "Imagen" => "T01_ImagenUsuario"
-];
-const aColumnasDepartamento = [
-    "Codigo" => "T02_CodDepartamento",
-    "Descripcion" => "T02_DescDepartamento",
-    "Volumen" => "T02_VolumenDeNegocio",
-    "FechaCreacion" => "T02_FechaCreacionDepartamento",
-    "FechaBaja" => "T02_FechaBajaDepartamento"
-];
