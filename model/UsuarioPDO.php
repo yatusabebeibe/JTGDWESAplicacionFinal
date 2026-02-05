@@ -172,4 +172,55 @@ class UsuarioPDO {
             return false; // No se encontró el usuario o no hubo cambios
         }
     }
+
+    /**
+     * Busca usuarios cuyo nombre o descripción contiene un texto dado.
+     *
+     * @param string $descripcion Texto a buscar en la descripción de los usuarios.
+     * @return array Array de objetos Usuario que cumplen con la búsqueda, vacío si no hay resultados.
+     */
+    public static function buscarUsuariosPorDescripcion(string $descripcion) {
+        $consulta = <<<CONSULTA
+        SELECT * FROM T01_Usuario
+        WHERE T01_DescUsuario LIKE CONCAT('%', :descripcion, '%');
+        CONSULTA;
+
+        $parametros = [
+            ":descripcion" => $descripcion
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        $usuarios = [];
+        if ($resultado && $resultado->rowCount() > 0) {
+            while ($oDatos = $resultado->fetchObject()) {
+                $usuarios[] = new Usuario(
+                    $oDatos->T01_CodUsuario,
+                    $oDatos->T01_Password,
+                    $oDatos->T01_DescUsuario,
+                    $oDatos->T01_NumConexiones,
+                    new DateTime($oDatos->T01_FechaHoraUltimaConexion),
+                    $oDatos->T01_FechaHoraUltimaConexion ? new DateTime($oDatos->T01_FechaHoraUltimaConexion) : null,
+                    $oDatos->T01_Perfil
+                );
+            }
+        }
+
+        return $usuarios;
+    }
 }
