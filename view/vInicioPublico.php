@@ -7,6 +7,7 @@
         <input type="radio" name="rd" id="rd3">
         <input type="radio" name="rd" id="rd4">
         <input type="radio" name="rd" id="rd5">
+        <input type="radio" name="rd" id="rd6">
 
         <div class="imagenes">
             <img src="./webroot/images/diagramaDeCasosDeUso.png" alt="">
@@ -14,6 +15,7 @@
             <img src="./webroot/images/diagramaDeClasesPropio.png" alt="">
             <img src="./webroot/images/usoSession.png" alt="">
             <img src="./webroot/images/modeloFisicoDeDatos.png" alt="">
+            <img src="./webroot/images/relacionDeFicheros.png" alt="">
         </div>
     </div>
     <script src="./webroot/js/imageModal.js"></script>
