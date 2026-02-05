@@ -47,6 +47,22 @@ if(isset($_REQUEST['crear'])){
     header('Location: index.php');
     exit;
 }
+// Si se ha pulsado el botón para dar de alta o baja un departamento
+if (isset($_REQUEST["altabaja"])) {
+    // Obtenemos el departamento
+    $departamentoAB = DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['codDep']);
+
+    // Si tiene fecha de baja → se la quitamos
+    // Si no tiene → se la ponemos a hoy
+    if ($departamentoAB->getFechaBaja()) {
+        $departamentoAB->setFechaBaja(null);
+    } else {
+        $departamentoAB->setFechaBaja(new DateTime());
+    }
+
+    // Actualizamos en BD
+    DepartamentoPDO::editarDepartamento($departamentoAB);
+}
 
 
 $buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe

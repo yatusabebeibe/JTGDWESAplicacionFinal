@@ -50,6 +50,7 @@
                             <input type="submit" value="👁️" name="ver" title="Ver">
                             <input type="submit" value="✏️" name="editar" title="Editar">
                             <input type="submit" value="🗑️" name="borrar" title="Borrar">
+                            <input type="submit" value="<?= empty($departamento["fechaBaja"]) ? "⬇️" : "⬆️" ?>" name="altabaja" title="Dar de <?= empty($departamento["fechaBaja"]) ? "baja" : "alta" ?>">
                         </form>
                     </td>
                 </tr>
