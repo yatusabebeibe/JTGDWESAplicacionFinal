@@ -37,9 +37,9 @@ class UsuarioPDO {
                 $exception->getMessage(),
                 $exception->getFile(),
                 $exception->getLine(),
-                $_SESSION['paginaEnCurso']
+                $_SESSION["paginaEnCurso"]
             );
-            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
             $_SESSION["paginaEnCurso"] = "error";
 
             header("Location: index.php");
@@ -94,9 +94,9 @@ class UsuarioPDO {
                 $exception->getMessage(),
                 $exception->getFile(),
                 $exception->getLine(),
-                $_SESSION['paginaEnCurso']
+                $_SESSION["paginaEnCurso"]
             );
-            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
             $_SESSION["paginaEnCurso"] = "error";
 
             header("Location: index.php");
@@ -156,9 +156,9 @@ class UsuarioPDO {
                 $exception->getMessage(),
                 $exception->getFile(),
                 $exception->getLine(),
-                $_SESSION['paginaEnCurso']
+                $_SESSION["paginaEnCurso"]
             );
-            $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
             $_SESSION["paginaEnCurso"] = "error";
 
             header("Location: index.php");

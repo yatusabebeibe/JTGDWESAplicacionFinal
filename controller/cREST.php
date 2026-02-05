@@ -7,7 +7,7 @@
 
 // Si no hay un usuario logueado, redirigimos al login
 if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -15,12 +15,13 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
     exit;
 }
 
-// Si se ha pulsado el botón de volver, redirigimos a la página anterior
-if(isset($_REQUEST['volver'])){
-    $temp = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior'] = $temp;
-    header('Location: index.php');
+// Si se ha pulsado el boton detalleNasa
+if (isset($_REQUEST['detalleNasa'])) {
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "detalleNasa";
+
+    // Redirigimos
+    header("Location: index.php");
     exit;
 }
 

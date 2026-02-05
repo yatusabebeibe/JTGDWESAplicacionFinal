@@ -5,21 +5,10 @@
  * @since 15/01/2026
  */
 
-// Si se ha pulsado el botón de volver, limpiamos el error y redirigimos a la página anterior
-if(isset($_REQUEST['volver'])){
-
-    // Limpiamos el error de la sesión
-    unset($_SESSION['error']);
-
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    header('Location: index.php');
-    exit;
-}
-
 // Login
 if (isset($_REQUEST["login"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -29,7 +18,7 @@ if (isset($_REQUEST["login"])) {
 // Registro
 if (isset($_REQUEST["register"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "registro";
 
     // Redirigimos

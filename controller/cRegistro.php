@@ -7,7 +7,7 @@
 // Comprobamos si se ha pulsado el botón 'cancelar'
 if (isset($_REQUEST["cancelar"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "inicioPublico";
 
     // Redirigimos
@@ -17,7 +17,7 @@ if (isset($_REQUEST["cancelar"])) {
 // Login
 if (isset($_REQUEST["login"])) {
 
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -34,15 +34,16 @@ if (isset($_REQUEST["aceptar"])) {
     $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["nombre"], 255, 4, 1);
     $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["contraseña1"], 16, 4, 1);
     $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["contraseña2"], 16, 4, 1);
+    $sErrorRegistro .= validacionFormularios::comprobarAlfaNumerico($_REQUEST["resPregSeg"], 25, 1, 1);
 
     // Si no hay errores, procesamos el formulario
-    if (empty($sErrorRegistro)) {
+    if (empty($sErrorRegistro) && $_REQUEST["resPregSeg"] == preguntaSeguridad) {
 
         // Comprobamos si las contraseñas coinciden
         if ($_REQUEST["contraseña1"] === $_REQUEST["contraseña2"]) {
             // Si el alta es correcta, redirigimos al inicio público
             if (UsuarioPDO::altaUsuario($_REQUEST["usuario"], $_REQUEST["nombre"], $_REQUEST["contraseña1"])) {
-                $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+                $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
                 $_SESSION["paginaEnCurso"] = "inicioPrivado";
                 $_SESSION["usuarioDAWJTGDAplicacionFinal"] = UsuarioPDO::validarUsuario($_REQUEST["usuario"], $_REQUEST["contraseña1"]);
                 UsuarioPDO::actualizarUltimaConexion($_REQUEST["usuario"], new DateTime());

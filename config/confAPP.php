@@ -17,6 +17,8 @@ require_once 'model/DepartamentoPDO.php';
 
 const NASA_KEY = '779UxkhQlroYxeSVtJe5YN16lYt0EYrLi6Y8Chhf'; // Clave de API de NASA
 
+const preguntaSeguridad = "pimentel";
+
 $controlador = [
     "inicioPublico" => "controller/cInicioPublico.php",
     "login" => "controller/cLogin.php",
@@ -28,6 +30,11 @@ $controlador = [
     "rest" => "controller/cREST.php",
     "mtoDep" => "controller/cMtoDepartamentos.php",
     "cuenta" => "controller/cMiCuenta.php",
+    "detalleNasa" => "controller/cImagenNasa.php",
+    "modificarDpto" => "controller/cConsultarModificarDepartamento.php",
+    "verDpto" => "controller/cConsultarModificarDepartamento.php",
+    "eliminarDpto" => "controller/cEliminarDepartamento.php",
+    "crearDpto" => "controller/cCrearDepartamento.php",
 ];
 
 $vista = [
@@ -42,4 +49,9 @@ $vista = [
     "rest" => "view/vREST.php",
     "mtoDep" => "view/vMtoDepartamentos.php",
     "cuenta" => "view/vMiCuenta.php",
+    "detalleNasa" => "view/vImagenNasa.php",
+    "modificarDpto" => "view/vConsultarModificarDepartamento.php",
+    "verDpto" => "view/vConsultarModificarDepartamento.php",
+    "eliminarDpto" => "view/vEliminarDepartamento.php",
+    "crearDpto" => "view/vCrearDepartamento.php",
 ];

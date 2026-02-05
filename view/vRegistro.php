@@ -14,6 +14,9 @@
         <label class="tituloCampo">Repetir Contraseña:</label>
         <input type="password" name="contraseña2" value="" obligatorio>
 
+        <label class="tituloCampo">Respuesta pregunta seguridad:</label>
+        <input type="text" name="resPregSeg" value="" obligatorio>
+
         <span class="error"><?= $sErrorRegistro ?></span>
 
         <div>

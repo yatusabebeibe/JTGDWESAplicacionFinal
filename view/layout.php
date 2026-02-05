@@ -31,7 +31,13 @@
         <a href="https://github.com/yatusabebeibe/JTGDWESAplicacionFinal/" target="_blank">
             <img src="./webroot/images/github.svg" style="filter: invert(1);">
         </a>
-        <p><a href="../../" target="_self">Jesús Temprano Gallego</a> | <a href="https://store.steampowered.com/" target="_blank">Pagina imitada</a> | 16/12/2025</p>
+        <p>
+            <a href="../../" target="_self">Jesús Temprano Gallego</a> |
+            <a href="https://store.steampowered.com/" target="_blank">Pagina imitada</a> |
+            16/12/2025 |
+            <a href="./doc/phpDoc/" target="_blank">Documentacion phpDoc</a> |
+            <a href="./doc/CV_Europass_Jesus.pdf" target="_blank">CV</a>
+        </p>
     </footer>
 </body>
 </html>

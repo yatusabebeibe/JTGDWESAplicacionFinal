@@ -7,7 +7,7 @@
 
 // Si no hay un usuario logueado, redirigimos al login
 if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
-    $_SESSION["paginaAnterior"] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
     $_SESSION["paginaEnCurso"] = "login";
 
     // Redirigimos
@@ -15,25 +15,84 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
     exit;
 }
 
-// Si se ha pulsado el botón de volver, redirigimos a la página anterior
-if(isset($_REQUEST['volver'])){
-    $temp = $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
-    $_SESSION['paginaAnterior'] = $temp;
+// Si se ha pulsado el botón de editar un departamento
+if(isset($_REQUEST['editar'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "modificarDpto";
     header('Location: index.php');
     exit;
 }
-
-if ( isset($_REQUEST["buscar"]) && empty(validacionFormularios::comprobarAlfaNumerico($_REQUEST["buscar"], minTamanio:0, obligatorio:1)) ) {
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_REQUEST["buscar"]);
-    $buscado = $_REQUEST["buscar"];
-} else {
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
-    $buscado = "";
+// Si se ha pulsado el botón de ver un departamento
+if(isset($_REQUEST['ver'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "verDpto";
+    header('Location: index.php');
+    exit;
 }
+// Si se ha pulsado el botón de borrar un departamento
+if(isset($_REQUEST['borrar'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "eliminarDpto";
+    header('Location: index.php');
+    exit;
+}
+// Si se ha pulsado el botón de crear un departamento
+if(isset($_REQUEST['crear'])){
+    $_SESSION["codDepActual"] = $_REQUEST['codDep'];
+    $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+    $_SESSION["paginaEnCurso"] = "crearDpto";
+    header('Location: index.php');
+    exit;
+}
+// Si se ha pulsado el botón para dar de alta o baja un departamento
+if (isset($_REQUEST["altabaja"])) {
+    // Obtenemos el departamento
+    $departamentoAB = DepartamentoPDO::buscaDepartamentoPorCod($_REQUEST['codDep']);
+
+    // Si tiene fecha de baja → se la quitamos
+    // Si no tiene → se la ponemos a hoy
+    if ($departamentoAB->getFechaBaja()) {
+        $departamentoAB->setFechaBaja(null);
+    } else {
+        $departamentoAB->setFechaBaja(new DateTime());
+    }
+
+    // Actualizamos en BD
+    DepartamentoPDO::editarDepartamento($departamentoAB);
+}
+
+
+$buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe
+$buscarValido = $buscar === "" || ( !empty($buscar) && empty(validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:0)) );
+
+if ($buscarValido || !empty($_SESSION["mtoDep"])) {
+    $terminoABuscar = $buscarValido ? $buscar : $_SESSION["mtoDep"];
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($terminoABuscar);
+    $_SESSION["mtoDep"] = $terminoABuscar;
+} else {
+    // No hay búsqueda ni sesión, mostramos todos
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
+    $_SESSION["mtoDep"] = "";
+}
+
+$aDatosDepartamentos = [];
+foreach ($aDepartamentos as $departamento) {
+    $aDatosDepartamentos[] = [
+        "codigo" => $departamento->getCodigo(),
+        "descripcion" => $departamento->getDesc(),
+        "fechaCreacion" => $departamento->getFechaCreacion()->format("d-m-Y"),
+        "volumenDeNegocio" => $departamento->getVolumenDeNegocio(),
+        "fechaBaja" => $departamento->getFechaBaja() ? $departamento->getFechaBaja()->format("d-m-Y") : null,
+    ];
+}
+
+
 $avMtoDep = [
-    "departamentos" => $aDepartamentos,
-    "buscado" => $buscado,
+    "departamentos" => $aDatosDepartamentos,
+    "buscado" => $_SESSION["mtoDep"],
 ];
 
 $titulo = "Mantenimiento Departamentos";

@@ -15,9 +15,10 @@
         <?php else: ?>
             <figure>
                 <img src="<?= $fotoNasa->getUrl() ?>" alt="" width="100%">
-                <figcaption><?= $fotoNasa->getTitulo()." - ".$fotoNasa->getCopyright() ?></figcaption>
             </figure>
-            <p><?= $fotoNasa->getExplicacion() ?></p>
+            <form action="" method="post" style="margin: 15px 50px;">
+                <input type="submit" value="Ver en detalle" name="detalleNasa">
+            </form>
         <?php endif; ?>
     </section>
 </div>

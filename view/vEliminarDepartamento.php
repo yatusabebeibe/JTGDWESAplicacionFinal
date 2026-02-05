@@ -1,0 +1,30 @@
+<section class="hero-text vaDep">
+
+    <form action="" method="post">
+        <label for="codigo">Codigo:</label>
+        <input type="text" id="codigo" name="codigo" value="<?= $avEditDep["codigo"] ?>" readonly disabled>
+
+        <label for="desc">Descripcion:</label>
+        <input type="text" id="desc" name="desc" value="<?= $avEditDep["descripcion"] ?>" readonly disabled>
+
+        <label for="fechaCreacion">Fecha de Creación:</label>
+        <input type="text" id="fechaCreacion" name="fechaCreacion" value="<?= $avEditDep["fechaCreacion"] ?>" readonly disabled>
+
+        <label for="volumenNegocio">Volumen de Negocio:</label>
+        <input type="text" id="volumenNegocio" name="volumenNegocio" value="<?= $avEditDep["volumenNegocio"] ?>" readonly disabled>
+
+        <label for="fechaBaja">Fecha de Baja:</label>
+        <input type="text" id="fechaBaja" name="fechaBaja" value="<?= $avEditDep["fechaBaja"] ?>" readonly disabled>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr;" >
+            <label for="darDeBaja" style="text-align: left;">Dar de Baja:</label>
+            <input type="checkbox" id="darDeBaja" name="darDeBaja" <?= !empty($avEditDep["fechaBaja"]) ? "checked" : "" ?> readonly disabled>
+        </div>
+
+        <?php if (!empty($avEditDep["error"])): ?>
+        <span style="margin-top: 20px; font-size: 0.8rem; color:red;"><?= $avEditDep["error"] ?></span>
+        <?php endif ?>
+
+        <input type="submit" value="Confirmar eliminar" name="eliminar">
+    </form>
+</section>
