@@ -131,86 +131,6 @@ Search.appendIndex(
             "summary": "Basada\u0020en\u0020validarAlfanumerico,\u0020esta\u0020funci\u00F3n\u0020comprueba\u0020si\u0020el\u0020nombre\u0020de\u0020un\narchivo\u0020tiene\u0020una\u0020extensi\u00F3n\u0020v\u00E1lida\u0020entre\u0020un\u0020array\u0020de\u0020extensiones\u0020admitidas.",
             "url": "classes/validacionFormularios.html#method_validarNombreArchivo"
         },                {
-            "fqsen": "\\ImagenNasa",
-            "name": "ImagenNasa",
-            "summary": "Clase\u0020que\u0020representa\u0020una\u0020imagen\u0020de\u0020la\u0020NASA\u0020obtenida\u0020a\u0020trav\u00E9s\u0020de\u0020su\u0020API.",
-            "url": "classes/ImagenNasa.html"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Constructor\u0020de\u0020la\u0020clase\u0020ImagenNasa.",
-            "url": "classes/ImagenNasa.html#method___construct"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetFecha\u0028\u0029",
-            "name": "getFecha",
-            "summary": "Obtiene\u0020la\u0020fecha\u0020de\u0020la\u0020imagen.",
-            "url": "classes/ImagenNasa.html#method_getFecha"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetTitulo\u0028\u0029",
-            "name": "getTitulo",
-            "summary": "Obtiene\u0020el\u0020t\u00EDtulo\u0020de\u0020la\u0020imagen.",
-            "url": "classes/ImagenNasa.html#method_getTitulo"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetUrl\u0028\u0029",
-            "name": "getUrl",
-            "summary": "Obtiene\u0020la\u0020URL\u0020de\u0020la\u0020imagen.",
-            "url": "classes/ImagenNasa.html#method_getUrl"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetHdurl\u0028\u0029",
-            "name": "getHdurl",
-            "summary": "Obtiene\u0020la\u0020URL\u0020de\u0020la\u0020imagen\u0020en\u0020alta\u0020definici\u00F3n.",
-            "url": "classes/ImagenNasa.html#method_getHdurl"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetExplicacion\u0028\u0029",
-            "name": "getExplicacion",
-            "summary": "Obtiene\u0020la\u0020explicaci\u00F3n\u0020de\u0020la\u0020imagen.",
-            "url": "classes/ImagenNasa.html#method_getExplicacion"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetCopyright\u0028\u0029",
-            "name": "getCopyright",
-            "summary": "Obtiene\u0020el\u0020copyright\u0020de\u0020la\u0020imagen.",
-            "url": "classes/ImagenNasa.html#method_getCopyright"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003AgetError\u0028\u0029",
-            "name": "getError",
-            "summary": "Obtiene\u0020el\u0020error\u0020asociado\u0020a\u0020la\u0020imagen.",
-            "url": "classes/ImagenNasa.html#method_getError"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024fecha",
-            "name": "fecha",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_fecha"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024titulo",
-            "name": "titulo",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_titulo"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024url",
-            "name": "url",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_url"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024hdurl",
-            "name": "hdurl",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_hdurl"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024explicacion",
-            "name": "explicacion",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_explicacion"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024copyright",
-            "name": "copyright",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_copyright"
-        },                {
-            "fqsen": "\\ImagenNasa\u003A\u003A\u0024error",
-            "name": "error",
-            "summary": "",
-            "url": "classes/ImagenNasa.html#property_error"
-        },                {
             "fqsen": "\\AppError",
             "name": "AppError",
             "summary": "",
@@ -363,27 +283,122 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DepartamentoPDO",
             "name": "DepartamentoPDO",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020gestiona\u0020operaciones\u0020sobre\u0020departamentos\u0020en\u0020la\u0020base\u0020de\u0020datos\u0020usando\u0020PDO.",
             "url": "classes/DepartamentoPDO.html"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentoPorCod\u0028\u0029",
             "name": "buscaDepartamentoPorCod",
-            "summary": "",
+            "summary": "Busca\u0020un\u0020departamento\u0020por\u0020su\u0020c\u00F3digo.",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentoPorCod"
         },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorDesc\u0028\u0029",
             "name": "buscaDepartamentosPorDesc",
-            "summary": "",
+            "summary": "Busca\u0020departamentos\u0020cuya\u0020descripci\u00F3n\u0020contenga\u0020el\u0020texto\u0020indicado.",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AeditarDepartamento\u0028\u0029",
+            "name": "editarDepartamento",
+            "summary": "Actualiza\u0020un\u0020departamento\u0020en\u0020la\u0020base\u0020de\u0020datos.",
+            "url": "classes/DepartamentoPDO.html#method_editarDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AeliminarDepartamento\u0028\u0029",
+            "name": "eliminarDepartamento",
+            "summary": "Elimina\u0020un\u0020departamento\u0020de\u0020forma\u0020f\u00EDsica\u0020de\u0020la\u0020base\u0020de\u0020datos.",
+            "url": "classes/DepartamentoPDO.html#method_eliminarDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AcrearDepartamento\u0028\u0029",
+            "name": "crearDepartamento",
+            "summary": "Crea\u0020un\u0020nuevo\u0020departamento\u0020en\u0020la\u0020base\u0020de\u0020datos.",
+            "url": "classes/DepartamentoPDO.html#method_crearDepartamento"
+        },                {
+            "fqsen": "\\ImagenNasa",
+            "name": "ImagenNasa",
+            "summary": "Clase\u0020que\u0020representa\u0020una\u0020imagen\u0020de\u0020la\u0020NASA\u0020obtenida\u0020a\u0020trav\u00E9s\u0020de\u0020su\u0020API.",
+            "url": "classes/ImagenNasa.html"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020de\u0020la\u0020clase\u0020ImagenNasa.",
+            "url": "classes/ImagenNasa.html#method___construct"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetFecha\u0028\u0029",
+            "name": "getFecha",
+            "summary": "Obtiene\u0020la\u0020fecha\u0020de\u0020la\u0020imagen.",
+            "url": "classes/ImagenNasa.html#method_getFecha"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetTitulo\u0028\u0029",
+            "name": "getTitulo",
+            "summary": "Obtiene\u0020el\u0020t\u00EDtulo\u0020de\u0020la\u0020imagen.",
+            "url": "classes/ImagenNasa.html#method_getTitulo"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetUrl\u0028\u0029",
+            "name": "getUrl",
+            "summary": "Obtiene\u0020la\u0020URL\u0020de\u0020la\u0020imagen.",
+            "url": "classes/ImagenNasa.html#method_getUrl"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetHdurl\u0028\u0029",
+            "name": "getHdurl",
+            "summary": "Obtiene\u0020la\u0020URL\u0020de\u0020la\u0020imagen\u0020en\u0020alta\u0020definici\u00F3n.",
+            "url": "classes/ImagenNasa.html#method_getHdurl"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetExplicacion\u0028\u0029",
+            "name": "getExplicacion",
+            "summary": "Obtiene\u0020la\u0020explicaci\u00F3n\u0020de\u0020la\u0020imagen.",
+            "url": "classes/ImagenNasa.html#method_getExplicacion"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetCopyright\u0028\u0029",
+            "name": "getCopyright",
+            "summary": "Obtiene\u0020el\u0020copyright\u0020de\u0020la\u0020imagen.",
+            "url": "classes/ImagenNasa.html#method_getCopyright"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003AgetError\u0028\u0029",
+            "name": "getError",
+            "summary": "Obtiene\u0020el\u0020error\u0020asociado\u0020a\u0020la\u0020imagen.",
+            "url": "classes/ImagenNasa.html#method_getError"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024fecha",
+            "name": "fecha",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_fecha"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024titulo",
+            "name": "titulo",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_titulo"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024url",
+            "name": "url",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_url"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024hdurl",
+            "name": "hdurl",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_hdurl"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024explicacion",
+            "name": "explicacion",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_explicacion"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024copyright",
+            "name": "copyright",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_copyright"
+        },                {
+            "fqsen": "\\ImagenNasa\u003A\u003A\u0024error",
+            "name": "error",
+            "summary": "",
+            "url": "classes/ImagenNasa.html#property_error"
         },                {
             "fqsen": "\\REST",
             "name": "REST",
-            "summary": "",
+            "summary": "Encargada\u0020de\u0020realizar\u0020peticiones\u0020a\u0020APIs\u0020REST\u0020externas.",
             "url": "classes/REST.html"
         },                {
             "fqsen": "\\REST\u003A\u003AgetFotoDiaNasa\u0028\u0029",
             "name": "getFotoDiaNasa",
-            "summary": "",
+            "summary": "Obtiene\u0020la\u0020foto\u0020del\u0020d\u00EDa\u0020de\u0020la\u0020NASA\u0020\u0028APOD\u0029\u0020para\u0020una\u0020fecha\u0020concreta.",
             "url": "classes/REST.html#method_getFotoDiaNasa"
         },                {
             "fqsen": "\\Usuario",
