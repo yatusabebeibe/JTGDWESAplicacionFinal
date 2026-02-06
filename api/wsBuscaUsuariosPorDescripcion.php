@@ -14,7 +14,7 @@ require_once '../model/UsuarioPDO.php';
 $buscar = $_REQUEST["desc"] ?? "";
 
 // Validamos la descripción: alfanumérico, max 50, min 0, no obligatorio
-$error = validacionFormularios::comprobarAlfaNumerico($buscar, 255, 0, 1);
+$error = validacionFormularios::comprobarAlfaNumerico($buscar, 255, 0, 0);
 
 // Si hay error, devolvemos JSON vacío y salimos
 if ($error !== null) {
