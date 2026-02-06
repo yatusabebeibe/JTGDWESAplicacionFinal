@@ -5,7 +5,7 @@
  */
 
 require_once '../core/231018libreriaValidacion.php';
-require_once("../config/confDB.php");
+require_once "../config/confDB.php";
 require_once '../model/DBPDO.php';
 require_once '../model/Usuario.php';
 require_once '../model/UsuarioPDO.php';
