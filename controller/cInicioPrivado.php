@@ -93,7 +93,7 @@ $titulo = "Inicio Privado";
 // Obtenemos los datos del usuario logueado
 $usuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"];
 
-$nombreUsuario = $usuario->getDescUsuario();
+$nombreUsuario = $usuario->getDesc();
 $numConexiones = $usuario->getNumAccesos();
 $fechaUltConex = $usuario->getFechaHoraUltimaConexionAnterior() ?? null;
 

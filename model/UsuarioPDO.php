@@ -166,7 +166,7 @@ class UsuarioPDO {
         }
 
         if ($datos->rowCount() > 0) {
-            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDescUsuario($descUsuario);
+            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDesc($descUsuario);
             return true; // Se modificó el usuario
         } else {
             return false; // No se encontró el usuario o no hubo cambios

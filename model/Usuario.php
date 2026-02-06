@@ -48,7 +48,7 @@ class Usuario {
      *
      * @return string El código del usuario.
      */
-    public function getCodUsuario(): string {
+    public function getCodigo(): string {
         return $this->codUsuario;
     }
 
@@ -56,10 +56,10 @@ class Usuario {
      *
      * @return string La contraseña del usuario.
      */
-    public function getDescUsuario(): string {
+    public function getDesc(): string {
         return $this->descUsuario;
     }
-    public function setDescUsuario(string $desc): void {
+    public function setDesc(string $desc): void {
         $this->descUsuario = $desc;
     }
 

@@ -24,7 +24,7 @@
 <?php if ($estaLogeado && $estaEnInicio): ?>
 <form id="form_cuenta" action="" method="post">
     <?php
-    $letra = strtoupper($_SESSION["usuarioDAWJTGDAplicacionFinal"]->getDescUsuario()[0]);
+    $letra = strtoupper($_SESSION["usuarioDAWJTGDAplicacionFinal"]->getDesc()[0]);
     $hue = (ord($letra) * 37) % 360; // matiz distinto según la letra
     $colorFondo = "hsl($hue, 70%, 50%)"; // un poco más oscuro para que contraste
     ?>

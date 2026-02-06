@@ -32,8 +32,8 @@ $usuarios = UsuarioPDO::buscarUsuariosPorDescripcion($buscar);
 $resultado = [];
 foreach ($usuarios as $usuario) {
     $resultado[] = [
-        "codigo" => $usuario->getCodUsuario(),
-        "descripcion" => $usuario->getDescUsuario(),
+        "codigo" => $usuario->getCodigo(),
+        "descripcion" => $usuario->getDesc(),
         "numConexiones" => $usuario->getNumAccesos(),
         "ultimaConexion" => $usuario->getFechaHoraUltimaConexion() ? $usuario->getFechaHoraUltimaConexion()->format("d-m-Y H:i:s") : null,
         "perfil" => $usuario->getPerfil()

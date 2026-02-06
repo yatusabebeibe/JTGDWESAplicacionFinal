@@ -57,10 +57,10 @@
     <div><img src="http://picsum.photos/id/103/500/500" alt=""></div>
     <form action="" method="post">
         <label for="codigoUsuario">Usuario:</label>
-        <input type="text" id="codigoUsuario" name="codigoUsuario" value="<?= $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getCodUsuario() ?>" readonly disabled>
+        <input type="text" id="codigoUsuario" name="codigoUsuario" value="<?= $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getCodigo() ?>" readonly disabled>
 
         <label for="descUsuario">Nombre Completo:</label>
-        <input type="text" id="descUsuario" name="descUsuario" value="<?= $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getDescUsuario() ?>" obligatorio>
+        <input type="text" id="descUsuario" name="descUsuario" value="<?= $_SESSION["usuarioDAWJTGDAplicacionFinal"]->getDesc() ?>" obligatorio>
 
         <input type="submit" value="Confirmar cambios" name="guardarUsuario">
     </form>
