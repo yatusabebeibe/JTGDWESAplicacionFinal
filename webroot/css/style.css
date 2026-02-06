@@ -333,8 +333,7 @@ main:has(#man) {
     &:nth-child(3) { --tamaño: 180px; text-align: center; }
     &:nth-child(4) { --tamaño: 196px; }
     &:nth-child(5) { --tamaño: 145px; text-align: center; }
-    &:nth-child(6) { --tamaño: 120px; text-align: center; }
-
+    &:nth-child(6) { --tamaño: 145px; text-align: center; }
 }
 
 #man .formEdicion {
@@ -349,9 +348,8 @@ main:has(#man) {
         border: none;
         background: none;
     }
-    input[type=submit]:hover {
-        transform: scale(1.4);
-    }
+    input[type=submit] { font-size: 18px; }
+    input[type=submit]:hover { transform: scale(1.4); }
 }
 
 
