@@ -1,6 +1,6 @@
 <style>
-    #manDep > table .deBaja { color: gray; }
-    #manDep > .formularios {
+    #man > table .deBaja { color: gray; }
+    #man > .formularios {
         margin-bottom: 30px;
         display: grid;
         --espacios: 1fr;
@@ -14,7 +14,7 @@
     .y { grid-area: y; }
 </style>
 
-<div id="manDep">
+<div id="man" class="manDep">
     <div class="formularios">
         <form method="post" class="x">
             <div>
