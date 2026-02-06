@@ -35,6 +35,7 @@ $controlador = [
     "verDpto" => "controller/cConsultarModificarDepartamento.php",
     "eliminarDpto" => "controller/cEliminarDepartamento.php",
     "crearDpto" => "controller/cCrearDepartamento.php",
+    "mtoUsuarios" => "controller/cMtoUsuarios.php",
 ];
 
 $vista = [
@@ -54,4 +55,5 @@ $vista = [
     "verDpto" => "view/vConsultarModificarDepartamento.php",
     "eliminarDpto" => "view/vEliminarDepartamento.php",
     "crearDpto" => "view/vCrearDepartamento.php",
+    "mtoUsuarios" => "view/vMtoUsuarios.php",
 ];

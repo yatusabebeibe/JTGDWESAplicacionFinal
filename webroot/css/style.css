@@ -335,6 +335,15 @@ main:has(#man) {
     &:nth-child(5) { --tamaño: 145px; text-align: center; }
     &:nth-child(6) { --tamaño: 145px; text-align: center; }
 }
+.manUsuarios table > * > tr >th,
+.manUsuarios table > * > tr >td {
+    text-align: justify;
+    &:nth-child(1) { --tamaño: 90px; }
+    &:nth-child(2) { --tamaño: 13vw; }
+    &:nth-child(3) { --tamaño: 180px; text-align: center; }
+    &:nth-child(4) { --tamaño: 196px; }
+    &:nth-child(5) { --tamaño: 220px; text-align: center; }
+}
 
 #man .formEdicion {
     display: flex;

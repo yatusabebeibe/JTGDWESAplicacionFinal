@@ -78,7 +78,7 @@ if (isset($_REQUEST["error"])) {
 
 if ( isset($_REQUEST["mtoUsuarios"]) && $sTipoUsuario == "administrador" ) {
     $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "mtoUsuarios";
 
     // Redirigimos
     header("Location: index.php");
