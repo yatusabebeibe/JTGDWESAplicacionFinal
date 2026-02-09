@@ -56,6 +56,6 @@ $avEditDep = [
     "editable" => $_SESSION["paginaEnCurso"] == "modificarDpto" ? true : false,
 ];
 
-$titulo = "Editar Departamento " .$departamentoActual->getCodigo();
+$titulo = ($avEditDep["editable"] ? "Editar" : "Consultar") . " Departamento " .$departamentoActual->getCodigo();
 
 require_once $vista['layout'];
