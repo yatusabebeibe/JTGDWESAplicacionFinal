@@ -35,7 +35,7 @@ foreach ($usuarios as $usuario) {
         "codigo" => $usuario->getCodigo(),
         "descripcion" => $usuario->getDesc(),
         "numConexiones" => $usuario->getNumAccesos(),
-        "ultimaConexion" => $usuario->getFechaHoraUltimaConexion() ? $usuario->getFechaHoraUltimaConexion()->format("d-m-Y H:i:s") : null,
+        "ultimaConexion" => $usuario->getFechaHoraUltimaConexion() ? $usuario->getFechaHoraUltimaConexion()->format("c" /* Formato ISO UTC */) : null,
         "perfil" => $usuario->getPerfil()
     ];
 }
