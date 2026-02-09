@@ -14,6 +14,7 @@ require_once 'model/REST.php';
 require_once 'model/ImagenNasa.php';
 require_once 'model/Departamento.php';
 require_once 'model/DepartamentoPDO.php';
+require_once 'model/JuegoSteam.php';
 
 const NASA_KEY = '779UxkhQlroYxeSVtJe5YN16lYt0EYrLi6Y8Chhf'; // Clave de API de NASA
 

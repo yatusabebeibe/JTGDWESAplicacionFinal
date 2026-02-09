@@ -21,4 +21,28 @@
             </form>
         <?php endif; ?>
     </section>
+
+    <section>
+        <h1 style="padding-bottom: 10px;">Juego Steam</h1>
+        <?php $juegoSteam = $avREST["juego"] ?>
+        <form method="post" id="steam" name="steam">
+            <input type="text" name="juego" id="juego" placeholder="Nombre del juego" value="<?= htmlspecialchars($juegoSteam->getTerminoBusqueda() ?? "") ?>">
+            <input type="submit" value="Buscar">
+        </form>
+        <?php if ($juegoSteam->getError()["code"] != null): ?>
+            <div class="error">
+                <h3>Ha ocurrido un error al obtener la información del juego:</h3>
+                <p><b><?= $juegoSteam->getError()["code"] ?>:</b> <?= $juegoSteam->getError()["msg"] ?></p>
+            </div>
+        <?php else: ?>
+            <?php if ($juegoSteam->getLogo()): ?>
+                <figure>
+                    <img src="<?= $juegoSteam->getLogo() ?>" alt="<?= htmlspecialchars($juegoSteam->getNombre()) ?>" width="100%">
+                    <figcaption><?= htmlspecialchars($juegoSteam->getNombre()) ?></figcaption>
+                </figure>
+            <?php else: ?>
+                <p>No se encontró imagen para el juego <?= htmlspecialchars($juegoSteam->getNombre()) ?></p>
+            <?php endif; ?>
+        <?php endif; ?>
+    </section>
 </div>

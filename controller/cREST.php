@@ -39,9 +39,20 @@ else if (empty($_SESSION["REST"]["nasa"]) || $_SESSION["REST"]["nasa"]->getFecha
     $_SESSION["REST"]["nasa"] = $fotoNasa;
 }
 
+// Si se ha enviado un nombre de juego por GET o POST, obtenemos la info
+$nombreJuego = $_REQUEST['juego'] ?? ""; // campo 'juego' enviado desde un formulario o URL
+if (!empty($nombreJuego) && empty(validacionFormularios::comprobarAlfaNumerico($nombreJuego))) {
+    $juegoSteam = REST::getJuegoSteam($nombreJuego);
+    $_SESSION["REST"]["juego"] = $juegoSteam;
+} else if (empty($_SESSION["REST"]["juego"])) {
+    $juegoSteam = REST::getJuegoSteam();
+    $_SESSION["REST"]["juego"] = $juegoSteam;
+}
+
 // Inicializamos el array de datos de la vista
 $avREST = [
     "nasa" => $_SESSION["REST"]["nasa"],
+    "juego" => $_SESSION["REST"]["juego"],
 ];
 
 $titulo = "REST";
