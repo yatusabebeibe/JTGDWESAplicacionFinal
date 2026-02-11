@@ -223,4 +223,55 @@ class UsuarioPDO {
 
         return $usuarios;
     }
+
+    /**
+     * Busca el usuario con el codigo indicado si hay.
+     *
+     * @param string $codigo Codigo a buscar.
+     * @return ?Usuario Objeto Usuario que cumple con la búsqueda, null si no hay ninguno.
+     */
+    public static function buscarUsuarioPorCodigo(string $codigo) {
+        $consulta = <<<CONSULTA
+        SELECT * FROM T01_Usuario
+        WHERE T01_CodUsuario = :codigo;
+        CONSULTA;
+
+        $parametros = [
+            ":codigo" => $codigo
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        if ($resultado && $resultado->rowCount() === 1) {
+            $oDatos = $resultado->fetchObject();
+            return new Usuario(
+                $oDatos->T01_CodUsuario,
+                $oDatos->T01_Password,
+                $oDatos->T01_DescUsuario,
+                $oDatos->T01_NumConexiones,
+                new DateTime($oDatos->T01_FechaHoraUltimaConexion),
+                $oDatos->T01_FechaHoraUltimaConexion
+                    ? new DateTime($oDatos->T01_FechaHoraUltimaConexion)
+                    : null,
+                $oDatos->T01_Perfil
+            );
+        }
+
+        return null;
+    }
 }

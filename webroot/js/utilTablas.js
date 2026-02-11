@@ -13,9 +13,9 @@ export const crearCeldaOpciones = (codigo) => {
         formulario.setAttribute("method", "post");
         formulario.setAttribute("class", "formEdicion");
 
-        formulario.appendChild( crearInputCustom("hidden", "codUsuario", codigo) );
-        formulario.appendChild( crearInputCustom("submit", "ver", "👁️") );
-        formulario.appendChild( crearInputCustom("submit", "borrar", "🗑️") );
+        formulario.appendChild( crearInputCustom("hidden", "codUsuario", codigo ?? "") );
+        formulario.appendChild( crearInputCustom("submit", "ver", "👁️", "Ver") );
+        formulario.appendChild( crearInputCustom("submit", "borrar", "🗑️", "Borrar") );
 
     celda.appendChild(formulario)
     return celda;
@@ -44,7 +44,7 @@ export const generarTabla = async (listaUsuarios, tabla) => {
         tr.appendChild(crearCelda(usuario.perfil));
         const fecha = new Date(usuario.ultimaConexion);
         tr.appendChild(crearCelda(fecha.toLocaleString()));
-        tr.appendChild(crearCeldaOpciones());
+        tr.appendChild(crearCeldaOpciones(usuario.codigo));
 
         tabla.appendChild(tr)
     }
