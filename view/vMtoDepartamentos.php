@@ -12,6 +12,28 @@
     }
     .x { grid-area: x; }
     .y { grid-area: y; }
+
+    #man > .formularios > form > div:nth-child(2) {
+        align-items: center;
+
+        > * { height: min-content; }
+        > div { display: flex; gap: 12px; }
+        & input { display: none; }
+        & label {
+            cursor: pointer;
+            padding: 8px 12px;
+            font-size: 13.3333px;
+            background: var(--color-primary);
+            color: var(--color-bg-header);
+            font-weight: bold;
+            border-radius: var(--border-radius);
+        }
+        & input:checked + label {
+            background: hsl(204, 64%, 45%);
+            transform: scale(1.15);
+            color: var(--color-text);
+        }
+    }
 </style>
 
 <div id="man" class="manDep">
@@ -20,6 +42,19 @@
             <div>
                 <input type="text" name="buscar" placeholder="Texto a buscar" value="<?= $avMtoDep["buscado"] ?>" autofocus>
                 <input type="submit" value="Buscar">
+            </div>
+            <div>
+                <p>Filtrar por:</p>
+                <div>
+                    <input type="radio" name="opcion" id="alta" value="alta" <?= $avMtoDep["opcion"] === "alta" ?"checked" :""; ?> >
+                    <label for="alta">Alta</label>
+
+                    <input type="radio" name="opcion" id="baja" value="baja" <?= $avMtoDep["opcion"] === "baja" ?"checked" :""; ?> >
+                    <label for="baja">Baja</label>
+
+                    <input type="radio" name="opcion" id="todo" value="todo" <?= $avMtoDep["opcion"] === "todo" ?"checked" :""; ?> >
+                    <label for="todo">Todo</label>
+                </div>
             </div>
         </form>
         <form method="post" class="y"><input type="submit" value="Crear departamento" name="crear"></form>

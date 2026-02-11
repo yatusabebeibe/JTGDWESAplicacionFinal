@@ -60,10 +60,17 @@ class DepartamentoPDO {
      * @param string $desc Texto a buscar en la descripción
      * @return array Array de objetos Departamento (vacío si no hay resultados)
      */
-    static function buscaDepartamentosPorDesc(string $desc = "") : ?Array {
+    static function buscaDepartamentosPorDesc(string $desc = "", ?string $opcion = null) : ?Array {
+
+        $condicion = match ($opcion) {
+            "alta" => "AND T02_FechaBajaDepartamento IS NULL",
+            "baja" => "AND T02_FechaBajaDepartamento IS NOT NULL",
+            default => ""
+        };
         $consulta = <<<CONSULTA
         SELECT * FROM T02_Departamento
         WHERE T02_DescDepartamento LIKE CONCAT('%', :descripcion, '%')
+        $condicion
         ORDER BY T02_FechaCreacionDepartamento DESC;
         CONSULTA;
 

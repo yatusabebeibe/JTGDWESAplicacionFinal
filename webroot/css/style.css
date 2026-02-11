@@ -301,14 +301,17 @@ form#form_cuenta > input[type="submit"]#boton_cuenta:hover {
     margin: 20px;
 }
 #man > .formularios > form {
-    display: flex;
+    --altura: 40px;
+    height: var(--altura);
+    display: grid; gap: 12px;
+    grid-template-rows: subgrid;
     justify-content: center;
-    & > div {display: flex; gap:10px;}
+    & > div {display: flex; gap:10px; justify-content: center}
     & input {display: block;}
 }
 #man > .formularios > form input[type="submit"] {
     margin: 0;
-    height: 40px;
+    height: var(--altura);
 }
 #man > table {
     border-collapse: collapse;

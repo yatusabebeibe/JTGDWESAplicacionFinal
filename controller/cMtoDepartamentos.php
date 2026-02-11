@@ -68,13 +68,15 @@ if (isset($_REQUEST["altabaja"])) {
 $buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe
 $buscarValido = $buscar === "" || ( !empty($buscar) && empty(validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:0)) );
 
+$opcion = $_REQUEST["opcion"] ?? "alta";
+
 if ($buscarValido || !empty($_SESSION["mtoDep"])) {
     $terminoABuscar = $buscarValido ? $buscar : $_SESSION["mtoDep"];
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($terminoABuscar);
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($terminoABuscar, $opcion);
     $_SESSION["mtoDep"] = $terminoABuscar;
 } else {
     // No hay búsqueda ni sesión, mostramos todos
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc();
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc(opcion:$opcion);
     $_SESSION["mtoDep"] = "";
 }
 
@@ -93,6 +95,7 @@ foreach ($aDepartamentos as $departamento) {
 $avMtoDep = [
     "departamentos" => $aDatosDepartamentos,
     "buscado" => $_SESSION["mtoDep"],
+    "opcion" => $opcion,
 ];
 
 $titulo = "Mantenimiento Departamentos";
