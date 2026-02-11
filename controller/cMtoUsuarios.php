@@ -26,7 +26,7 @@ if(isset($_REQUEST['ver'])){
 if(isset($_REQUEST['borrar'])){
     $_SESSION["codUsuarioActual"] = $_REQUEST['codUsuario'];
     $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "eliminarUsuario";
     header('Location: index.php');
     exit;
 }

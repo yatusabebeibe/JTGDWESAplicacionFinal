@@ -275,4 +275,40 @@ class UsuarioPDO {
 
         return null;
     }
+
+    /**
+     * Elimina el usuario con el código indicado si existe.
+     *
+     * @param string $codigo Código del usuario a eliminar.
+     * @return bool True si se ha eliminado correctamente, false si no se pudo.
+     */
+    public static function eliminarUsuario(string $codigo): bool {
+        $consulta = <<<CONSULTA
+        DELETE FROM T01_Usuario
+        WHERE T01_CodUsuario = :codigo;
+        CONSULTA;
+
+        $parametros = [
+            ":codigo" => $codigo
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                $exception->getFile(),
+                $exception->getLine(),
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        return $resultado && $resultado->rowCount() === 1;
+    }
 }
