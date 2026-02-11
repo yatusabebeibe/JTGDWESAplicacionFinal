@@ -182,7 +182,8 @@ class UsuarioPDO {
     public static function buscarUsuariosPorDescripcion(string $descripcion) {
         $consulta = <<<CONSULTA
         SELECT * FROM T01_Usuario
-        WHERE T01_DescUsuario LIKE CONCAT('%', :descripcion, '%');
+        WHERE T01_DescUsuario LIKE CONCAT('%', :descripcion, '%')
+        ORDER BY T01_FechaHoraUltimaConexion DESC;
         CONSULTA;
 
         $parametros = [
