@@ -2,7 +2,7 @@
 
 /**
  * @author Jesús Temprano Gallego
- * @since 23/01/2026
+ * @since 11/02/2026
  */
 
 // Si no hay un usuario logueado, redirigimos al login
