@@ -314,7 +314,7 @@ class DepartamentoPDO {
      * @param string|null $estado "alta", "baja" o null
      * @return int Número total de páginas
      */
-    static function contarTotalPaginas(?string $estado = null) : int {
+    static function contarTotalPaginas(string $desc = "", ?string $estado = null) : int {
 
         $resultadosPorPagina = ResultadosPorPagina;
 
@@ -331,7 +331,7 @@ class DepartamentoPDO {
         CONSULTA;
 
         $parametros = [
-            ":descripcion" => ""
+            ":descripcion" => $desc,
         ];
 
         try {

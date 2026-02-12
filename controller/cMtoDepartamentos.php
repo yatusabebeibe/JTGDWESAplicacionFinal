@@ -83,15 +83,15 @@ $estadoHaCambiado = $estadoSeleccionado !== ($_SESSION["mtoDep"]["estado"] ?? "a
 // Reiniciamos página si cambió búsqueda o estado
 $paginaActual = ($terminoHaCambiado || $estadoHaCambiado) ? 1 : $paginaSolicitada;
 
+// Determinamos el término de búsqueda final
+$terminoABuscar = $buscarValido ? $buscar : ($_SESSION["mtoDep"]["terminoBusqueda"] ?? "");
+
 // Calculamos total de páginas y ajustamos la página actual
-$totalPaginas = DepartamentoPDO::contarTotalPaginas($estadoSeleccionado);
+$totalPaginas = DepartamentoPDO::contarTotalPaginas($terminoABuscar, $estadoSeleccionado);
 
 // Guardamos estado y página en sesión
 $_SESSION["mtoDep"]["estado"] = $estadoSeleccionado;
 $_SESSION["mtoDep"]["nPagina"] = max(1, min($paginaActual, $totalPaginas));
-
-// Determinamos el término de búsqueda final
-$terminoABuscar = $buscarValido ? $buscar : ($_SESSION["mtoDep"]["terminoBusqueda"] ?? "");
 
 // Consultamos los departamentos según término y estado
 if ($terminoABuscar !== "") {
