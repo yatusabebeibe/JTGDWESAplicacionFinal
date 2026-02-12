@@ -33,6 +33,10 @@
             transform: scale(1.15);
             color: var(--color-text);
         }
+        label#filtroActual {
+            background: hsl(204, 64%, 54%);
+            color: yellow;
+        }
     }
 </style>
 
@@ -47,13 +51,13 @@
                 <p>Filtrar por:</p>
                 <div>
                     <input type="radio" name="estado" id="alta" value="alta" <?= $avMtoDep["estado"] === "alta" ?"checked" :""; ?> >
-                    <label for="alta">Alta</label>
+                    <label for="alta" <?= $avMtoDep["estado"] === "alta" ?"id='filtroActual'" :""; ?> >Alta</label>
 
-                    <input type="radio" name="estado" id="baja" value="baja" <?= $avMtoDep["estado"] === "baja" ?"checked" :""; ?> >
-                    <label for="baja">Baja</label>
+                    <input type="radio" name="estado" id="baja" value="baja" <?= $avMtoDep["estado"] === "baja" ?"checked " :""; ?> >
+                    <label for="baja" <?= $avMtoDep["estado"] === "baja" ?"id='filtroActual'" :""; ?> >Baja</label>
 
                     <input type="radio" name="estado" id="todo" value="todo" <?= $avMtoDep["estado"] === "todo" ?"checked" :""; ?> >
-                    <label for="todo">Todo</label>
+                    <label for="todo" <?= $avMtoDep["estado"] === "todo" ?"id='filtroActual'" :""; ?> >Todo</label>
                 </div>
             </div>
         </form>
