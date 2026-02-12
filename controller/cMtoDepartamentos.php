@@ -64,20 +64,42 @@ if (isset($_REQUEST["altabaja"])) {
     DepartamentoPDO::editarDepartamento($departamentoAB);
 }
 
+// Recogemos inputs y valores de sesión
+$estadoSeleccionado = $_REQUEST["estado"] ?? $_SESSION["mtoDep"]["estado"] ?? "alta";
+$buscar = $_REQUEST["buscar"] ?? null;
+$paginaSolicitada = isset($_REQUEST["pagina"]) && is_numeric($_REQUEST["pagina"])
+    ? (int)$_REQUEST["pagina"]
+    : ($_SESSION["mtoDep"]["nPagina"] ?? 1);
 
-$buscar = $_REQUEST["buscar"] ?? null; // evita warning si no existe
-$buscarValido = $buscar === "" || ( !empty($buscar) && empty(validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:0)) );
+// Validamos el término de búsqueda: vacío o alfanumérico válido
+$buscarValido = $buscar === "" || (!empty($buscar) && empty(
+    validacionFormularios::comprobarAlfaNumerico($buscar, minTamanio:0, obligatorio:0)
+));
 
-$opcion = $_REQUEST["opcion"] ?? "alta";
+// Comprobamos si cambió el término de búsqueda o el estado
+$terminoHaCambiado = $buscarValido && $buscar !== ($_SESSION["mtoDep"]["terminoBusqueda"] ?? "");
+$estadoHaCambiado = $estadoSeleccionado !== ($_SESSION["mtoDep"]["estado"] ?? "alta");
 
-if ($buscarValido || !empty($_SESSION["mtoDep"])) {
-    $terminoABuscar = $buscarValido ? $buscar : $_SESSION["mtoDep"];
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($terminoABuscar, $opcion);
-    $_SESSION["mtoDep"] = $terminoABuscar;
+// Reiniciamos página si cambió búsqueda o estado
+$paginaActual = ($terminoHaCambiado || $estadoHaCambiado) ? 1 : $paginaSolicitada;
+
+// Calculamos total de páginas y ajustamos la página actual
+$totalPaginas = DepartamentoPDO::contarTotalPaginas($estadoSeleccionado);
+
+// Guardamos estado y página en sesión
+$_SESSION["mtoDep"]["estado"] = $estadoSeleccionado;
+$_SESSION["mtoDep"]["nPagina"] = max(1, min($paginaActual, $totalPaginas));
+
+// Determinamos el término de búsqueda final
+$terminoABuscar = $buscarValido ? $buscar : ($_SESSION["mtoDep"]["terminoBusqueda"] ?? "");
+
+// Consultamos los departamentos según término y estado
+if ($terminoABuscar !== "") {
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDescPaginado($terminoABuscar, $estadoSeleccionado, $_SESSION["mtoDep"]["nPagina"]);
+    $_SESSION["mtoDep"]["terminoBusqueda"] = $terminoABuscar;
 } else {
-    // No hay búsqueda ni sesión, mostramos todos
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc(opcion:$opcion);
-    $_SESSION["mtoDep"] = "";
+    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDescPaginado(estado: $estadoSeleccionado, numeroPagina: $_SESSION["mtoDep"]["nPagina"]);
+    $_SESSION["mtoDep"]["terminoBusqueda"] = "";
 }
 
 $aDatosDepartamentos = [];
@@ -94,8 +116,10 @@ foreach ($aDepartamentos as $departamento) {
 
 $avMtoDep = [
     "departamentos" => $aDatosDepartamentos,
-    "buscado" => $_SESSION["mtoDep"],
-    "opcion" => $opcion,
+    "buscado" => $_SESSION["mtoDep"]["terminoBusqueda"],
+    "estado" => $_SESSION["mtoDep"]["estado"],
+    "totalPaginas" => $totalPaginas,
+    "paginaActual" => $_SESSION["mtoDep"]["nPagina"],
 ];
 
 $titulo = "Mantenimiento Departamentos";

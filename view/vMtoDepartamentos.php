@@ -46,13 +46,13 @@
             <div>
                 <p>Filtrar por:</p>
                 <div>
-                    <input type="radio" name="opcion" id="alta" value="alta" <?= $avMtoDep["opcion"] === "alta" ?"checked" :""; ?> >
+                    <input type="radio" name="estado" id="alta" value="alta" <?= $avMtoDep["estado"] === "alta" ?"checked" :""; ?> >
                     <label for="alta">Alta</label>
 
-                    <input type="radio" name="opcion" id="baja" value="baja" <?= $avMtoDep["opcion"] === "baja" ?"checked" :""; ?> >
+                    <input type="radio" name="estado" id="baja" value="baja" <?= $avMtoDep["estado"] === "baja" ?"checked" :""; ?> >
                     <label for="baja">Baja</label>
 
-                    <input type="radio" name="opcion" id="todo" value="todo" <?= $avMtoDep["opcion"] === "todo" ?"checked" :""; ?> >
+                    <input type="radio" name="estado" id="todo" value="todo" <?= $avMtoDep["estado"] === "todo" ?"checked" :""; ?> >
                     <label for="todo">Todo</label>
                 </div>
             </div>
@@ -92,4 +92,50 @@
             <?php endforeach ?>
         </tbody>
     </table>
+
+    <style>
+        #man {position: relative;}
+        #man > .paginacion {
+            position: absolute;
+            bottom: 50px; left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+        }
+        #man > .paginacion > button {
+            background: none;
+            border: none;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            cursor: pointer;
+        }
+        #man > .paginacion {
+            & > #pagActual {
+                cursor: context-menu;
+                color: whitesmoke;
+            }
+            & > button:disabled {
+                cursor: context-menu;
+                color: gray;
+            }
+        }
+    </style>
+
+    <form class="paginacion" method="post">
+        <?php $esPrimera = $avMtoDep["paginaActual"] == 1; ?>
+        <button name="pagina" value="1" <?= $esPrimera ? 'disabled' : '' ?>>&NestedLessLess;</button>
+        <button name="pagina" value="<?= $avMtoDep["paginaActual"] - 1 ?>" <?= $esPrimera ? 'disabled' : '' ?>>&lt;</button>
+
+        <?php for($nPag = 1; $nPag <= $avMtoDep["totalPaginas"]; $nPag++): ?>
+            <button name="pagina" value="<?= $nPag ?>" <?= $nPag == $avMtoDep["paginaActual"] ? 'id="pagActual"' : '' ?>>
+                <?= $nPag ?>
+            </button>
+        <?php endfor; ?>
+
+        <?php $esUltima = $avMtoDep["paginaActual"] == $avMtoDep["totalPaginas"]; ?>
+        <button name="pagina" value="<?= $avMtoDep["paginaActual"] + 1 ?>" <?= $esUltima ? 'disabled' : '' ?>>&gt;</button>
+        <button name="pagina" value="<?= $avMtoDep["totalPaginas"] ?>" <?= $esUltima ? 'disabled' : '' ?>>&NestedGreaterGreater;</button>
+    </form>
 </div>

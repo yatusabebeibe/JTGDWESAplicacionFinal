@@ -19,3 +19,5 @@ const DBUser = "userJTGDWESAplicacionFinal";
 const DBPass = "paso";   // desarrollo
 // const DBPass = "!Paso1234x";   // explotación
 const DSN = "mysql:host=".DBHost.";dbname=".DBName;
+
+const ResultadosPorPagina = 5;
