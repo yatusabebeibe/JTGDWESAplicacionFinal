@@ -30,8 +30,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -60,9 +60,9 @@ class DepartamentoPDO {
      * @param string $desc Texto a buscar en la descripción
      * @return array Array de objetos Departamento (vacío si no hay resultados)
      */
-    static function buscaDepartamentosPorDesc(string $desc = "", ?string $opcion = null) : ?Array {
+    static function buscaDepartamentosPorDesc(string $desc = "", ?string $estado = null) : ?Array {
 
-        $condicion = match ($opcion) {
+        $condicion = match ($estado) {
             "alta" => "AND T02_FechaBajaDepartamento IS NULL",
             "baja" => "AND T02_FechaBajaDepartamento IS NOT NULL",
             default => ""
@@ -84,8 +84,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -141,8 +141,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -177,8 +177,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -232,8 +232,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];

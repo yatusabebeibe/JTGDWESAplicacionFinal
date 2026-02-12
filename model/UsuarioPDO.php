@@ -35,8 +35,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -92,8 +92,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -154,8 +154,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -196,8 +196,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -247,8 +247,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -298,8 +298,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
