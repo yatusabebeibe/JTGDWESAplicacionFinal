@@ -291,42 +291,64 @@ form#form_cuenta > input[type="submit"]#boton_cuenta:hover {
     transform: scale(1.15);
 }
 
-#manDep {
+#man {
     background: var(--color-bg-footer);
     padding: 22px;
     border-radius: 8px;
     display: flex;
     flex-flow: column nowrap;
     gap: 15px;
+    margin: 20px;
 }
-#manDep > .formularios > form {
-    display: flex;
+#man > .formularios > form {
+    --altura: 40px;
+    height: var(--altura);
+    display: grid; gap: 12px;
+    grid-template-rows: subgrid;
     justify-content: center;
-    & > div {display: flex; gap:10px;}
+    & > div {display: flex; gap:10px; justify-content: center}
     & input {display: block;}
 }
-#manDep > .formularios > form input[type="submit"] {
+#man > .formularios > form input[type="submit"] {
     margin: 0;
-    height: 40px;
+    height: var(--altura);
 }
-#manDep > table {
+#man > table {
     border-collapse: collapse;
     font-size: 1.1rem;
 
-    & * {border: 3px solid var(--color-primary);}
-    & td,th { padding: 4px 10px}
+    & * {border: 3px solid transparent;}
+    & td,th { padding: 6px 10px}
 }
-#manDep table > * > tr >th,
-#manDep table > * > tr >td {
-    &:nth-child(1) { --tamaño: 83px; width: var(--tamaño); max-width: var(--tamaño); }
-    &:nth-child(2) { --tamaño: 50vw; width: var(--tamaño); max-width: var(--tamaño); }
-    &:nth-child(3) { --tamaño: 180px; width: var(--tamaño); max-width: var(--tamaño); }
-    &:nth-child(4) { --tamaño: 196px; width: var(--tamaño); max-width: var(--tamaño); }
-    &:nth-child(5) { --tamaño: 145px; width: var(--tamaño); max-width: var(--tamaño); }
-    &:nth-child(6) { --tamaño: 120px; width: var(--tamaño); max-width: var(--tamaño); }
+main:has(#man) {
+    align-items: unset;
+}
+#man table > * > tr >th, #man table > * > tr >td {
+    width: var(--tamaño); max-width: var(--tamaño);
+}
+#man table > thead { background: var(--color-primary); color: black; }
+#man table > tbody > *:nth-child(2n) { background: var(--color-bg-body); }
+.manDep table > * > tr >th,
+.manDep table > * > tr >td {
+    text-align: justify;
+    &:nth-child(1) { --tamaño: 83px; }
+    &:nth-child(2) { --tamaño: 50vw; }
+    &:nth-child(3) { --tamaño: 180px; text-align: center; }
+    &:nth-child(4) { --tamaño: 196px; }
+    &:nth-child(5) { --tamaño: 145px; text-align: center; }
+    &:nth-child(6) { --tamaño: 145px; text-align: center; }
+}
+.manUsuarios table > * > tr >th,
+.manUsuarios table > * > tr >td {
+    text-align: justify;
+    &:nth-child(1) { --tamaño: 90px; }
+    &:nth-child(2) { --tamaño: 13vw; }
+    &:nth-child(3) { --tamaño: 180px; text-align: center; }
+    &:nth-child(4) { --tamaño: 196px; }
+    &:nth-child(5) { --tamaño: 220px; text-align: center; }
 }
 
-#manDep .formEdicion {
+#man .formEdicion {
     display: flex;
     gap: 8px;
     justify-content: center;
@@ -338,9 +360,8 @@ form#form_cuenta > input[type="submit"]#boton_cuenta:hover {
         border: none;
         background: none;
     }
-    input[type=submit]:hover {
-        transform: scale(1.4);
-    }
+    input[type=submit] { font-size: 18px; }
+    input[type=submit]:hover { transform: scale(1.4); }
 }
 
 

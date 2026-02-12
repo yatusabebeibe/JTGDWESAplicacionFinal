@@ -35,8 +35,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -50,13 +50,13 @@ class UsuarioPDO {
         if ($datos && $datos->rowCount() >= 1) {
             $oDatos = $datos->fetchObject();
             $usuario = new Usuario(
-                $oDatos->{aColumnasUsuario["Codigo"]},
-                $oDatos->{aColumnasUsuario["Password"]},
-                $oDatos->{aColumnasUsuario["Descripcion"]},
-                $oDatos->{aColumnasUsuario["NumConexiones"]} + 1,
+                $oDatos->T01_CodUsuario,
+                $oDatos->T01_Password,
+                $oDatos->T01_DescUsuario,
+                $oDatos->T01_NumConexiones + 1,
                 new DateTime(),
-                $oDatos->{aColumnasUsuario["UltimaConexion"]} ? new DateTime($oDatos->{aColumnasUsuario["UltimaConexion"]}) : null,
-                $oDatos->{aColumnasUsuario["Perfil"]}
+                $oDatos->T01_FechaHoraUltimaConexion ? new DateTime($oDatos->T01_FechaHoraUltimaConexion) : null,
+                $oDatos->T01_Perfil
             );
 
             return $usuario;
@@ -92,8 +92,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -154,8 +154,8 @@ class UsuarioPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -166,10 +166,149 @@ class UsuarioPDO {
         }
 
         if ($datos->rowCount() > 0) {
-            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDescUsuario($descUsuario);
+            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDesc($descUsuario);
             return true; // Se modificó el usuario
         } else {
             return false; // No se encontró el usuario o no hubo cambios
         }
+    }
+
+    /**
+     * Busca usuarios cuyo nombre o descripción contiene un texto dado.
+     *
+     * @param string $descripcion Texto a buscar en la descripción de los usuarios.
+     * @return array Array de objetos Usuario que cumplen con la búsqueda, vacío si no hay resultados.
+     */
+    public static function buscarUsuariosPorDescripcion(string $descripcion) {
+        $consulta = <<<CONSULTA
+        SELECT * FROM T01_Usuario
+        WHERE T01_DescUsuario LIKE CONCAT('%', :descripcion, '%')
+        ORDER BY T01_FechaHoraUltimaConexion DESC;
+        CONSULTA;
+
+        $parametros = [
+            ":descripcion" => $descripcion
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                __FILE__,
+                __LINE__,
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        $usuarios = [];
+        if ($resultado && $resultado->rowCount() > 0) {
+            while ($oDatos = $resultado->fetchObject()) {
+                $usuarios[] = new Usuario(
+                    $oDatos->T01_CodUsuario,
+                    $oDatos->T01_Password,
+                    $oDatos->T01_DescUsuario,
+                    $oDatos->T01_NumConexiones,
+                    new DateTime($oDatos->T01_FechaHoraUltimaConexion),
+                    $oDatos->T01_FechaHoraUltimaConexion ? new DateTime($oDatos->T01_FechaHoraUltimaConexion) : null,
+                    $oDatos->T01_Perfil
+                );
+            }
+        }
+
+        return $usuarios;
+    }
+
+    /**
+     * Busca el usuario con el codigo indicado si hay.
+     *
+     * @param string $codigo Codigo a buscar.
+     * @return ?Usuario Objeto Usuario que cumple con la búsqueda, null si no hay ninguno.
+     */
+    public static function buscarUsuarioPorCodigo(string $codigo) {
+        $consulta = <<<CONSULTA
+        SELECT * FROM T01_Usuario
+        WHERE T01_CodUsuario = :codigo;
+        CONSULTA;
+
+        $parametros = [
+            ":codigo" => $codigo
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                __FILE__,
+                __LINE__,
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        if ($resultado && $resultado->rowCount() === 1) {
+            $oDatos = $resultado->fetchObject();
+            return new Usuario(
+                $oDatos->T01_CodUsuario,
+                $oDatos->T01_Password,
+                $oDatos->T01_DescUsuario,
+                $oDatos->T01_NumConexiones,
+                new DateTime($oDatos->T01_FechaHoraUltimaConexion),
+                $oDatos->T01_FechaHoraUltimaConexion
+                    ? new DateTime($oDatos->T01_FechaHoraUltimaConexion)
+                    : null,
+                $oDatos->T01_Perfil
+            );
+        }
+
+        return null;
+    }
+
+    /**
+     * Elimina el usuario con el código indicado si existe.
+     *
+     * @param string $codigo Código del usuario a eliminar.
+     * @return bool True si se ha eliminado correctamente, false si no se pudo.
+     */
+    public static function eliminarUsuario(string $codigo): bool {
+        $consulta = <<<CONSULTA
+        DELETE FROM T01_Usuario
+        WHERE T01_CodUsuario = :codigo;
+        CONSULTA;
+
+        $parametros = [
+            ":codigo" => $codigo
+        ];
+
+        try {
+            $resultado = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                __FILE__,
+                __LINE__,
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        return $resultado && $resultado->rowCount() === 1;
     }
 }

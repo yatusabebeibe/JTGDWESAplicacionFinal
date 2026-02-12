@@ -30,8 +30,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -60,10 +60,17 @@ class DepartamentoPDO {
      * @param string $desc Texto a buscar en la descripción
      * @return array Array de objetos Departamento (vacío si no hay resultados)
      */
-    static function buscaDepartamentosPorDesc(string $desc = "") : ?Array {
+    static function buscaDepartamentosPorDesc(string $desc = "", ?string $estado = null) : ?Array {
+
+        $condicion = match ($estado) {
+            "alta" => "AND T02_FechaBajaDepartamento IS NULL",
+            "baja" => "AND T02_FechaBajaDepartamento IS NOT NULL",
+            default => ""
+        };
         $consulta = <<<CONSULTA
         SELECT * FROM T02_Departamento
         WHERE T02_DescDepartamento LIKE CONCAT('%', :descripcion, '%')
+        $condicion
         ORDER BY T02_FechaCreacionDepartamento DESC;
         CONSULTA;
 
@@ -77,8 +84,69 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+
+            header("Location: index.php");
+            exit;
+        }
+
+        $aDepartamentos = [];
+        if ($datos && $datos->rowCount() >= 1) {
+            while ($departamento = $datos->fetchObject()) {
+                $aDepartamentos[] = new Departamento(
+                    $departamento->T02_CodDepartamento,
+                    $departamento->T02_DescDepartamento,
+                    new DateTime($departamento->T02_FechaCreacionDepartamento),
+                    $departamento->T02_VolumenDeNegocio,
+                    $departamento->T02_FechaBajaDepartamento ? new DateTime($departamento->T02_FechaBajaDepartamento) : null
+                );
+            }
+        }
+        return $aDepartamentos;
+    }
+
+
+    /**
+     * Busca departamentos cuya descripción contenga el texto indicado. (Paginados)
+     *
+     * @param string $desc Texto a buscar en la descripción
+     * @return array Array de objetos Departamento (vacío si no hay resultados)
+     */
+    static function buscaDepartamentosPorDescPaginado(string $desc = "", ?string $estado = null, int $numeroPagina = 1) : ?Array {
+
+        $resultadosPorPagina = ResultadosPorPagina;
+        $pagina = ($numeroPagina - 1) * $resultadosPorPagina;
+
+        $condicion = match ($estado) {
+            "alta" => "AND T02_FechaBajaDepartamento IS NULL",
+            "baja" => "AND T02_FechaBajaDepartamento IS NOT NULL",
+            default => ""
+        };
+        $consulta = <<<CONSULTA
+        SELECT * FROM T02_Departamento
+        WHERE T02_DescDepartamento LIKE CONCAT('%', :descripcion, '%')
+        $condicion
+        ORDER BY T02_FechaCreacionDepartamento DESC
+        LIMIT $resultadosPorPagina OFFSET $pagina;
+        CONSULTA;
+
+        $parametros = [
+            ":descripcion" => $desc,
+        ];
+
+        try {
+            $datos = DBPDO::ejecutarConsulta($consulta,$parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -134,8 +202,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -170,8 +238,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -225,8 +293,8 @@ class DepartamentoPDO {
             $_SESSION['error'] = new AppError(
                 $exception->getCode(),
                 $exception->getMessage(),
-                $exception->getFile(),
-                $exception->getLine(),
+                __FILE__,
+                __LINE__,
                 $_SESSION["paginaEnCurso"]
             );
             $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -238,5 +306,53 @@ class DepartamentoPDO {
 
         // Devolvemos el objeto solo si se insertó exactamente 1 fila
         return ($resultado && $resultado->rowCount() === 1) ? $departamento : null;
+    }
+
+    /**
+     * Devuelve el número total de páginas según los resultados por página y opción
+     *
+     * @param string|null $estado "alta", "baja" o null
+     * @return int Número total de páginas
+     */
+    static function contarTotalPaginas(string $desc = "", ?string $estado = null) : int {
+
+        $resultadosPorPagina = ResultadosPorPagina;
+
+        $condicion = match ($estado) {
+            "alta" => "AND T02_FechaBajaDepartamento IS NULL",
+            "baja" => "AND T02_FechaBajaDepartamento IS NOT NULL",
+            default => ""
+        };
+
+        $consulta = <<<CONSULTA
+            SELECT COUNT(*) AS total FROM T02_Departamento
+            WHERE T02_DescDepartamento LIKE CONCAT('%', :descripcion, '%')
+            $condicion
+        CONSULTA;
+
+        $parametros = [
+            ":descripcion" => $desc,
+        ];
+
+        try {
+            $datos = DBPDO::ejecutarConsulta($consulta, $parametros);
+        } catch (PDOException $exception) {
+            $_SESSION['error'] = new AppError(
+                $exception->getCode(),
+                $exception->getMessage(),
+                __FILE__,
+                __LINE__,
+                $_SESSION["paginaEnCurso"]
+            );
+            $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
+            $_SESSION["paginaEnCurso"] = "error";
+            header("Location: index.php");
+            exit;
+        }
+
+        $fila = $datos->fetch(PDO::FETCH_ASSOC);
+        $totalRegistros = $fila['total'];
+        $totalPaginas = ceil($totalRegistros / $resultadosPorPagina);
+        return $totalPaginas;
     }
 }

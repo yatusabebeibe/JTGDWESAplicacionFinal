@@ -40,7 +40,7 @@ if (isset($_REQUEST["entrar"])) {
     // Si el usuario es correcto, lo almacenamos en la sesión y redirigimos al inicio privado
     if ($usuario) {
         $_SESSION["usuarioDAWJTGDAplicacionFinal"] = $usuario;
-        UsuarioPDO::actualizarUltimaConexion($usuario->getCodUsuario(), new DateTime());
+        UsuarioPDO::actualizarUltimaConexion($usuario->getCodigo(), new DateTime());
         $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
         $_SESSION["paginaEnCurso"] = "inicioPrivado";
 

@@ -60,4 +60,45 @@ class REST {
             copyright: $datos['copyright'] ?? "N/A"
         );
     }
+
+    /**
+     * Obtiene información de un juego de Steam por su nombre.
+     *
+     * Realiza una petición a la API de búsqueda de Steam y devuelve un objeto JuegoSteam
+     * con los datos del juego o con la información del error si ocurre.
+     *
+     * @param string $nombreJuego Nombre del juego a buscar.
+     * @return JuegoSteam Objeto con los datos del juego o con el error producido.
+     */
+    public static function getJuegoSteam(string $nombreJuego = ""): JuegoSteam {
+        // Inicializamos una sesión cURL con la URL de búsqueda de Steam
+        $curl = curl_init("https://store.steampowered.com/search/results?json=1&term=" . urlencode($nombreJuego));
+
+        // Configuramos cURL para que devuelva la respuesta como cadena
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+        $respuesta = curl_exec($curl); // Ejecutamos la solicitud cURL
+        $errorCode = curl_errno($curl); // Código de error cURL
+        $errorMsg = curl_error($curl);  // Mensaje de error cURL
+
+        // Si hay error en la solicitud cURL, devolvemos un objeto con el error
+        if ($errorCode) {
+            return new JuegoSteam($nombreJuego, code: $errorCode, msg: $errorMsg);
+        }
+
+        $datos = json_decode($respuesta, true); // Decodificamos la respuesta JSON
+
+        // Comprobamos si la respuesta tiene algún error
+        if (!isset($datos['items']) || count($datos['items']) === 0) {
+            return new JuegoSteam($nombreJuego, code: 404, msg: "Juego no encontrado");
+        }
+
+        // Tomamos el primer resultado como ejemplo
+        $primerJuego = $datos['items'][0];
+
+        $nombre = $primerJuego['name'] ?? null;
+        $logo = $primerJuego['logo'] ?? null;
+
+        return new JuegoSteam($nombreJuego, $nombre, $logo);
+    }
 }

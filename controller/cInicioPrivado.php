@@ -64,8 +64,8 @@ if (isset($_REQUEST["error"])) {
         $_SESSION['error'] = new AppError(
             $exception->getCode(),
             $exception->getMessage(),
-            $exception->getFile(),
-            $exception->getLine(),
+            __FILE__,
+            __LINE__,
             $_SESSION["paginaEnCurso"]
         );
         $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
@@ -78,7 +78,7 @@ if (isset($_REQUEST["error"])) {
 
 if ( isset($_REQUEST["mtoUsuarios"]) && $sTipoUsuario == "administrador" ) {
     $_SESSION["paginaAnterior"][] = $_SESSION["paginaEnCurso"];
-    $_SESSION["paginaEnCurso"] = "wip";
+    $_SESSION["paginaEnCurso"] = "mtoUsuarios";
 
     // Redirigimos
     header("Location: index.php");
@@ -93,7 +93,7 @@ $titulo = "Inicio Privado";
 // Obtenemos los datos del usuario logueado
 $usuario = $_SESSION["usuarioDAWJTGDAplicacionFinal"];
 
-$nombreUsuario = $usuario->getDescUsuario();
+$nombreUsuario = $usuario->getDesc();
 $numConexiones = $usuario->getNumAccesos();
 $fechaUltConex = $usuario->getFechaHoraUltimaConexionAnterior() ?? null;
 

@@ -19,9 +19,9 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
 $error = "";
 if (isset($_REQUEST["crearDep"])) {
     $error = $_REQUEST["codigo"] !== strtoupper($_REQUEST["codigo"]) ? "El codigo tiene que estar en mayusculas" : $error;
-    $error = validacionFormularios::comprobarAlfaNumerico($_REQUEST["codigo"],3,3,1) ?? $error;
+    $error = validacionFormularios::comprobarAlfabetico($_REQUEST["codigo"],3,3,1) ?? $error;
     $error = validacionFormularios::comprobarAlfaNumerico($_REQUEST["desc"],255,3,1) ?? $error;
-    $error = validacionFormularios::comprobarFloat($_REQUEST["volumenNegocio"],obligatorio:1) ?? $error;
+    $error = validacionFormularios::comprobarFloat($_REQUEST["volumenNegocio"],obligatorio:1, max: 999999, min:0) ?? $error;
 
     if (empty($error)) {
         $departamento = new Departamento(
