@@ -42,8 +42,10 @@ export const generarTabla = async (listaUsuarios, tabla) => {
         tr.appendChild(crearCelda(usuario.descripcion));
         tr.appendChild(crearCelda(usuario.numConexiones));
         tr.appendChild(crearCelda(usuario.perfil));
-        const fecha = new Date(usuario.ultimaConexion);
-        tr.appendChild(crearCelda(fecha.toLocaleString()));
+        const fecha = usuario.ultimaConexion
+            ? new Date(usuario.ultimaConexion).toLocaleString()
+            : "Sin conexion anterior";
+        tr.appendChild(crearCelda(fecha));
         tr.appendChild(crearCeldaOpciones(usuario.codigo));
 
         tabla.appendChild(tr)

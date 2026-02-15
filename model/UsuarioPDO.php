@@ -215,8 +215,10 @@ class UsuarioPDO {
                     $oDatos->T01_Password,
                     $oDatos->T01_DescUsuario,
                     $oDatos->T01_NumConexiones,
-                    new DateTime($oDatos->T01_FechaHoraUltimaConexion),
-                    $oDatos->T01_FechaHoraUltimaConexion ? new DateTime($oDatos->T01_FechaHoraUltimaConexion) : null,
+                    $oDatos->T01_FechaHoraUltimaConexion
+                        ? new DateTime($oDatos->T01_FechaHoraUltimaConexion)
+                        : null,
+                    null,
                     $oDatos->T01_Perfil
                 );
             }
@@ -265,10 +267,10 @@ class UsuarioPDO {
                 $oDatos->T01_Password,
                 $oDatos->T01_DescUsuario,
                 $oDatos->T01_NumConexiones,
-                new DateTime($oDatos->T01_FechaHoraUltimaConexion),
                 $oDatos->T01_FechaHoraUltimaConexion
                     ? new DateTime($oDatos->T01_FechaHoraUltimaConexion)
                     : null,
+                null,
                 $oDatos->T01_Perfil
             );
         }
