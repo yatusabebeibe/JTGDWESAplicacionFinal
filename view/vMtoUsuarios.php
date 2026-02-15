@@ -49,7 +49,17 @@
 
         let busqueda = document.querySelector("#man > .formularios > form:nth-child(1) input[name=buscar]");
 
+        let busquedaGuardada = sessionStorage.getItem("busquedaUsuarios");
+        if (busquedaGuardada !== null) {
+            busqueda.value = busquedaGuardada;
+            listaUsuarios = await obtenerUsuarios(busquedaGuardada);
+            tabla.innerHTML = "";
+            generarTabla(listaUsuarios, tabla);
+        }
+
         busqueda.addEventListener("keyup", async () => {
+            sessionStorage.setItem("busquedaUsuarios", busqueda.value);
+
             listaUsuarios = await obtenerUsuarios(busqueda.value);
             tabla.innerHTML = "";
             generarTabla(listaUsuarios, tabla);
