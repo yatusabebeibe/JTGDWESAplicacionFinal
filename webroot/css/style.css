@@ -238,7 +238,7 @@ input[readonly],input[disabled] {
 }
 
 
-input:not([type="submit"]) {
+input:not([type="submit"]), select {
     padding: 10px;
     border-radius: var(--border-radius);
     border: 1px solid #2a475e;

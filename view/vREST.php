@@ -1,3 +1,4 @@
+<style>  form > * { flex: 1 1 140px; }  </style>
 <div class="gridLayout">
     <section>
         <h1 style="padding-bottom: 10PX;">NASA</h1>
@@ -47,9 +48,9 @@
     </section>
 
     <section>
-        <h1>Calculadora</h1>
+        <h1 style="padding-bottom: 10px;">Calculadora</h1>
         <?php $calc = $avREST["calculadora"] ?>
-        <form method="post">
+        <form method="post" id="calculadora" name="calculadora">
             <input type="number" step="any" name="num1" value="<?= $calc->getNum1() ?>" required>
             <input type="number" step="any" name="num2" value="<?= $calc->getNum2() ?>" required>
             <select name="operacion">
