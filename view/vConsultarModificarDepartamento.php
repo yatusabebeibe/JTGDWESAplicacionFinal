@@ -16,6 +16,11 @@
         <label for="fechaBaja">Fecha de Baja:</label>
         <input type="text" id="fechaBaja" name="fechaBaja" value="<?= $avEditDep["fechaBaja"] ?>" readonly disabled>
 
+        <div style="display: grid; grid-template-columns: 1fr 1fr;" >
+            <label for="darDeBaja" style="text-align: left;">Esta de Baja:</label>
+            <span style="text-align: left;"><?= !empty($avEditDep["fechaBaja"]) ? "✅" : "❌" ?></span>
+        </div>
+
         <?php if (!empty($avEditDep["error"]) && $avEditDep["editable"]): ?>
         <span style="margin-top: 20px; font-size: 0.8rem; color:red;"><?= $avEditDep["error"] ?></span>
         <?php endif ?>
