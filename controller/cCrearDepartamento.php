@@ -30,9 +30,6 @@ if (isset($_REQUEST["crearDep"])) {
             new DateTime(),
             $_REQUEST["volumenNegocio"]
         );
-        if (! empty($_REQUEST["darDeBaja"])) {
-            $departamento->setFechaBaja(new DateTime());
-        }
 
         // Intentamos actualizar el departamento en la base de datos y redirigimos si tiene éxito
         if (DepartamentoPDO::crearDepartamento($departamento)) {
