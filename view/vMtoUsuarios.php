@@ -21,7 +21,6 @@
                 <input type="text" name="buscar" placeholder="Texto a buscar" autofocus>
             </div>
         </form>
-        <form method="post" class="y"><input type="submit" value="Crear usuario" name="crear"></form>
     </div>
 
     <table>
