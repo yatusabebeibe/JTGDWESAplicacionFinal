@@ -45,4 +45,28 @@
             <?php endif; ?>
         <?php endif; ?>
     </section>
+
+    <section>
+        <h1>Calculadora</h1>
+        <?php $calc = $avREST["calculadora"] ?>
+        <form method="post">
+            <input type="number" step="any" name="num1" value="<?= $calc->getNum1() ?>" required>
+            <input type="number" step="any" name="num2" value="<?= $calc->getNum2() ?>" required>
+            <select name="operacion">
+                <option value="suma" <?= $calc->getOperacion() === 'suma' ? 'selected' : '' ?>>Suma</option>
+                <option value="resta" <?= $calc->getOperacion() === 'resta' ? 'selected' : '' ?>>Resta</option>
+                <option value="multiplicacion" <?= $calc->getOperacion() === 'multiplicacion' ? 'selected' : '' ?>>Multiplicacion</option>
+                <option value="division" <?= $calc->getOperacion() === 'division' ? 'selected' : '' ?>>Division</option>
+            </select>
+            <input type="submit" value="Calcular">
+        </form>
+
+        <?php if ($calc->getError()["code"] !== null): ?>
+            <div class="error">
+                <p><b>Error <?= $calc->getError()["code"] ?>:</b> <?= htmlspecialchars($calc->getError()["msg"]) ?></p>
+            </div>
+        <?php else: ?>
+            <p>Resultado: <?= $calc->getResultado() ?></p>
+        <?php endif; ?>
+    </section>
 </div>
