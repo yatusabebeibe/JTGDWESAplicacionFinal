@@ -136,7 +136,7 @@ class UsuarioPDO {
         return ($insercion && $insercion->rowCount() > 0) ? true : false ;
     }
 
-    public static function modificarUsuario(string $codUsuario, string $descUsuario) {
+    public static function modificarUsuario(string $codUsuario, string $desc) {
         $consulta = <<<CONSULTA
         UPDATE T01_Usuario
         SET T01_DescUsuario = :descripcion
@@ -145,7 +145,7 @@ class UsuarioPDO {
 
         $parametros = [
             ":usuario" => $codUsuario,
-            ":descripcion" => $descUsuario,
+            ":descripcion" => $desc,
         ];
 
         try {
@@ -166,7 +166,7 @@ class UsuarioPDO {
         }
 
         if ($datos->rowCount() > 0) {
-            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDesc($descUsuario);
+            $_SESSION["usuarioDAWJTGDAplicacionFinal"]->setDesc($desc);
             return true; // Se modificó el usuario
         } else {
             return false; // No se encontró el usuario o no hubo cambios
