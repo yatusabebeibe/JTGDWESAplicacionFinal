@@ -51,8 +51,8 @@
         <h1 style="padding-bottom: 10px;">Calculadora</h1>
         <?php $calc = $avREST["calculadora"] ?>
         <form method="post" id="calculadora" name="calculadora">
-            <input type="number" step="any" name="num1" value="<?= $calc->getNum1() ?>" required>
-            <input type="number" step="any" name="num2" value="<?= $calc->getNum2() ?>" required>
+            <input type="number" step="any" name="num1" value="<?= $calc->getNum1() ?>" obligatorio>
+            <input type="number" step="any" name="num2" value="<?= $calc->getNum2() ?>" obligatorio>
             <select name="operacion">
                 <option value="suma" <?= $calc->getOperacion() === 'suma' ? 'selected' : '' ?>>Suma</option>
                 <option value="resta" <?= $calc->getOperacion() === 'resta' ? 'selected' : '' ?>>Resta</option>
