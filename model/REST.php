@@ -110,7 +110,7 @@ class REST {
      * @param string $operacion Operación a realizar: suma, resta, multiplica, divide
      * @return Calculadora Objeto con el resultado o error
      */
-    public static function calculadora(float $num1, float $num2, string $operacion): Calculadora {
+    public static function getCalculadora(float $num1, float $num2, string $operacion): Calculadora {
         $protocolo = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
         $dominio   = $_SERVER['HTTP_HOST'];
 

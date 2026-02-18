@@ -55,7 +55,7 @@ if (isset($_REQUEST['num1'], $_REQUEST['num2'], $_REQUEST['operacion'])) {
     $num2 = (float) $_REQUEST['num2'];
     $operacion = $_REQUEST['operacion'];
 
-    $calc = REST::calculadora($num1, $num2, $operacion);
+    $calc = REST::getCalculadora($num1, $num2, $operacion);
     $_SESSION["REST"]["calculadora"] = $calc;
 } else if (empty($_SESSION["REST"]["calculadora"])) {
     $_SESSION["REST"]["calculadora"] = new Calculadora(0, 0, 'suma', 0);
