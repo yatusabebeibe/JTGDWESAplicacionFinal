@@ -49,5 +49,12 @@ INSERT INTO T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_Fecha
 VALUES
     ('TES','Desc test', NOW() - INTERVAL 3 MONTH, 1235.5, NOW() - INTERVAL 43 DAY),
     ('INF','Dept Informatica', NOW() - INTERVAL 2 WEEK, 1235.5 ,NULL),
-    ('MUS','Dept Musica', NOW(), 1235.5, NULL)
+    ('MUS','Dept Musica', NOW(), 1235.5, NULL),
+    ('ADM','Dept Administracion', NOW() - INTERVAL 6 MONTH, 2500.75, NULL),
+    ('VEN','Dept Ventas', NOW() - INTERVAL 1 YEAR, 5400.00, NOW() - INTERVAL 10 DAY),
+    ('RRH','Dept Recursos Humanos', NOW() - INTERVAL 8 MONTH, 1800.20, NULL),
+    ('LOG','Dept Logistica', NOW() - INTERVAL 5 WEEK, 3200.90, NULL),
+    ('MAR','Dept Marketing', NOW() - INTERVAL 4 MONTH, 4100.60, NOW() - INTERVAL 2 MONTH),
+    ('CAL','Dept Calidad', NOW() - INTERVAL 15 DAY, 900.00, NULL),
+    ('IDP','Dept Investigacion', NOW() - INTERVAL 9 MONTH, 6700.30, NULL)
 ;
