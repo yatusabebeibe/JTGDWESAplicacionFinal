@@ -138,7 +138,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\AppError",
             "name": "AppError",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020representa\u0020un\u0020error\u0020en\u0020la\u0020aplicaci\u00F3n.",
             "url": "classes/AppError.html"
         },                {
             "fqsen": "\\AppError\u003A\u003A__construct\u0028\u0029",
@@ -198,7 +198,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Calculadora",
             "name": "Calculadora",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020representa\u0020una\u0020calculadora.",
             "url": "classes/Calculadora.html"
         },                {
             "fqsen": "\\Calculadora\u003A\u003A__construct\u0028\u0029",
@@ -258,7 +258,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\DBPDO",
             "name": "DBPDO",
-            "summary": "",
+            "summary": "Clase\u0020para\u0020gestionar\u0020consultas\u0020a\u0020la\u0020base\u0020de\u0020datos\u0020usando\u0020PDO.",
             "url": "classes/DBPDO.html"
         },                {
             "fqsen": "\\DBPDO\u003A\u003AejecutarConsulta\u0028\u0029",
@@ -538,7 +538,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020representa\u0020un\u0020usuario\u0020del\u0020sistema.",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
@@ -618,7 +618,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\UsuarioPDO",
             "name": "UsuarioPDO",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020gestiona\u0020operaciones\u0020sobre\u0020usuarios\u0020en\u0020la\u0020base\u0020de\u0020datos\u0020usando\u0020PDO.",
             "url": "classes/UsuarioPDO.html"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarUsuario\u0028\u0029",
