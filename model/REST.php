@@ -120,7 +120,6 @@ class REST {
         $carpetaProyecto = $carpetaProyecto === '/' ? '' : $carpetaProyecto;
 
         $url = "$protocolo://$dominio$carpetaProyecto/api/wsCalculadora.php?num1=$num1&num2=$num2&operacion=$operacion";
-        $_SESSION["logUlr"] = $url;
 
         $curl = curl_init($url);
 
