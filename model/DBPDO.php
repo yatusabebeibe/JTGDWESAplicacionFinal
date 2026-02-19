@@ -1,10 +1,10 @@
 <?php
 
 /**
+ * Clase para gestionar consultas a la base de datos usando PDO.
+ *
  * @author Jesús Temprano Gallego
  * @since 18/12/2025
- *
- * Clase para gestionar consultas a la base de datos usando PDO.
  */
 class DBPDO {
     /**

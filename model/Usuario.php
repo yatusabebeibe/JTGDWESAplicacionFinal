@@ -1,10 +1,10 @@
 <?php
 
 /**
+ * Clase que representa un usuario del sistema.
+ *
  * @author Jesús Temprano Gallego
  * @since 18/12/2025
- *
- * Clase que representa un usuario del sistema.
  */
 class Usuario {
     private string $codUsuario;

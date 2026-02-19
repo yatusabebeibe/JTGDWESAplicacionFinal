@@ -1,10 +1,10 @@
 <?php
 
 /**
+ * Clase que representa una calculadora.
+ *
  * @author Jesús Temprano Gallego
  * @since 19/02/2025
- *
- * Clase que representa una calculadora.
  */
 class Calculadora {
     public float $num1;

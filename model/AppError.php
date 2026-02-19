@@ -1,10 +1,10 @@
 <?php
 
 /**
+ * Clase que representa un error en la aplicación.
+ *
  * @author Jesús Temprano Gallego
  * @since 14/01/2025
- *
- * Clase que representa un error en la aplicación.
  */
 class AppError {
     private string $codError;

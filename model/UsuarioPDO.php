@@ -1,10 +1,10 @@
 <?php
 
 /**
+ * Clase que gestiona operaciones sobre usuarios en la base de datos usando PDO.
+ *
  * @author Jesús Temprano Gallego
  * @since 18/12/2025
- *
- * Clase que gestiona operaciones sobre usuarios en la base de datos usando PDO.
  */
 class UsuarioPDO {
 
