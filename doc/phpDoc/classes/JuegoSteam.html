@@ -87,7 +87,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    AppError
+    JuegoSteam
 
     
             <div class="phpdocumentor-element__package">
@@ -106,20 +106,22 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">9</span>
+    <span class="phpdocumentor-element-found-in__line">10</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Clase que representa un error en la aplicación.</p>
+            <p class="phpdocumentor-summary">Clase que representa un juego de Steam.</p>
 
 
+    <section class="phpdocumentor-description"><p>Contiene el termino de budqueda, el nombre, el logo, o información de error si tiene.</p>
+</section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/AppError.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/JuegoSteam.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -136,7 +138,7 @@
                     <span class="phpdocumentor-tag__name">since</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">14/01/2025</span>
+                                            <span class="phpdocumentor-tag-link">09/02/2026</span>
                                                                                 
                                              
                                     </dd>
@@ -146,7 +148,7 @@
     
 <h3 id="toc">
     Table of Contents
-    <a href="classes/AppError.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/JuegoSteam.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -160,36 +162,30 @@
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/AppError.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/JuegoSteam.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_archivoError">$archivoError</a>
+    <a class="" href="classes/JuegoSteam.html#property_error">$error</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_codError">$codError</a>
+    <a class="" href="classes/JuegoSteam.html#property_logo">$logo</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_descError">$descError</a>
+    <a class="" href="classes/JuegoSteam.html#property_nombre">$nombre</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: string|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_lineaError">$lineaError</a>
-    <span>
-                        &nbsp;: int            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_paginaSiguiente">$paginaSiguiente</a>
+    <a class="" href="classes/JuegoSteam.html#property_terminoBusqueda">$terminoBusqueda</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
@@ -198,51 +194,44 @@
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/AppError.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/JuegoSteam.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method___construct">__construct()</a>
+    <a class="" href="classes/JuegoSteam.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor de la clase AppError.</dd>
+<dd>Constructor de la clase JuegoSteam.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getArchivoError">getArchivoError()</a>
+    <a class="" href="classes/JuegoSteam.html#method_getError">getError()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+</dt>
+<dd>Obtiene la información de error asociada al juego.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/JuegoSteam.html#method_getLogo">getLogo()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>Obtiene la URL o ruta del logo del juego.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/JuegoSteam.html#method_getNombre">getNombre()</a>
+    <span>
+                                &nbsp;: string|null    </span>
+</dt>
+<dd>Obtiene el nombre del juego.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/JuegoSteam.html#method_getTerminoBusqueda">getTerminoBusqueda()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Obtiene el archivo donde ocurrió el error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getCodError">getCodError()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Obtiene el código del error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getDescError">getDescError()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Obtiene la descripción del error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getLineaError">getLineaError()</a>
-    <span>
-                                &nbsp;: int    </span>
-</dt>
-<dd>Obtiene la línea donde ocurrió el error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getPaginaSiguiente">getPaginaSiguiente()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Obtiene la página a la que se redirige después del error.</dd>
+<dd>Obtiene el termino de budqueda para el juego.</dd>
 
     </dl>
 
@@ -254,7 +243,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/AppError.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/JuegoSteam.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -264,15 +253,89 @@
             -private
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_archivoError">
-        $archivoError
-        <a href="classes/AppError.html#property_archivoError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_error">
+        $error
+        <a href="classes/JuegoSteam.html#property_error" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
+    <span class="phpdocumentor-signature__name">$error</span>
+    </code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_logo">
+        $logo
+        <a href="classes/JuegoSteam.html#property_logo" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">private</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$logo</span>
+    </code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_nombre">
+        $nombre
+        <a href="classes/JuegoSteam.html#property_nombre" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">12</span>
 
@@ -282,8 +345,8 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$archivoError</span>
+            <span class="phpdocumentor-signature__type">string|null</span>
+    <span class="phpdocumentor-signature__name">$nombre</span>
     </code>
 
     
@@ -301,52 +364,15 @@
             -private
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_codError">
-        $codError
-        <a href="classes/AppError.html#property_codError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_terminoBusqueda">
+        $terminoBusqueda
+        <a href="classes/JuegoSteam.html#property_terminoBusqueda" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$codError</span>
-    </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                                    "
->
-    <h4 class="phpdocumentor-element__name" id="property_descError">
-        $descError
-        <a href="classes/AppError.html#property_descError" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">11</span>
 
@@ -357,81 +383,7 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
             <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$descError</span>
-    </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                                    "
->
-    <h4 class="phpdocumentor-element__name" id="property_lineaError">
-        $lineaError
-        <a href="classes/AppError.html#property_lineaError" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">13</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$lineaError</span>
-    </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                                    "
->
-    <h4 class="phpdocumentor-element__name" id="property_paginaSiguiente">
-        $paginaSiguiente
-        <a href="classes/AppError.html#property_paginaSiguiente" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$paginaSiguiente</span>
+    <span class="phpdocumentor-signature__name">$terminoBusqueda</span>
     </code>
 
     
@@ -447,7 +399,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/AppError.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/JuegoSteam.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -458,21 +410,21 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/AppError.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/JuegoSteam.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">25</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor de la clase AppError.</p>
+        <p class="phpdocumentor-summary">Constructor de la clase JuegoSteam.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$archivoError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lineaError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$paginaSiguiente</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$terminoBusqueda</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$nombre</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$logo</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$msg</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -481,47 +433,47 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$codError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$terminoBusqueda</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Código del error.</p>
+                    <section class="phpdocumentor-description"><p>Termino de budqueda para el juego.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$descError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
-                            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$nombre</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Descripción del error.</p>
+                    <section class="phpdocumentor-description"><p>Nombre del juego.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$archivoError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
-                            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$logo</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Archivo donde ocurrió el error.</p>
+                    <section class="phpdocumentor-description"><p>URL o ruta del logo del juego.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$lineaError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">int</span>
-                            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$code</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Línea donde ocurrió el error.</p>
+                    <section class="phpdocumentor-description"><p>Código de error si existe.</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$paginaSiguiente</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
-                            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$msg</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Página a la que se redirige después del error.</p>
+                    <section class="phpdocumentor-description"><p>Mensaje de error si existe.</p>
 </section>
 
             </dd>
@@ -539,23 +491,152 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getArchivoError">
-        getArchivoError()
-        <a href="classes/AppError.html#method_getArchivoError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getError">
+        getError()
+        <a href="classes/JuegoSteam.html#method_getError" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Obtiene el archivo donde ocurrió el error.</p>
+        <p class="phpdocumentor-summary">Obtiene la información de error asociada al juego.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getArchivoError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Array con las claves &quot;code&quot; y &quot;msg&quot;.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getLogo">
+        getLogo()
+        <a href="classes/JuegoSteam.html#method_getLogo" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">58</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Obtiene la URL o ruta del logo del juego.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getLogo</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Logo del juego.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getNombre">
+        getNombre()
+        <a href="classes/JuegoSteam.html#method_getNombre" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">49</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Obtiene el nombre del juego.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getNombre</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">string|null</span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Nombre del juego.</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTerminoBusqueda">
+        getTerminoBusqueda()
+        <a href="classes/JuegoSteam.html#method_getTerminoBusqueda" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/JuegoSteam.php"><a href="files/model-juegosteam.html"><abbr title="model/JuegoSteam.php">JuegoSteam.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">40</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Obtiene el termino de budqueda para el juego.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getTerminoBusqueda</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -570,179 +651,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
                     &mdash;
-                <section class="phpdocumentor-description"><p>El archivo donde ocurrió el error.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getCodError">
-        getCodError()
-        <a href="classes/AppError.html#method_getCodError" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Obtiene el código del error.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCodError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>El código del error.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getDescError">
-        getDescError()
-        <a href="classes/AppError.html#method_getDescError" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">45</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Obtiene la descripción del error.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getDescError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>La descripción del error.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getLineaError">
-        getLineaError()
-        <a href="classes/AppError.html#method_getLineaError" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">61</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Obtiene la línea donde ocurrió el error.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getLineaError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">int</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>La línea donde ocurrió el error.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getPaginaSiguiente">
-        getPaginaSiguiente()
-        <a href="classes/AppError.html#method_getPaginaSiguiente" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">69</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Obtiene la página a la que se redirige después del error.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPaginaSiguiente</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>La página a la que se redirige después del error.</p>
+                <section class="phpdocumentor-description"><p>Termino de budqueda para el juego.</p>
 </section>
 
             </section>
@@ -754,7 +663,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/model/AppError.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/model/JuegoSteam.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -855,31 +764,29 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/AppError.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/AppError.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/JuegoSteam.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/JuegoSteam.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/AppError.html#property_archivoError">$archivoError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_codError">$codError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_descError">$descError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_lineaError">$lineaError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_paginaSiguiente">$paginaSiguiente</a></li>
+                                                    <li class=""><a href="classes/JuegoSteam.html#property_error">$error</a></li>
+                                                    <li class=""><a href="classes/JuegoSteam.html#property_logo">$logo</a></li>
+                                                    <li class=""><a href="classes/JuegoSteam.html#property_nombre">$nombre</a></li>
+                                                    <li class=""><a href="classes/JuegoSteam.html#property_terminoBusqueda">$terminoBusqueda</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/AppError.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getArchivoError">getArchivoError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getCodError">getCodError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getDescError">getDescError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getLineaError">getLineaError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getPaginaSiguiente">getPaginaSiguiente()</a></li>
+                                            <li class=""><a href="classes/JuegoSteam.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/JuegoSteam.html#method_getError">getError()</a></li>
+                                            <li class=""><a href="classes/JuegoSteam.html#method_getLogo">getLogo()</a></li>
+                                            <li class=""><a href="classes/JuegoSteam.html#method_getNombre">getNombre()</a></li>
+                                            <li class=""><a href="classes/JuegoSteam.html#method_getTerminoBusqueda">getTerminoBusqueda()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -899,7 +806,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/AppError.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/JuegoSteam.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

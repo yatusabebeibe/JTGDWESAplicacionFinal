@@ -49,10 +49,23 @@ if (!empty($nombreJuego) && empty(validacionFormularios::comprobarAlfaNumerico($
     $_SESSION["REST"]["juego"] = $juegoSteam;
 }
 
+// Si se ha enviado una operación de calculadora
+if (isset($_REQUEST['num1'], $_REQUEST['num2'], $_REQUEST['operacion'])) {
+    $num1 = (float) $_REQUEST['num1'];
+    $num2 = (float) $_REQUEST['num2'];
+    $operacion = $_REQUEST['operacion'];
+
+    $calc = REST::getCalculadora($num1, $num2, $operacion);
+    $_SESSION["REST"]["calculadora"] = $calc;
+} else if (empty($_SESSION["REST"]["calculadora"])) {
+    $_SESSION["REST"]["calculadora"] = new Calculadora(0, 0, 'suma', 0);
+}
+
 // Inicializamos el array de datos de la vista
 $avREST = [
     "nasa" => $_SESSION["REST"]["nasa"],
     "juego" => $_SESSION["REST"]["juego"],
+    "calculadora" => $_SESSION["REST"]["calculadora"],
 ];
 
 $titulo = "REST";

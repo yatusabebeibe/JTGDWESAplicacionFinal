@@ -36,15 +36,10 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#constant_DSN"
         },                {
-            "fqsen": "\\aColumnasUsuario",
-            "name": "aColumnasUsuario",
+            "fqsen": "\\ResultadosPorPagina",
+            "name": "ResultadosPorPagina",
             "summary": "",
-            "url": "namespaces/default.html#constant_aColumnasUsuario"
-        },                {
-            "fqsen": "\\aColumnasDepartamento",
-            "name": "aColumnasDepartamento",
-            "summary": "",
-            "url": "namespaces/default.html#constant_aColumnasDepartamento"
+            "url": "namespaces/default.html#constant_ResultadosPorPagina"
         },                {
             "fqsen": "\\validacionFormularios",
             "name": "validacionFormularios",
@@ -131,9 +126,19 @@ Search.appendIndex(
             "summary": "Basada\u0020en\u0020validarAlfanumerico,\u0020esta\u0020funci\u00F3n\u0020comprueba\u0020si\u0020el\u0020nombre\u0020de\u0020un\narchivo\u0020tiene\u0020una\u0020extensi\u00F3n\u0020v\u00E1lida\u0020entre\u0020un\u0020array\u0020de\u0020extensiones\u0020admitidas.",
             "url": "classes/validacionFormularios.html#method_validarNombreArchivo"
         },                {
+            "fqsen": "\\validacionFormularios\u003A\u003AcomprobarFloatMonetarioES\u0028\u0029",
+            "name": "comprobarFloatMonetarioES",
+            "summary": "Comprueba\u0020si\u0020una\u0020cadena\u0020representa\u0020un\u0020n\u00FAmero\u0020decimal\u0020\u0028float\u0029\u0020en\u0020formato\u0020espa\u00F1ol\u0020\u0028usando\u0020coma\u0029\ny,\u0020si\u0020es\u0020correcto,\u0020valida\u0020que\u0020est\u00E9\u0020dentro\u0020de\u0020un\u0020rango\u0020\u005Bmin,\u0020max\u005D.",
+            "url": "classes/validacionFormularios.html#method_comprobarFloatMonetarioES"
+        },                {
+            "fqsen": "\\validacionFormularios\u003A\u003AcomprobarCadenaEspecifica\u0028\u0029",
+            "name": "comprobarCadenaEspecifica",
+            "summary": "Funci\u00F3n\u0020para\u0020comprobar\u0020una\u0020cadena\u0020con\u0020valores\u0020predefinidos.",
+            "url": "classes/validacionFormularios.html#method_comprobarCadenaEspecifica"
+        },                {
             "fqsen": "\\AppError",
             "name": "AppError",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020representa\u0020un\u0020error\u0020en\u0020la\u0020aplicaci\u00F3n.",
             "url": "classes/AppError.html"
         },                {
             "fqsen": "\\AppError\u003A\u003A__construct\u0028\u0029",
@@ -191,9 +196,69 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/AppError.html#property_paginaSiguiente"
         },                {
+            "fqsen": "\\Calculadora",
+            "name": "Calculadora",
+            "summary": "Clase\u0020que\u0020representa\u0020una\u0020calculadora.",
+            "url": "classes/Calculadora.html"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020de\u0020la\u0020clase",
+            "url": "classes/Calculadora.html#method___construct"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003AgetNum1\u0028\u0029",
+            "name": "getNum1",
+            "summary": "",
+            "url": "classes/Calculadora.html#method_getNum1"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003AgetNum2\u0028\u0029",
+            "name": "getNum2",
+            "summary": "",
+            "url": "classes/Calculadora.html#method_getNum2"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003AgetOperacion\u0028\u0029",
+            "name": "getOperacion",
+            "summary": "",
+            "url": "classes/Calculadora.html#method_getOperacion"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003AgetResultado\u0028\u0029",
+            "name": "getResultado",
+            "summary": "",
+            "url": "classes/Calculadora.html#method_getResultado"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003AgetError\u0028\u0029",
+            "name": "getError",
+            "summary": "",
+            "url": "classes/Calculadora.html#method_getError"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003A\u0024num1",
+            "name": "num1",
+            "summary": "",
+            "url": "classes/Calculadora.html#property_num1"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003A\u0024num2",
+            "name": "num2",
+            "summary": "",
+            "url": "classes/Calculadora.html#property_num2"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003A\u0024operacion",
+            "name": "operacion",
+            "summary": "",
+            "url": "classes/Calculadora.html#property_operacion"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003A\u0024resultado",
+            "name": "resultado",
+            "summary": "",
+            "url": "classes/Calculadora.html#property_resultado"
+        },                {
+            "fqsen": "\\Calculadora\u003A\u003A\u0024error",
+            "name": "error",
+            "summary": "",
+            "url": "classes/Calculadora.html#property_error"
+        },                {
             "fqsen": "\\DBPDO",
             "name": "DBPDO",
-            "summary": "",
+            "summary": "Clase\u0020para\u0020gestionar\u0020consultas\u0020a\u0020la\u0020base\u0020de\u0020datos\u0020usando\u0020PDO.",
             "url": "classes/DBPDO.html"
         },                {
             "fqsen": "\\DBPDO\u003A\u003AejecutarConsulta\u0028\u0029",
@@ -296,6 +361,11 @@ Search.appendIndex(
             "summary": "Busca\u0020departamentos\u0020cuya\u0020descripci\u00F3n\u0020contenga\u0020el\u0020texto\u0020indicado.",
             "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDesc"
         },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AbuscaDepartamentosPorDescPaginado\u0028\u0029",
+            "name": "buscaDepartamentosPorDescPaginado",
+            "summary": "Busca\u0020departamentos\u0020cuya\u0020descripci\u00F3n\u0020contenga\u0020el\u0020texto\u0020indicado.\u0020\u0028Paginados\u0029",
+            "url": "classes/DepartamentoPDO.html#method_buscaDepartamentosPorDescPaginado"
+        },                {
             "fqsen": "\\DepartamentoPDO\u003A\u003AeditarDepartamento\u0028\u0029",
             "name": "editarDepartamento",
             "summary": "Actualiza\u0020un\u0020departamento\u0020en\u0020la\u0020base\u0020de\u0020datos.",
@@ -310,6 +380,11 @@ Search.appendIndex(
             "name": "crearDepartamento",
             "summary": "Crea\u0020un\u0020nuevo\u0020departamento\u0020en\u0020la\u0020base\u0020de\u0020datos.",
             "url": "classes/DepartamentoPDO.html#method_crearDepartamento"
+        },                {
+            "fqsen": "\\DepartamentoPDO\u003A\u003AcontarTotalPaginas\u0028\u0029",
+            "name": "contarTotalPaginas",
+            "summary": "Devuelve\u0020el\u0020n\u00FAmero\u0020total\u0020de\u0020p\u00E1ginas\u0020seg\u00FAn\u0020los\u0020resultados\u0020por\u0020p\u00E1gina\u0020y\u0020opci\u00F3n",
+            "url": "classes/DepartamentoPDO.html#method_contarTotalPaginas"
         },                {
             "fqsen": "\\ImagenNasa",
             "name": "ImagenNasa",
@@ -391,6 +466,56 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/ImagenNasa.html#property_error"
         },                {
+            "fqsen": "\\JuegoSteam",
+            "name": "JuegoSteam",
+            "summary": "Clase\u0020que\u0020representa\u0020un\u0020juego\u0020de\u0020Steam.",
+            "url": "classes/JuegoSteam.html"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020de\u0020la\u0020clase\u0020JuegoSteam.",
+            "url": "classes/JuegoSteam.html#method___construct"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003AgetTerminoBusqueda\u0028\u0029",
+            "name": "getTerminoBusqueda",
+            "summary": "Obtiene\u0020el\u0020termino\u0020de\u0020budqueda\u0020para\u0020el\u0020juego.",
+            "url": "classes/JuegoSteam.html#method_getTerminoBusqueda"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003AgetNombre\u0028\u0029",
+            "name": "getNombre",
+            "summary": "Obtiene\u0020el\u0020nombre\u0020del\u0020juego.",
+            "url": "classes/JuegoSteam.html#method_getNombre"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003AgetLogo\u0028\u0029",
+            "name": "getLogo",
+            "summary": "Obtiene\u0020la\u0020URL\u0020o\u0020ruta\u0020del\u0020logo\u0020del\u0020juego.",
+            "url": "classes/JuegoSteam.html#method_getLogo"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003AgetError\u0028\u0029",
+            "name": "getError",
+            "summary": "Obtiene\u0020la\u0020informaci\u00F3n\u0020de\u0020error\u0020asociada\u0020al\u0020juego.",
+            "url": "classes/JuegoSteam.html#method_getError"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003A\u0024terminoBusqueda",
+            "name": "terminoBusqueda",
+            "summary": "",
+            "url": "classes/JuegoSteam.html#property_terminoBusqueda"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003A\u0024nombre",
+            "name": "nombre",
+            "summary": "",
+            "url": "classes/JuegoSteam.html#property_nombre"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003A\u0024logo",
+            "name": "logo",
+            "summary": "",
+            "url": "classes/JuegoSteam.html#property_logo"
+        },                {
+            "fqsen": "\\JuegoSteam\u003A\u003A\u0024error",
+            "name": "error",
+            "summary": "",
+            "url": "classes/JuegoSteam.html#property_error"
+        },                {
             "fqsen": "\\REST",
             "name": "REST",
             "summary": "Encargada\u0020de\u0020realizar\u0020peticiones\u0020a\u0020APIs\u0020REST\u0020externas.",
@@ -401,9 +526,19 @@ Search.appendIndex(
             "summary": "Obtiene\u0020la\u0020foto\u0020del\u0020d\u00EDa\u0020de\u0020la\u0020NASA\u0020\u0028APOD\u0029\u0020para\u0020una\u0020fecha\u0020concreta.",
             "url": "classes/REST.html#method_getFotoDiaNasa"
         },                {
+            "fqsen": "\\REST\u003A\u003AgetJuegoSteam\u0028\u0029",
+            "name": "getJuegoSteam",
+            "summary": "Obtiene\u0020informaci\u00F3n\u0020de\u0020un\u0020juego\u0020de\u0020Steam\u0020por\u0020su\u0020nombre.",
+            "url": "classes/REST.html#method_getJuegoSteam"
+        },                {
+            "fqsen": "\\REST\u003A\u003AgetCalculadora\u0028\u0029",
+            "name": "getCalculadora",
+            "summary": "Realiza\u0020una\u0020operaci\u00F3n\u0020de\u0020calculadora\u0020mediante\u0020el\u0020web\u0020service.",
+            "url": "classes/REST.html#method_getCalculadora"
+        },                {
             "fqsen": "\\Usuario",
             "name": "Usuario",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020representa\u0020un\u0020usuario\u0020del\u0020sistema.",
             "url": "classes/Usuario.html"
         },                {
             "fqsen": "\\Usuario\u003A\u003A__construct\u0028\u0029",
@@ -411,20 +546,20 @@ Search.appendIndex(
             "summary": "Constructor\u0020de\u0020la\u0020clase\u0020Usuario.",
             "url": "classes/Usuario.html#method___construct"
         },                {
-            "fqsen": "\\Usuario\u003A\u003AgetCodUsuario\u0028\u0029",
-            "name": "getCodUsuario",
+            "fqsen": "\\Usuario\u003A\u003AgetCodigo\u0028\u0029",
+            "name": "getCodigo",
             "summary": "Obtiene\u0020el\u0020c\u00F3digo\u0020del\u0020usuario.",
-            "url": "classes/Usuario.html#method_getCodUsuario"
+            "url": "classes/Usuario.html#method_getCodigo"
         },                {
-            "fqsen": "\\Usuario\u003A\u003AgetDescUsuario\u0028\u0029",
-            "name": "getDescUsuario",
+            "fqsen": "\\Usuario\u003A\u003AgetDesc\u0028\u0029",
+            "name": "getDesc",
             "summary": "Obtiene\u0020la\u0020descripci\u00F3n\u0020del\u0020usuario.",
-            "url": "classes/Usuario.html#method_getDescUsuario"
+            "url": "classes/Usuario.html#method_getDesc"
         },                {
-            "fqsen": "\\Usuario\u003A\u003AsetDescUsuario\u0028\u0029",
-            "name": "setDescUsuario",
+            "fqsen": "\\Usuario\u003A\u003AsetDesc\u0028\u0029",
+            "name": "setDesc",
             "summary": "",
-            "url": "classes/Usuario.html#method_setDescUsuario"
+            "url": "classes/Usuario.html#method_setDesc"
         },                {
             "fqsen": "\\Usuario\u003A\u003AgetNumAccesos\u0028\u0029",
             "name": "getNumAccesos",
@@ -483,7 +618,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\UsuarioPDO",
             "name": "UsuarioPDO",
-            "summary": "",
+            "summary": "Clase\u0020que\u0020gestiona\u0020operaciones\u0020sobre\u0020usuarios\u0020en\u0020la\u0020base\u0020de\u0020datos\u0020usando\u0020PDO.",
             "url": "classes/UsuarioPDO.html"
         },                {
             "fqsen": "\\UsuarioPDO\u003A\u003AvalidarUsuario\u0028\u0029",
@@ -505,6 +640,21 @@ Search.appendIndex(
             "name": "modificarUsuario",
             "summary": "",
             "url": "classes/UsuarioPDO.html#method_modificarUsuario"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscarUsuariosPorDescripcion\u0028\u0029",
+            "name": "buscarUsuariosPorDescripcion",
+            "summary": "Busca\u0020usuarios\u0020cuyo\u0020nombre\u0020o\u0020descripci\u00F3n\u0020contiene\u0020un\u0020texto\u0020dado.",
+            "url": "classes/UsuarioPDO.html#method_buscarUsuariosPorDescripcion"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AbuscarUsuarioPorCodigo\u0028\u0029",
+            "name": "buscarUsuarioPorCodigo",
+            "summary": "Busca\u0020el\u0020usuario\u0020con\u0020el\u0020codigo\u0020indicado\u0020si\u0020hay.",
+            "url": "classes/UsuarioPDO.html#method_buscarUsuarioPorCodigo"
+        },                {
+            "fqsen": "\\UsuarioPDO\u003A\u003AeliminarUsuario\u0028\u0029",
+            "name": "eliminarUsuario",
+            "summary": "Elimina\u0020el\u0020usuario\u0020con\u0020el\u0020c\u00F3digo\u0020indicado\u0020si\u0020existe.",
+            "url": "classes/UsuarioPDO.html#method_eliminarUsuario"
         },                {
             "fqsen": "\\",
             "name": "\\",

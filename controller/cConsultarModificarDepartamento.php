@@ -24,18 +24,17 @@ if (! $departamentoActual = DepartamentoPDO::buscaDepartamentoPorCod($_SESSION["
 // Comprobamos si se ha pulsado el botón de guardar y validamos los datos recibidos
 $error = "";
 if (isset($_REQUEST["guardarDep"])) {
-    $error = validacionFormularios::comprobarAlfaNumerico($_REQUEST["desc"],255,3,1);
-    $error = validacionFormularios::comprobarFloat($_REQUEST["volumenNegocio"],obligatorio:1, max: 999999, min:0) ?? $error;
+    if ($errDesc = validacionFormularios::comprobarAlfaNumerico($_REQUEST["desc"],255,3,1)) {
+        $error = "Descripcion: $errDesc";
+    }
+    if ($errVol = validacionFormularios::comprobarFloat($_REQUEST["volumenNegocio"],obligatorio:1, max: 999999, min:0)) {
+        $error = "VolNegocio: $errVol";
+    }
 
     if (empty($error)) {
         $departamento = $departamentoActual;
         $departamento->setDesc($_REQUEST["desc"]);
         $departamento->setVolumenDeNegocio($_REQUEST["volumenNegocio"]);
-        if (! empty($_REQUEST["darDeBaja"])) {
-            $departamento->setFechaBaja(new DateTime());
-        } else {
-            $departamento->setFechaBaja(null);
-        }
 
         // Intentamos actualizar el departamento en la base de datos y redirigimos si tiene éxito
         if (DepartamentoPDO::editarDepartamento($departamento)) {

@@ -1,3 +1,4 @@
+<style>  form > * { flex: 1 1 140px; }  </style>
 <div class="gridLayout">
     <section>
         <h1 style="padding-bottom: 10PX;">NASA</h1>
@@ -43,6 +44,30 @@
             <?php else: ?>
                 <p>No se encontró imagen para el juego <?= htmlspecialchars($juegoSteam->getNombre()) ?></p>
             <?php endif; ?>
+        <?php endif; ?>
+    </section>
+
+    <section>
+        <h1 style="padding-bottom: 10px;">Calculadora</h1>
+        <?php $calc = $avREST["calculadora"] ?>
+        <form method="post" id="calculadora" name="calculadora">
+            <input type="number" step="any" name="num1" value="<?= $calc->getNum1() ?>" obligatorio>
+            <input type="number" step="any" name="num2" value="<?= $calc->getNum2() ?>" obligatorio>
+            <select name="operacion">
+                <option value="suma" <?= $calc->getOperacion() === 'suma' ? 'selected' : '' ?>>Suma</option>
+                <option value="resta" <?= $calc->getOperacion() === 'resta' ? 'selected' : '' ?>>Resta</option>
+                <option value="multiplicacion" <?= $calc->getOperacion() === 'multiplicacion' ? 'selected' : '' ?>>Multiplicacion</option>
+                <option value="division" <?= $calc->getOperacion() === 'division' ? 'selected' : '' ?>>Division</option>
+            </select>
+            <input type="submit" value="Calcular">
+        </form>
+
+        <?php if ($calc->getError()["code"] !== null): ?>
+            <div class="error">
+                <p><b>Error <?= $calc->getError()["code"] ?>:</b> <?= htmlspecialchars($calc->getError()["msg"]) ?></p>
+            </div>
+        <?php else: ?>
+            <p>Resultado: <?= $calc->getResultado() ?></p>
         <?php endif; ?>
     </section>
 </div>

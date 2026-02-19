@@ -103,8 +103,8 @@
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AppError.html"><abbr title="\AppError">AppError</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DBPDO.html"><abbr title="\DBPDO">DBPDO</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Departamento.html"><abbr title="\Departamento">Departamento</abbr></a></dt><dd>Representa un departamento con su código, descripción, fecha de creación,
-volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DepartamentoPDO.html"><abbr title="\DepartamentoPDO">DepartamentoPDO</abbr></a></dt><dd>Clase que gestiona operaciones sobre departamentos en la base de datos usando PDO.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ImagenNasa.html"><abbr title="\ImagenNasa">ImagenNasa</abbr></a></dt><dd>Clase que representa una imagen de la NASA obtenida a través de su API.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/REST.html"><abbr title="\REST">REST</abbr></a></dt><dd>Encargada de realizar peticiones a APIs REST externas.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Usuario.html"><abbr title="\Usuario">Usuario</abbr></a></dt>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/UsuarioPDO.html"><abbr title="\UsuarioPDO">UsuarioPDO</abbr></a></dt>    </dl>
+                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/AppError.html"><abbr title="\AppError">AppError</abbr></a></dt><dd>Clase que representa un error en la aplicación.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Calculadora.html"><abbr title="\Calculadora">Calculadora</abbr></a></dt><dd>Clase que representa una calculadora.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DBPDO.html"><abbr title="\DBPDO">DBPDO</abbr></a></dt><dd>Clase para gestionar consultas a la base de datos usando PDO.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Departamento.html"><abbr title="\Departamento">Departamento</abbr></a></dt><dd>Representa un departamento con su código, descripción, fecha de creación,
+volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/DepartamentoPDO.html"><abbr title="\DepartamentoPDO">DepartamentoPDO</abbr></a></dt><dd>Clase que gestiona operaciones sobre departamentos en la base de datos usando PDO.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/ImagenNasa.html"><abbr title="\ImagenNasa">ImagenNasa</abbr></a></dt><dd>Clase que representa una imagen de la NASA obtenida a través de su API.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/JuegoSteam.html"><abbr title="\JuegoSteam">JuegoSteam</abbr></a></dt><dd>Clase que representa un juego de Steam.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/REST.html"><abbr title="\REST">REST</abbr></a></dt><dd>Encargada de realizar peticiones a APIs REST externas.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Usuario.html"><abbr title="\Usuario">Usuario</abbr></a></dt><dd>Clase que representa un usuario del sistema.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/UsuarioPDO.html"><abbr title="\UsuarioPDO">UsuarioPDO</abbr></a></dt><dd>Clase que gestiona operaciones sobre usuarios en la base de datos usando PDO.</dd>    </dl>
 
 
 
@@ -114,18 +114,6 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="namespaces/default.html#constant_aColumnasDepartamento">aColumnasDepartamento</a>
-    <span>
-        &nbsp;= [&quot;Codigo&quot; =&gt; &quot;T02_CodDepartamento&quot;, &quot;Descripcion&quot; =&gt; &quot;T02_DescDepartamento&quot;, &quot;Volumen&quot; =&gt; &quot;T02_VolumenDeNegocio&quot;, &quot;FechaCreacion&quot; =&gt; &quot;T02_FechaCreacionDepartamento&quot;, &quot;FechaBaja&quot; =&gt; &quot;T02_FechaBajaDepartamento&quot;]                            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
-    <a class="" href="namespaces/default.html#constant_aColumnasUsuario">aColumnasUsuario</a>
-    <span>
-        &nbsp;= [&quot;Codigo&quot; =&gt; &quot;T01_CodUsuario&quot;, &quot;Password&quot; =&gt; &quot;T01_Password&quot;, &quot;Descripcion&quot; =&gt; &quot;T01_DescUsuario&quot;, &quot;NumConexiones&quot; =&gt; &quot;T01_NumConexiones&quot;, &quot;UltimaConexion&quot; =&gt; &quot;T01_FechaHoraUltimaConexion&quot;, &quot;Perfil&quot; =&gt; &quot;T01_Perfil&quot;, &quot;Imagen&quot; =&gt; &quot;T01_ImagenUsuario&quot;]                            </span>
-</dt>
-
             <dt class="phpdocumentor-table-of-contents__entry -constant -public">
     <a class="" href="namespaces/default.html#constant_DBHost">DBHost</a>
     <span>
@@ -168,6 +156,12 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
         &nbsp;= &quot;pimentel&quot;                            </span>
 </dt>
 
+            <dt class="phpdocumentor-table-of-contents__entry -constant -public">
+    <a class="" href="namespaces/default.html#constant_ResultadosPorPagina">ResultadosPorPagina</a>
+    <span>
+        &nbsp;= 5                            </span>
+</dt>
+
     </dl>
 
 
@@ -181,66 +175,6 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
             <a href="packages/Application.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_aColumnasDepartamento">
-        aColumnasDepartamento
-        <a href="namespaces/default.html#constant_aColumnasDepartamento" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="config/confDB.php"><a href="files/config-confdb.html"><abbr title="config/confDB.php">confDB.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">33</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">aColumnasDepartamento</span>
-    = <span class="phpdocumentor-signature__default-value">[&quot;Codigo&quot; =&gt; &quot;T02_CodDepartamento&quot;, &quot;Descripcion&quot; =&gt; &quot;T02_DescDepartamento&quot;, &quot;Volumen&quot; =&gt; &quot;T02_VolumenDeNegocio&quot;, &quot;FechaCreacion&quot; =&gt; &quot;T02_FechaCreacionDepartamento&quot;, &quot;FechaBaja&quot; =&gt; &quot;T02_FechaBajaDepartamento&quot;]</span>
-</code>
-
-
-    
-    
-    
-
-        
-    </article>
-                    <article class="phpdocumentor-element -constant -public ">
-    <h4 class="phpdocumentor-element__name" id="constant_aColumnasUsuario">
-        aColumnasUsuario
-        <a href="namespaces/default.html#constant_aColumnasUsuario" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="config/confDB.php"><a href="files/config-confdb.html"><abbr title="config/confDB.php">confDB.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">aColumnasUsuario</span>
-    = <span class="phpdocumentor-signature__default-value">[&quot;Codigo&quot; =&gt; &quot;T01_CodUsuario&quot;, &quot;Password&quot; =&gt; &quot;T01_Password&quot;, &quot;Descripcion&quot; =&gt; &quot;T01_DescUsuario&quot;, &quot;NumConexiones&quot; =&gt; &quot;T01_NumConexiones&quot;, &quot;UltimaConexion&quot; =&gt; &quot;T01_FechaHoraUltimaConexion&quot;, &quot;Perfil&quot; =&gt; &quot;T01_Perfil&quot;, &quot;Imagen&quot; =&gt; &quot;T01_ImagenUsuario&quot;]</span>
-</code>
-
-
-    
-    
-    
-
-        
-    </article>
                     <article class="phpdocumentor-element -constant -public ">
     <h4 class="phpdocumentor-element__name" id="constant_DBHost">
         DBHost
@@ -418,7 +352,7 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="config/confAPP.php"><a href="files/config-confapp.html"><abbr title="config/confAPP.php">confAPP.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 
     </aside>
 
@@ -448,7 +382,7 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="config/confAPP.php"><a href="files/config-confapp.html"><abbr title="config/confAPP.php">confAPP.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
@@ -459,6 +393,36 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
         <span class="phpdocumentor-signature__type">mixed</span>
     <span class="phpdocumentor-signature__name">preguntaSeguridad</span>
     = <span class="phpdocumentor-signature__default-value">&quot;pimentel&quot;</span>
+</code>
+
+
+    
+    
+    
+
+        
+    </article>
+                    <article class="phpdocumentor-element -constant -public ">
+    <h4 class="phpdocumentor-element__name" id="constant_ResultadosPorPagina">
+        ResultadosPorPagina
+        <a href="namespaces/default.html#constant_ResultadosPorPagina" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="config/confDB.php"><a href="files/config-confdb.html"><abbr title="config/confDB.php">confDB.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-signature phpdocumentor-code ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+        <span class="phpdocumentor-signature__type">mixed</span>
+    <span class="phpdocumentor-signature__name">ResultadosPorPagina</span>
+    = <span class="phpdocumentor-signature__default-value">5</span>
 </code>
 
 
@@ -584,8 +548,6 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
                             <li class="phpdocumentor-on-this-page-section__title">Constants</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="namespaces/default.html#constant_aColumnasDepartamento">aColumnasDepartamento</a></li>
-                                                    <li class=""><a href="namespaces/default.html#constant_aColumnasUsuario">aColumnasUsuario</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_DBHost">DBHost</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_DBName">DBName</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_DBPass">DBPass</a></li>
@@ -593,6 +555,7 @@ volumen de negocio y fecha de baja opcional.</dd>            <dt class="phpdocum
                                                     <li class=""><a href="namespaces/default.html#constant_DSN">DSN</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_NASA_KEY">NASA_KEY</a></li>
                                                     <li class=""><a href="namespaces/default.html#constant_preguntaSeguridad">preguntaSeguridad</a></li>
+                                                    <li class=""><a href="namespaces/default.html#constant_ResultadosPorPagina">ResultadosPorPagina</a></li>
                                             </ul>
                 </li>
             

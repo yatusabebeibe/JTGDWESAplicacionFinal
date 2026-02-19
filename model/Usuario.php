@@ -1,17 +1,17 @@
 <?php
 
 /**
+ * Clase que representa un usuario del sistema.
+ *
  * @author Jesús Temprano Gallego
  * @since 18/12/2025
- *
- * Clase que representa un usuario del sistema.
  */
 class Usuario {
     private string $codUsuario;
     private string $password;
     private string $descUsuario;
     private int $numAccesos;
-    private DateTime $fechaHoraUltimaConexion;
+    private ?DateTime $fechaHoraUltimaConexion;
     private ?DateTime $fechaHoraUltimaConexionAnterior;
     private string $perfil;
 
@@ -22,7 +22,7 @@ class Usuario {
      * @param string $password
      * @param string $descUsuario
      * @param int $numAccesos
-     * @param DateTime $fechaHoraUltimaConexion
+     * @param ?DateTime $fechaHoraUltimaConexion
      * @param ?DateTime $fechaHoraUltimaConexionAnterior
      * @param string $perfil
      */
@@ -31,7 +31,7 @@ class Usuario {
         string $password,
         string $descUsuario,
         int $numAccesos,
-        DateTime $fechaHoraUltimaConexion,
+        ?DateTime $fechaHoraUltimaConexion,
         ?DateTime $fechaHoraUltimaConexionAnterior,
         string $perfil
     ) {
@@ -75,7 +75,7 @@ class Usuario {
      *
      * @return DateTime La fecha y hora de la última conexión del usuario.
      */
-    public function getFechaHoraUltimaConexion(): DateTime {
+    public function getFechaHoraUltimaConexion(): ?DateTime {
         return $this->fechaHoraUltimaConexion;
     }
 

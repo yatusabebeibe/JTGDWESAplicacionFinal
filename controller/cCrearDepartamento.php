@@ -18,10 +18,16 @@ if (! isset($_SESSION["usuarioDAWJTGDAplicacionFinal"])) {
 // Comprobamos si se ha pulsado el botón de crear y validamos los datos recibidos
 $error = "";
 if (isset($_REQUEST["crearDep"])) {
-    $error = $_REQUEST["codigo"] !== strtoupper($_REQUEST["codigo"]) ? "El codigo tiene que estar en mayusculas" : $error;
-    $error = validacionFormularios::comprobarAlfabetico($_REQUEST["codigo"],3,3,1) ?? $error;
-    $error = validacionFormularios::comprobarAlfaNumerico($_REQUEST["desc"],255,3,1) ?? $error;
-    $error = validacionFormularios::comprobarFloat($_REQUEST["volumenNegocio"],obligatorio:1, max: 999999, min:0) ?? $error;
+    $error = $_REQUEST["codigo"] !== strtoupper($_REQUEST["codigo"]) ? "Codigo: Tiene que estar en mayusculas" : $error;
+    if ($errCodigo = validacionFormularios::comprobarAlfabetico($_REQUEST["codigo"],3,3,1)) {
+        $error = "Codigo: $errCodigo";
+    }
+    if ($errDesc = validacionFormularios::comprobarAlfaNumerico($_REQUEST["desc"],255,3,1)) {
+        $error = "Descripcion: $errDesc";
+    }
+    if ($errVol = validacionFormularios::comprobarFloat($_REQUEST["volumenNegocio"],obligatorio:1, max: 999999, min:0)) {
+        $error = "VolNegocio: $errVol";
+    }
 
     if (empty($error)) {
         $departamento = new Departamento(
@@ -30,16 +36,13 @@ if (isset($_REQUEST["crearDep"])) {
             new DateTime(),
             $_REQUEST["volumenNegocio"]
         );
-        if (! empty($_REQUEST["darDeBaja"])) {
-            $departamento->setFechaBaja(new DateTime());
-        }
 
         // Intentamos actualizar el departamento en la base de datos y redirigimos si tiene éxito
         if (DepartamentoPDO::crearDepartamento($departamento)) {
             header("Location: index.php?volver=1");
             exit;
         }
-        $error = "No se pudo editar el departamento";
+        $error = "No se pudo crear el departamento";
     }
 }
 

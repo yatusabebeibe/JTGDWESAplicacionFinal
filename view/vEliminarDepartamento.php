@@ -17,8 +17,8 @@
         <input type="text" id="fechaBaja" name="fechaBaja" value="<?= $avEditDep["fechaBaja"] ?>" readonly disabled>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr;" >
-            <label for="darDeBaja" style="text-align: left;">Dar de Baja:</label>
-            <input type="checkbox" id="darDeBaja" name="darDeBaja" <?= !empty($avEditDep["fechaBaja"]) ? "checked" : "" ?> readonly disabled>
+            <label for="darDeBaja" style="text-align: left;">Esta de Baja:</label>
+            <span style="text-align: left;"><?= !empty($avEditDep["fechaBaja"]) ? "✅" : "❌" ?></span>
         </div>
 
         <?php if (!empty($avEditDep["error"])): ?>

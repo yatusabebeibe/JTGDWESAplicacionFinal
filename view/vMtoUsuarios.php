@@ -21,7 +21,6 @@
                 <input type="text" name="buscar" placeholder="Texto a buscar" autofocus>
             </div>
         </form>
-        <form method="post" class="y"><input type="submit" value="Crear usuario" name="crear"></form>
     </div>
 
     <table>
@@ -41,18 +40,33 @@
         import { obtenerUsuarios } from "./webroot/js/utilUsuarios.js";
         import { generarTabla } from "./webroot/js/utilTablas.js";
 
-        let tabla = document.getElementsByTagName("tbody")[0];
+        // elementos
+        const tabla = document.querySelector("tbody");
+        const busqueda = document.querySelector(
+            "#man > .formularios > form:nth-child(1) input[name=buscar]"
+        );
 
-        let listaUsuarios = await obtenerUsuarios();
+        let listaUsuarios = [];
 
-        generarTabla(listaUsuarios, tabla)
-
-        let busqueda = document.querySelector("#man > .formularios > form:nth-child(1) input[name=buscar]");
-
-        busqueda.addEventListener("keyup", async () => {
-            listaUsuarios = await obtenerUsuarios(busqueda.value);
+        async function cargarUsuarios(texto = "") {
+            listaUsuarios = await obtenerUsuarios(texto);
             tabla.innerHTML = "";
             generarTabla(listaUsuarios, tabla);
-        })
+        }
+
+        // cargar estado inicial
+        const busquedaGuardada = sessionStorage.getItem("busquedaUsuarios");
+        if (busquedaGuardada !== null) {
+            busqueda.value = busquedaGuardada;
+            await cargarUsuarios(busquedaGuardada);
+        } else {
+            await cargarUsuarios();
+        }
+
+        // evento
+        busqueda.addEventListener("keyup", async () => {
+            sessionStorage.setItem("busquedaUsuarios", busqueda.value);
+            await cargarUsuarios(busqueda.value);
+        });
     </script>
 </div>

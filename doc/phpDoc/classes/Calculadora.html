@@ -87,7 +87,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    AppError
+    Calculadora
 
     
             <div class="phpdocumentor-element__package">
@@ -106,20 +106,20 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">9</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Clase que representa un error en la aplicación.</p>
+            <p class="phpdocumentor-summary">Clase que representa una calculadora.</p>
 
 
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/AppError.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Calculadora.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -136,7 +136,7 @@
                     <span class="phpdocumentor-tag__name">since</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                            <span class="phpdocumentor-tag-link">14/01/2025</span>
+                                            <span class="phpdocumentor-tag-link">19/02/2025</span>
                                                                                 
                                              
                                     </dd>
@@ -146,7 +146,7 @@
     
 <h3 id="toc">
     Table of Contents
-    <a href="classes/AppError.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Calculadora.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -160,89 +160,84 @@
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/AppError.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Calculadora.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_archivoError">$archivoError</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/Calculadora.html#property_num1">$num1</a>
+    <span>
+                        &nbsp;: float            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/Calculadora.html#property_num2">$num2</a>
+    <span>
+                        &nbsp;: float            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/Calculadora.html#property_operacion">$operacion</a>
     <span>
                         &nbsp;: string            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_codError">$codError</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -public">
+    <a class="" href="classes/Calculadora.html#property_resultado">$resultado</a>
     <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: float|null            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_descError">$descError</a>
+    <a class="" href="classes/Calculadora.html#property_error">$error</a>
     <span>
-                        &nbsp;: string            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_lineaError">$lineaError</a>
-    <span>
-                        &nbsp;: int            </span>
-</dt>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a class="" href="classes/AppError.html#property_paginaSiguiente">$paginaSiguiente</a>
-    <span>
-                        &nbsp;: string            </span>
+                        &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
 </dt>
 
     </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/AppError.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Calculadora.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method___construct">__construct()</a>
+    <a class="" href="classes/Calculadora.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor de la clase AppError.</dd>
+<dd>Constructor de la clase</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getArchivoError">getArchivoError()</a>
+    <a class="" href="classes/Calculadora.html#method_getError">getError()</a>
+    <span>
+                                &nbsp;: array&lt;string|int, mixed&gt;|null    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/Calculadora.html#method_getNum1">getNum1()</a>
+    <span>
+                                &nbsp;: float    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/Calculadora.html#method_getNum2">getNum2()</a>
+    <span>
+                                &nbsp;: float    </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a class="" href="classes/Calculadora.html#method_getOperacion">getOperacion()</a>
     <span>
                                 &nbsp;: string    </span>
 </dt>
-<dd>Obtiene el archivo donde ocurrió el error.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getCodError">getCodError()</a>
+    <a class="" href="classes/Calculadora.html#method_getResultado">getResultado()</a>
     <span>
-                                &nbsp;: string    </span>
+                                &nbsp;: float|null    </span>
 </dt>
-<dd>Obtiene el código del error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getDescError">getDescError()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Obtiene la descripción del error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getLineaError">getLineaError()</a>
-    <span>
-                                &nbsp;: int    </span>
-</dt>
-<dd>Obtiene la línea donde ocurrió el error.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a class="" href="classes/AppError.html#method_getPaginaSiguiente">getPaginaSiguiente()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Obtiene la página a la que se redirige después del error.</dd>
 
     </dl>
 
@@ -254,62 +249,25 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/AppError.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Calculadora.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
         class="
             phpdocumentor-element
             -property
-            -private
+            -public
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_archivoError">
-        $archivoError
-        <a href="classes/AppError.html#property_archivoError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_num1">
+        $num1
+        <a href="classes/Calculadora.html#property_num1" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">12</span>
-
-    </aside>
-
-    
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$archivoError</span>
-    </code>
-
-    
-    
-    
-
-        
-        
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                                    "
->
-    <h4 class="phpdocumentor-element__name" id="property_codError">
-        $codError
-        <a href="classes/AppError.html#property_codError" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                            </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">10</span>
 
@@ -318,9 +276,9 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$codError</span>
+        <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__type">float</span>
+    <span class="phpdocumentor-signature__name">$num1</span>
     </code>
 
     
@@ -335,18 +293,18 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -public
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_descError">
-        $descError
-        <a href="classes/AppError.html#property_descError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_num2">
+        $num2
+        <a href="classes/Calculadora.html#property_num2" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">11</span>
 
@@ -355,9 +313,9 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$descError</span>
+        <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__type">float</span>
+    <span class="phpdocumentor-signature__name">$num2</span>
     </code>
 
     
@@ -372,18 +330,55 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -public
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_lineaError">
-        $lineaError
-        <a href="classes/AppError.html#property_lineaError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_operacion">
+        $operacion
+        <a href="classes/Calculadora.html#property_operacion" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">12</span>
+
+    </aside>
+
+    
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+        <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__type">string</span>
+    <span class="phpdocumentor-signature__name">$operacion</span>
+    </code>
+
+    
+    
+    
+
+        
+        
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -public
+                                                                    "
+>
+    <h4 class="phpdocumentor-element__name" id="property_resultado">
+        $resultado
+        <a href="classes/Calculadora.html#property_resultado" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                            </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">13</span>
 
@@ -392,9 +387,9 @@
     
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-        <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$lineaError</span>
+        <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__type">float|null</span>
+    <span class="phpdocumentor-signature__name">$resultado</span>
     </code>
 
     
@@ -412,15 +407,15 @@
             -private
                                                                     "
 >
-    <h4 class="phpdocumentor-element__name" id="property_paginaSiguiente">
-        $paginaSiguiente
-        <a href="classes/AppError.html#property_paginaSiguiente" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_error">
+        $error
+        <a href="classes/Calculadora.html#property_error" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                             </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">14</span>
 
@@ -430,8 +425,8 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
         <span class="phpdocumentor-signature__visibility">private</span>
-            <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$paginaSiguiente</span>
+            <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;|null</span>
+    <span class="phpdocumentor-signature__name">$error</span>
     </code>
 
     
@@ -447,7 +442,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/AppError.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Calculadora.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -458,21 +453,21 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/AppError.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Calculadora.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor de la clase AppError.</p>
+        <p class="phpdocumentor-summary">Constructor de la clase</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$codError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$descError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$archivoError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lineaError</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$paginaSiguiente</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$num1</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$num2</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$operacion</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">float|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$resultado</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$code</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$msg</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -481,47 +476,56 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$codError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$num1</span>
+                : <span class="phpdocumentor-argument-list__argument__type">float</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Código del error.</p>
+                    <section class="phpdocumentor-description"><p>Primer número</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$descError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
+                <span class="phpdocumentor-argument-list__argument__name">$num2</span>
+                : <span class="phpdocumentor-argument-list__argument__type">float</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Descripción del error.</p>
+                    <section class="phpdocumentor-description"><p>Segundo número</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$archivoError</span>
+                <span class="phpdocumentor-argument-list__argument__name">$operacion</span>
                 : <span class="phpdocumentor-argument-list__argument__type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Archivo donde ocurrió el error.</p>
+                    <section class="phpdocumentor-description"><p>Tipo de operación</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$lineaError</span>
-                : <span class="phpdocumentor-argument-list__argument__type">int</span>
-                            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$resultado</span>
+                : <span class="phpdocumentor-argument-list__argument__type">float|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Línea donde ocurrió el error.</p>
+                    <section class="phpdocumentor-description"><p>Resultado de la operación</p>
 </section>
 
             </dd>
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-argument-list__argument__name">$paginaSiguiente</span>
-                : <span class="phpdocumentor-argument-list__argument__type">string</span>
-                            </dt>
+                <span class="phpdocumentor-argument-list__argument__name">$code</span>
+                : <span class="phpdocumentor-argument-list__argument__type">int|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Página a la que se redirige después del error.</p>
+                    <section class="phpdocumentor-description"><p>Código de error</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-argument-list__argument__name">$msg</span>
+                : <span class="phpdocumentor-argument-list__argument__type">string|null</span>
+                 = <span class="phpdocumentor-argument-list__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Mensaje de error</p>
 </section>
 
             </dd>
@@ -539,23 +543,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getArchivoError">
-        getArchivoError()
-        <a href="classes/AppError.html#method_getArchivoError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getError">
+        getError()
+        <a href="classes/Calculadora.html#method_getError" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">53</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Obtiene el archivo donde ocurrió el error.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getArchivoError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -568,11 +571,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>El archivo donde ocurrió el error.</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;|null</span>
             </section>
 
 </article>
@@ -582,23 +581,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getCodError">
-        getCodError()
-        <a href="classes/AppError.html#method_getCodError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getNum1">
+        getNum1()
+        <a href="classes/Calculadora.html#method_getNum1" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">37</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Obtiene el código del error.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getCodError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getNum1</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -611,11 +609,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>El código del error.</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type">float</span>
             </section>
 
 </article>
@@ -625,23 +619,60 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getDescError">
-        getDescError()
-        <a href="classes/AppError.html#method_getDescError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getNum2">
+        getNum2()
+        <a href="classes/Calculadora.html#method_getNum2" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">41</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getNum2</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+    
+
+        
+    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">float</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getOperacion">
+        getOperacion()
+        <a href="classes/Calculadora.html#method_getOperacion" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">45</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Obtiene la descripción del error.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getDescError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">getOperacion</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -655,10 +686,6 @@
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
         <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>La descripción del error.</p>
-</section>
-
             </section>
 
 </article>
@@ -668,23 +695,22 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getLineaError">
-        getLineaError()
-        <a href="classes/AppError.html#method_getLineaError" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getResultado">
+        getResultado()
+        <a href="classes/Calculadora.html#method_getResultado" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="model/Calculadora.php"><a href="files/model-calculadora.html"><abbr title="model/Calculadora.php">Calculadora.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">61</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Obtiene la línea donde ocurrió el error.</p>
-
+    
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getLineaError</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+                    <span class="phpdocumentor-signature__name">getResultado</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float|null</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -697,54 +723,7 @@
     
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">int</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>La línea donde ocurrió el error.</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getPaginaSiguiente">
-        getPaginaSiguiente()
-        <a href="classes/AppError.html#method_getPaginaSiguiente" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="model/AppError.php"><a href="files/model-apperror.html"><abbr title="model/AppError.php">AppError.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">69</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Obtiene la página a la que se redirige después del error.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">getPaginaSiguiente</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-    
-
-        
-    
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>La página a la que se redirige después del error.</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type">float|null</span>
             </section>
 
 </article>
@@ -754,7 +733,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/model/AppError.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/model/Calculadora.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -855,31 +834,31 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/AppError.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/AppError.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/Calculadora.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/Calculadora.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li class=""><a href="classes/AppError.html#property_archivoError">$archivoError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_codError">$codError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_descError">$descError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_lineaError">$lineaError</a></li>
-                                                    <li class=""><a href="classes/AppError.html#property_paginaSiguiente">$paginaSiguiente</a></li>
+                                                    <li class=""><a href="classes/Calculadora.html#property_num1">$num1</a></li>
+                                                    <li class=""><a href="classes/Calculadora.html#property_num2">$num2</a></li>
+                                                    <li class=""><a href="classes/Calculadora.html#property_operacion">$operacion</a></li>
+                                                    <li class=""><a href="classes/Calculadora.html#property_resultado">$resultado</a></li>
+                                                    <li class=""><a href="classes/Calculadora.html#property_error">$error</a></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li class=""><a href="classes/AppError.html#method___construct">__construct()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getArchivoError">getArchivoError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getCodError">getCodError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getDescError">getDescError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getLineaError">getLineaError()</a></li>
-                                            <li class=""><a href="classes/AppError.html#method_getPaginaSiguiente">getPaginaSiguiente()</a></li>
+                                            <li class=""><a href="classes/Calculadora.html#method___construct">__construct()</a></li>
+                                            <li class=""><a href="classes/Calculadora.html#method_getError">getError()</a></li>
+                                            <li class=""><a href="classes/Calculadora.html#method_getNum1">getNum1()</a></li>
+                                            <li class=""><a href="classes/Calculadora.html#method_getNum2">getNum2()</a></li>
+                                            <li class=""><a href="classes/Calculadora.html#method_getOperacion">getOperacion()</a></li>
+                                            <li class=""><a href="classes/Calculadora.html#method_getResultado">getResultado()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -899,7 +878,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/AppError.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Calculadora.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

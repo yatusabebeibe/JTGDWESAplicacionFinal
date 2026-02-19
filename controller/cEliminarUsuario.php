@@ -43,7 +43,9 @@ $avEliminarUsuario = [
     "descripcion" => $usuarioActual->getDesc(),
     "numAccesos" => $usuarioActual->getNumAccesos(),
     "perfil" => $usuarioActual->getPerfil(),
-    "ultimaConexion" => $usuarioActual->getFechaHoraUltimaConexion()->format("d-m-Y, h:m:s"),
+    "ultimaConexion" => $usuarioActual->getFechaHoraUltimaConexion()
+        ? $usuarioActual->getFechaHoraUltimaConexion()->format("d-m-Y, h:i:s")
+        : "Sin conexion anterior",
     "error" => $error,
 ];
 

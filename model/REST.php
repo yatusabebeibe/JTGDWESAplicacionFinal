@@ -101,4 +101,46 @@ class REST {
 
         return new JuegoSteam($nombreJuego, $nombre, $logo);
     }
+
+    /**
+     * Realiza una operación de calculadora mediante el web service.
+     *
+     * @param float $num1 Primer número
+     * @param float $num2 Segundo número
+     * @param string $operacion Operación a realizar: suma, resta, multiplica, divide
+     * @return Calculadora Objeto con el resultado o error
+     */
+    public static function getCalculadora(float $num1, float $num2, string $operacion): Calculadora {
+        $protocolo = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+        $dominio   = $_SERVER['HTTP_HOST'];
+
+        // carpeta raiz del proyecto (ej: /JTGDWESAplicacionFinal)
+        $carpetaProyecto = dirname($_SERVER['SCRIPT_NAME']);
+        $carpetaProyecto = str_replace('\\', '/', $carpetaProyecto);
+        $carpetaProyecto = $carpetaProyecto === '/' ? '' : $carpetaProyecto;
+
+        $url = "$protocolo://$dominio$carpetaProyecto/api/wsCalculadora.php?num1=$num1&num2=$num2&operacion=$operacion";
+
+        $curl = curl_init($url);
+
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $respuesta = curl_exec($curl);
+        $errorCode = curl_errno($curl);
+        $errorMsg = curl_error($curl);
+
+        if ($errorCode) {
+            return new Calculadora($num1, $num2, $operacion, null, $errorCode, $errorMsg);
+        }
+
+        $datos = json_decode($respuesta, true);
+
+        if (isset($datos['error'])) {
+            return new Calculadora($num1, $num2, $operacion, null, 1, $datos['error']);
+        }
+
+        return new Calculadora($num1, $num2, $operacion, $datos['resultado']);
+    }
 }

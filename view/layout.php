@@ -36,6 +36,7 @@
             <a href="https://store.steampowered.com/" target="_blank">Pagina imitada</a> |
             16/12/2025 |
             <a href="./doc/phpDoc/" target="_blank">Documentacion phpDoc</a> |
+            <a href="https://github.com/yatusabebeibe/JTGDAWProyectoDAW/blob/master/README.md" target="_blank">Herramientas</a> |
             <a href="./doc/CV_Europass_Jesus.pdf" target="_blank">CV</a>
         </p>
     </footer>
